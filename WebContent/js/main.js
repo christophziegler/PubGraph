@@ -24,7 +24,7 @@ $(document).ready(function() {
 				authorsJSON = authorData;
 				//console.log(authorsJSON);
 				
-				$("#loading").fadeOut();
+				$("#loadingContainer").fadeOut();
 				
 				//start Graph	
 				globalAuthors = authorsJSON;
@@ -32,18 +32,9 @@ $(document).ready(function() {
 				loadGraph();
 				graph.init(authorsJSON, publicationsJSON, time_range, null);
 
-				//$('img').hide();
-				//$('span').text(new Date() - start + "ms");
-
-				//$('h2').show();
-				//$('#publications').val(JSON.stringify(publicationsJSON)).show();
-				//$('#authors').val(JSON.stringify(authorsJSON)).show();
 			});
 		});
 	});
 
-	// $.get("http://localhost:3000/publications", function(data) {
-	// 		console.log("server", new Date() - start);
-	// })
 });
 	
