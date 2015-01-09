@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PubGraph</title>
+
+	<link href="css/main.css" type="text/css" rel="stylesheet"></link>
+	<link href="css/graph.css" type="text/css" rel="stylesheet"></link>
+	
+
+	<!-- D3 -->
+	<!-- <script type="text/javascript" src="js/d3.js"></script> -->
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
+	<!-- jQuery UI -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+	
+	<!-- PubDB Parser -->
+	<script type="text/javascript" src="js/pubdb.js"></script>
+	
+	<script type="text/javascript" src="js/author.js"></script>
+	
+	<!-- Fisheye distortion -->
+	<script type="text/javascript" src="js/fisheye.js"></script>
+	
+	
+	
+	
+	<link href="css/details.css" type="text/css" rel="stylesheet"></link>
+</head>
+
+<body>
+
+		<div id="headline">
+			<div id="headline_text">Publikationen des Instituts für Informatik der LMU</div>
+		</div>
+	
+		<div id="graph_filter">
+  			<div id="slider_text" class="text">Time Range: 2014 - 2015</div>
+  			<div id="slider-range" class="margin"></div>
+  			<input id="slider_button" value="Build Graph" class="margin">
+  			<div id="name_text" class="text">Authors:</div>
+  			<input id="autocomplete" class="margin">
+		</div>
+
+		<div id="graph"></div>
+		
+		
+		
+		
+	
+	
+	
+	
+	<div id="author" class="dialog">
+		<div class="details">
+		<ul>
+			<li><a href="#general">General</a></li>
+			<li><a href="#publications">Publications</a></li>
+			<li><a href="#lorem">Lorem</a></li>
+			<li><a href="#ipsum">Ipsum</a></li>
+		</ul>
+		<div id="general"></div>
+		<div id="publications"></div>
+		<div id="lorem"></div>
+		<div id="ipsum"></div>
+	</div>
+	</div>
+	
+	<div id="loading"><img alt="Loading ..." src="img/loading.gif"></div>
+	
+	
+</body>
+	<script type="text/javascript" src="js/graph.js"></script>
+	
+	<!-- main.js to load data -->
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	
+</html>

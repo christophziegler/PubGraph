@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<!-- PubDB Parser -->
+<script type="text/javascript" src="js/pubdb.js"></script>
+
+<script type="text/javascript" src="js/author.js"></script>
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(
+
+			function() {
+				
+				var publicationsJSON = [];
+				var authorsJSON = [];
+
+				// create a new pubDB json object
+				var converter = new pubDB.json();
+
+				// initialize -> get a jQuery object of html contents in callback function
+				converter.init(function(dbObject) {
+					// pass dbObject to buildJSON method -> get a json object back (<- created on client side)
+					converter.buildPublicationJSON(dbObject, function(pubData) {
+
+						converter.buildAuthorJSON(pubData,
+								function(authorData) {
+									$("#loading").fadeOut();
+							
+									// AuthorView.getInstance(authorData, pubData).show("Daniel Buschek");
+									AuthorView.getInstance(authorData, pubData)
+											.show("Alina Hang");
+									// AuthorView.getInstance(authorData, pubData).show("Alexander De Luca");
+									// AuthorView.getInstance(authorData, pubData).show("Gilbert Beyer");
+									// AuthorView.getInstance(authorData, pubData).show("Gregor Broll");
+
+								});
+					});
+				});
+				
+				$(".dialog").dialog({
+					autoOpen: false,
+					width: "80%",
+					minWidth: "300",
+					maxWidth: "750",
+					show: {
+						effect: "fade",
+				        duration: 500
+					},
+					hide: {
+						effect: "fade",
+				        duration: 500
+					},
+					position: {
+						my: "bottom"
+					}
+				});
+				
+				$(".details").tabs({
+					show : {
+						effect : "fade",
+						duration : 500
+					}
+				});
+
+				$("#publications").accordion({
+					heightStyle : "content",
+					collapsible : true
+				});
+
+			});
+</script>
+
+<link href="css/details.css" type="text/css" rel="stylesheet"></link>
+
+<title>Test</title>
+</head>
+<body>
+
+	<div id="loading"><img alt="Loading ..." src="img/loading.gif"></div>
+	<div id="author" class="dialog">
+		<div class="details">
+		<ul>
+			<li><a href="#general">General</a></li>
+			<li><a href="#publications">Publications</a></li>
+			<li><a href="#lorem">Lorem</a></li>
+			<li><a href="#ipsum">Ipsum</a></li>
+		</ul>
+		<div id="general"></div>
+		<div id="publications"></div>
+		<div id="lorem"></div>
+		<div id="ipsum"></div>
+	</div>
+	</div>
+	
+
+</body>
+</html>

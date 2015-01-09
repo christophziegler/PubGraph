@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+}
+
+img {
+	width: 100%;
+}
+
+.details {
+	width: 100%;
+	margin: 2% auto;
+}
+
+.author_img_container {
+	margin: 2% auto;
+	width: 50%;
+	max-width: 300px;
+}
+
+#loading {
+	width: 20%;
+	max-width: 75px;
+	margin: 0 auto;
+	padding: 20% 0;
+}
+
+.dialog {
+	display: none;
+}
+
+img#loading {
+	vertical-align: middle;
+}

@@ -1,0 +1,78 @@
+@CHARSET "UTF-8";
+
+body, .stage 
+{
+  background: #042029; 
+}
+
+#graph
+{
+	position: relative;
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 65%;
+	
+	border: solid 1px white;
+}
+
+#headline
+{
+	position: relative;
+	text-align: center;
+	top: 20px;
+	left: 20px;
+	width: 65%;
+	border: solid 1px white;
+}
+
+.text
+{
+	color: white;
+	font-family: Helvetica;
+	font-size: 25px;
+	padding: 8px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#headline_text
+{
+	color: white;
+	font-family: Helvetica;
+	font-size: 25px;
+	padding: 8px;
+}
+
+#graph_filter
+{
+	float: right;
+	
+	margin-right: 20px; 
+	margin-top: 30px;
+	border: solid 1px white;
+	width: 32%;
+}
+
+#name_text
+{
+	margin-top: 30px;
+}
+
+
+
+.margin
+{
+	margin-left: 18px;
+	margin-right: 18px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#autocomplete
+{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+
+
