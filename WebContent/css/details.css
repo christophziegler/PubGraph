@@ -43,3 +43,20 @@ img {
 	max-width: 75px;
 	margin: 20% auto;
 }
+
+.chart rect {
+	fill: steelblue;
+}
+
+.chart text {
+	font: 10px sans-serif;
+	text-anchor: end;
+}
+
+text.num {
+	fill: white;
+}
+
+text.name {
+	fill: black;
+}
