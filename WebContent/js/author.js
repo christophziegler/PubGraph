@@ -173,7 +173,7 @@ var AuthorView = (function() {
 				}
 			}
 			
-			var jsonString = JSON.stringify(coauthorsList);
+			var jsonString = JSON.stringify(activityList);
 			
 			return {
 				"coauthors": coauthorsList,
@@ -185,7 +185,8 @@ var AuthorView = (function() {
 
 		function createCoauthorsChart(parentNodeId, data) {
 
-			var width = $("#author").width()*.8, barHeight = 35;
+			var width = $("#author").width()*.8,
+				barHeight = 35;
 
 			var x = d3.scale.linear().range([0, width*.8 ]);
 
@@ -230,6 +231,69 @@ var AuthorView = (function() {
 
 		}
 
+		function createActivityChart(parentId, data) {
+
+			var margin = {
+				top : 20,
+				right : 30,
+				bottom : 30,
+				left : 40
+			}, 
+			width = $("#author").width()*.8 - margin.left - margin.right, 
+			height = 500 - margin.top - margin.bottom;
+
+			var x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
+
+			var y = d3.scale.linear().range([ height, 0 ]);
+
+			var xAxis = d3.svg.axis().scale(x).orient("bottom");
+
+			var yAxis = d3.svg.axis().scale(y).orient("left");
+
+			var chart = d3.select("#" + parentId)
+				.append("svg")
+				.attr("class", "chart")
+				.attr("width", width + margin.left + margin.right)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+			x.domain(data.map(function(d) {
+				return d.year;
+			}));
+			
+			y.domain([ 0, d3.max(data, function(d) {
+				return d.numPub;
+			}) ]);
+
+			chart.append("g")
+				.attr("class", "x axis")
+				.attr("transform", "translate(0," + height + ")")
+				.call(xAxis);
+
+			chart.append("g")
+				.attr("class", "y axis")
+				.call(yAxis);
+
+			chart.selectAll(".bar")
+				.data(data).enter()
+				.append("rect")
+				.attr("class", "bar")
+				.attr("x", function(d) {
+					return x(d.year);
+				}).attr("y", function(d) {
+					return y(d.numPub);
+				}).attr("height", function(d) {
+					return height - y(d.numPub);
+				}).attr("width", x.rangeBand());
+
+			function type(d) {
+				d.numPub = +d.numPub; // coerce to number
+				return d;
+			}
+
+		}
+		
 		return {
 
 			/**
@@ -256,7 +320,7 @@ var AuthorView = (function() {
 						// Show general author information
 						
 						// Show author name
-						$("#general, #publications, #coauthors").empty(); // remove old info
+						$("#general, #publications, #coauthors, #activity").empty(); // remove old info
 						$("#author").dialog("option", "title", authorName);
 						
 						
@@ -311,7 +375,8 @@ var AuthorView = (function() {
 						// (Needs to be done after the refresh, since createCoauthorsChart uses the elements width)			
 						createCoauthorsChart("coauthors", pubStats.coauthors);
 						
-						
+						// Show authors activity
+						createActivityChart("activity", pubStats.activity);
 						
 						
 						// TODO hide menu items that are not defined for authors

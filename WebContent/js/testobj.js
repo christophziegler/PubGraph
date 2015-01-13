@@ -1,3 +1,68 @@
+var butzActivity = [ {
+	"year" : "1994",
+	"numPub" : 1
+}, {
+	"year" : "1995",
+	"numPub" : 2
+}, {
+	"year" : "1996",
+	"numPub" : 1
+}, {
+	"year" : "1997",
+	"numPub" : 3
+}, {
+	"year" : "1998",
+	"numPub" : 1
+}, {
+	"year" : "1999",
+	"numPub" : 3
+}, {
+	"year" : "2000",
+	"numPub" : 7
+}, {
+	"year" : "2001",
+	"numPub" : 4
+}, {
+	"year" : "2002",
+	"numPub" : 4
+}, {
+	"year" : "2003",
+	"numPub" : 3
+}, {
+	"year" : "2004",
+	"numPub" : 6
+}, {
+	"year" : "2005",
+	"numPub" : 13
+}, {
+	"year" : "2006",
+	"numPub" : 8
+}, {
+	"year" : "2007",
+	"numPub" : 7
+}, {
+	"year" : "2008",
+	"numPub" : 6
+}, {
+	"year" : "2009",
+	"numPub" : 14
+}, {
+	"year" : "2010",
+	"numPub" : 20
+}, {
+	"year" : "2011",
+	"numPub" : 11
+}, {
+	"year" : "2012",
+	"numPub" : 16
+}, {
+	"year" : "2013",
+	"numPub" : 24
+}, {
+	"year" : "2014",
+	"numPub" : 15
+} ];
+
 var butz = [
 		{
 			"numColab" : 6,
