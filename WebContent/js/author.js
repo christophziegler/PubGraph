@@ -124,22 +124,24 @@ var AuthorView = (function() {
 			return null;
 		}
 		
-		function getPublications (author) {
+		/**
+		 * Retrieves publication objects by id from publications collection.
+		 * @param pubRefs {Array} List of IDs referencing the publications.
+		 * @returns {Array} List of objects from publications collection
+		 */
+		function getPublications (pubRefs) {
 			
 			var pubList = [],
 				pubKey = 0;
 			
-			if (author.hasOwnProperty("publications")) {
-				for (var i = 0; i < publications.length; i++) {
-					if (author.publications.indexOf(publications[i].id) > -1) {
-						pubList[pubKey] = publications[i];
-						pubKey++;
-					}
+			for (var i = 0; i < pubRefs.length; i++) {
+				if (pubRefs.indexOf(publications[i].id) > -1) {
+					pubList[pubKey] = publications[i];
+					pubKey++;
 				}
-				return pubList;
 			}
 			
-			return null;
+			return pubList;
 			
 		}
 		
@@ -186,12 +188,15 @@ var AuthorView = (function() {
 				if (!activity.hasOwnProperty(pubs[i].year)) {
 					
 					// Initialize
-					activity[pubs[i].year] = 0;
+					activity[pubs[i].year] = {};
+					activity[pubs[i].year]["numPub"] = 0;
+					activity[pubs[i].year]["publications"] = []
 					
 				}
 				
 				// 1 up
-				activity[pubs[i].year] += 1;
+				activity[pubs[i].year]["numPub"] += 1;
+				activity[pubs[i].year]["publications"].push(pubs[i].id);
 				
 			}
 			
@@ -206,7 +211,8 @@ var AuthorView = (function() {
 			for (var key in activity) {
 				item = {};
 				item.year = key;
-				item.numPub = activity[key];
+				item.numPub = activity[key]["numPub"];
+				item.publications = activity[key]["publications"];
 				if (key < minYear) {
 					activityList.unshift(item);
 					minYear = key;
@@ -345,7 +351,7 @@ var AuthorView = (function() {
 			 */
 			show : function (authorName) {
 				
-				var authorsPublications = null, // Collection of publication objects for this author
+				var authorsPublications = [], // List of publication objects for this author
 					href = "", // Link to authors view
 					pubStats = null, // Publications statistics for this author
 					d3_info = null; // Refernce to d3 selection for general info on author
@@ -360,7 +366,9 @@ var AuthorView = (function() {
 					if (author !== null) {
 						
 						// Filter info
-						authorsPublications = getPublications(author);
+						if (author.hasOwnProperty("publications")) {
+							authorsPublications = getPublications(author.publications);
+						}
 						pubStats = getPubLicationStatistics (authorName, authorsPublications);
 						
 						// Remove old info from view
