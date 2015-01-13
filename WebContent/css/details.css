@@ -13,13 +13,19 @@ img {
 
 .details {
 	width: 100%;
-	margin: 2% auto;
+	min-height: 100%;
+	margin: 0 auto;
 }
 
 .author_img_container {
-	margin: 2% auto;
+	margin: 2% 4%;
 	width: 50%;
 	max-width: 300px;
+	float: left;
+}
+
+#generalInfo {
+	margin: 2% 4%;
 }
 
 .dialog {

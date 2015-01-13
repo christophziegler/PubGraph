@@ -347,7 +347,8 @@ var AuthorView = (function() {
 				
 				var authorsPublications = null, // Collection of publication objects for this author
 					href = "", // Link to authors view
-					pubStats = null; // Publications statistics for this author
+					pubStats = null, // Publications statistics for this author
+					d3_info = null; // Refernce to d3 selection for general info on author
 				
 				$("#loadingContainer").fadeIn();
 				
@@ -372,7 +373,6 @@ var AuthorView = (function() {
 						// Show author name
 						$("#author").dialog("option", "title", authorName);
 						
-						
 						if (author.hasOwnProperty("imgUrl")) {
 							
 							// Show photo
@@ -380,10 +380,19 @@ var AuthorView = (function() {
 						
 						} 
 						
+						// Show author info
+						d3_info = d3.select("#general").append("div").attr("id", "generalInfo").append("ul");
+						d3_info.append("li").html("Active since: " + pubStats.activeSince);
+						d3_info.append("li").html("Number of publications: " + pubStats.numPub);
+						d3_info.append("li").html("Rank: " + "... TODO ..."); // TODO Compute rank (Quartile)
+						
 						if (author.hasOwnProperty("url")) {
 							
 							// Show web site link
-							$("#general").append("Website: <a href='" + author.url + "' target='_blank'>" + author.url + "</a>");
+							d3_info.append("li").html("Website: ").append("a")
+								.attr("href", author.url)
+								.attr("target", "_blank")
+								.html(author.url);
 							
 						}
 						
