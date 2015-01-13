@@ -45,12 +45,17 @@ img {
 }
 
 .chart rect {
-	fill: steelblue;
+	fill: #042029;
 }
 
 .chart text {
-	font: 10px sans-serif;
+	font: 14px sans-serif;
 	text-anchor: end;
+}
+
+.chart rect:HOVER {
+	fill: #ccc;
+	cursor: pointer;
 }
 
 text.num {
@@ -58,5 +63,10 @@ text.num {
 }
 
 text.name {
-	fill: black;
+	fill: #042029;
+}
+
+text.name:HOVER {
+	text-decoration: underline;
+	cursor: pointer;
 }

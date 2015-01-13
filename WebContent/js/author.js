@@ -173,6 +173,8 @@ var AuthorView = (function() {
 				}
 			}
 			
+			var jsonString = JSON.stringify(coauthorsList);
+			
 			return {
 				"coauthors": coauthorsList,
 				"activity": activityList
@@ -181,54 +183,52 @@ var AuthorView = (function() {
 		}
 		
 
-//		function createCoauthorsChart (parentNodeId, data) {
-//
-//			var width = 400, barHeight = 20;
-//
-//			var x = d3.scale.linear()
-//						.range([ 0, width ]);
-//			
-//			var chart = d3.select(parentNodeId).append("svg")
-//							.attr("class", "chart")
-//							.attr("id", "#coauthorsChart");
-//
-////			var chart = d3.select(".chart").attr("width", width);
-//
-//			x.domain([0, d3.max(data, function(d) {
-//					return d.numColab;
-//			})]);
-//
-//			chart.attr("height", barHeight * data.length);
-//
-//			var bar = chart.selectAll("g")
-//							.data(data)
-//							.enter()
-//							.append("g").attr("transform", function(d, i) {
-//								return "translate(0," + i * barHeight + ")";
-//							});
-//
-//			bar.append("rect").attr("width", function(d) {
-//				return x(d.numColab);
-//			}).attr("height", barHeight - 1);
-//
-//			bar.append("text").attr("x", function(d) {
-//				return x(d.numColab) - 3;
-//			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
-//				return d.numColab;
-//			}).attr("class", "num");
-//			
-//			bar.append("text").attr("x", function(d) {
-//				return x(d.numColab) + 100;
-//			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
-//				return d.name;
-//			}).attr("class", "name");
-//
-//			function type(d) {
-//				d.numColab = + d.numColab;
-//				return d;
-//			}
-//
-//		}
+		function createCoauthorsChart(parentNodeId, data) {
+
+			var width = $("#author").width()*.8, barHeight = 35;
+
+			var x = d3.scale.linear().range([0, width*.8 ]);
+
+			var chart = d3.select("#" + parentNodeId).append("svg")
+					.attr("class", "chart").attr("id", "#coauthorsChart")
+					.attr("width", width);
+
+			x.domain([ 0, d3.max(data, function(d) {
+				return d.numColab;
+			}) ]);
+
+			chart.attr("height", barHeight * data.length);
+
+			var bar = chart.selectAll("g").data(data).enter().append("g").attr(
+					"transform", function(d, i) {
+						return "translate(" + width*.2 + "," + i * barHeight + ")";
+					});
+
+			bar.append("rect").attr("width", function(d) {
+				return x(d.numColab);
+			}).attr("height", barHeight - 1);
+
+			bar.append("text").attr("x", function(d) {
+				return x(d.numColab) - 3;
+			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
+				return d.numColab;
+			}).attr("class", "num");
+			
+			bar.append("text").attr("x", function(d) {
+				return -5;
+			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
+				return d.name;
+			}).attr("class", "name")
+			.on("click", function () {
+				AuthorView.getInstance().show(this.innerHTML);
+			});
+			
+			function type(d) {
+				d.numColab = +d.numColab;
+				return d;
+			}
+
+		}
 
 		return {
 
@@ -303,23 +303,19 @@ var AuthorView = (function() {
 						// Compute publications statistics
 						pubStats = getPubLicationStatistics (authorName, authorsPublications);
 						
-						// Show coauthors						
-						for (var i = 0; i < pubStats.coauthors.length; i++) {
-
-							$("#coauthors").append("<h3>" + pubStats.coauthors[i].name + " (" + pubStats.coauthors[i].numColab + ")</h3>");
-							$("#coauthors").append("<div id='colab_" + i + "'></div>");
-						}
-						
-//						createCoauthorsChart("#coauthors", pubStats.coauthors);
-						
-						
 						$(".accordion").accordion("refresh");
 						$(".details").tabs("option", "active", 0);
-						
-						// TODO hide menu items that are not defined for authors
-						
 						$("#author").dialog("open");
 						
+						// Show coauthors
+						// (Needs to be done after the refresh, since createCoauthorsChart uses the elements width)			
+						createCoauthorsChart("coauthors", pubStats.coauthors);
+						
+						
+						
+						
+						// TODO hide menu items that are not defined for authors
+											
 					} else {
 						// TODO Handle author not found error.
 					}
