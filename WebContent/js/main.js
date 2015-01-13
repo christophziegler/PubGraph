@@ -31,9 +31,6 @@ $(document).ready(function() {
 				globalPubs = publicationsJSON;
 				loadGraph();
 				
-				var h1 = JSON.stringify(authorsJSON);
-				var h2 = JSON.stringify(publicationsJSON);
-				
 				graph.init(authorsJSON, publicationsJSON, time_range, null);
 
 			});

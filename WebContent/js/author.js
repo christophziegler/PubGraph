@@ -173,8 +173,6 @@ var AuthorView = (function() {
 				}
 			}
 			
-			var jsonString = JSON.stringify(activityList);
-			
 			return {
 				"coauthors": coauthorsList,
 				"activity": activityList
