@@ -1,5 +1,8 @@
 /**
- * Object to control authors detail view. AuthorView is implemented as singleton.
+ * Object to control authors detail view.
+ * 
+ * AuthorView is implemented as singleton (==> there can only be one dialog
+ * opened at a time).
  */
 var AuthorView = (function() {
 
@@ -11,6 +14,41 @@ var AuthorView = (function() {
 		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/";
 	
 	function init() {
+		
+		// --- Create dialog --- //
+		
+		var d3_details = d3.select("body").append("div")
+				.attr("id", "author")
+				.attr("class", "dialog")
+				.append("div")
+				.attr("class", "details");
+				
+		var d3_tabs = d3_details.append("ul");
+		
+		d3_tabs.append("li")
+			.append("a")
+			.attr("href", "#general")
+			.html("General");
+		
+		d3_tabs.append("li")
+			.append("a")
+			.attr("href", "#publications")
+			.html("Publications");
+		
+		d3_tabs.append("li")
+			.append("a")
+			.attr("href", "#coauthors")
+			.html("Coauthors");
+		
+		d3_tabs.append("li")
+			.append("a")
+			.attr("href", "#activity")
+			.html("Activity");
+		
+		d3_details.append("div").attr("id", "general");
+		d3_details.append("div").attr("id", "publications").attr("class", "accordion");
+		d3_details.append("div").attr("id", "coauthors");
+		d3_details.append("div").attr("id", "activity");
 		
 		$(".dialog").dialog({
 			autoOpen: false,
@@ -39,6 +77,10 @@ var AuthorView = (function() {
 			heightStyle : "content",
 			collapsible : true
 		});
+		
+		
+		
+		// --- Define private methods --- //
 		
 		function getAuthor (authorName, onready) {
 			for (var i = 0; i < authors.length; i++) {
@@ -84,17 +126,17 @@ var AuthorView = (function() {
 		
 		function getPublications (author) {
 			
-			var pubCollection = [],
+			var pubList = [],
 				pubKey = 0;
 			
 			if (author.hasOwnProperty("publications")) {
 				for (var i = 0; i < publications.length; i++) {
 					if (author.publications.indexOf(publications[i].id) > -1) {
-						pubCollection[pubKey] = publications[i];
+						pubList[pubKey] = publications[i];
 						pubKey++;
 					}
 				}
-				return pubCollection;
+				return pubList;
 			}
 			
 			return null;
@@ -175,7 +217,9 @@ var AuthorView = (function() {
 			
 			return {
 				"coauthors": coauthorsList,
-				"activity": activityList
+				"activity": activityList,
+				"activeSince": activityList[0].year,
+				"numPub":  pubs.length
 			};
 			
 		}
@@ -297,8 +341,7 @@ var AuthorView = (function() {
 			/**
 			 * Displays the detail view for a specific author.
 			 * 
-			 * @param {string}
-			 *            authorName Name of the author
+			 * @param {string} authorName Name of the author
 			 */
 			show : function (authorName) {
 				
@@ -315,10 +358,18 @@ var AuthorView = (function() {
 					
 					if (author !== null) {
 						
-						// Show general author information
+						// Filter info
+						authorsPublications = getPublications(author);
+						pubStats = getPubLicationStatistics (authorName, authorsPublications);
+						
+						// Remove old info from view
+						$("#general, #publications, #coauthors, #activity").empty(); 
+						
+						
+						
+						// --- TAB: "General" --- //
 						
 						// Show author name
-						$("#general, #publications, #coauthors, #activity").empty(); // remove old info
 						$("#author").dialog("option", "title", authorName);
 						
 						
@@ -336,10 +387,11 @@ var AuthorView = (function() {
 							
 						}
 						
-						// Show publications
-						$("#publications").empty(); // remove old info
 						
-						authorsPublications = getPublications(author);
+						
+						// --- TAB: Publications --- //
+						
+						$("#publications").empty(); // remove old info
 						
 						for (var i = 0; i < authorsPublications.length; i++) {
 							$("#publications").append("<h3>" + authorsPublications[i].title.name + "</h3>");
@@ -362,25 +414,29 @@ var AuthorView = (function() {
 							
 						}
 						
-						// Compute publications statistics
-						pubStats = getPubLicationStatistics (authorName, authorsPublications);
-						
+						// Refresh View
 						$(".accordion").accordion("refresh");
 						$(".details").tabs("option", "active", 0);
 						$("#author").dialog("open");
 						
-						// Show coauthors
+						
+						
+						// --- TAB: Coauthors --- //
+						
 						// (Needs to be done after the refresh, since createCoauthorsChart uses the elements width)			
 						createCoauthorsChart("coauthors", pubStats.coauthors);
 						
-						// Show authors activity
+						
+						
+						// --- TAB: Activity --- //
+						
 						createActivityChart("activity", pubStats.activity);
 						
 						
 						// TODO hide menu items that are not defined for authors
 											
 					} else {
-						// TODO Handle author not found error.
+						// TODO Throw/ handle author not found error.
 					}
 					
 				});
