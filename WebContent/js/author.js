@@ -11,7 +11,8 @@ var AuthorView = (function() {
 	
 	var authors = null,
 		publications = null;
-		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/";
+		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/",
+		colabView = null;
 	
 	function init() {
 		
@@ -50,7 +51,7 @@ var AuthorView = (function() {
 		d3_details.append("div").attr("id", "coauthors");
 		d3_details.append("div").attr("id", "activity");
 		
-		$(".dialog").dialog({
+		$("#author").dialog({
 			autoOpen: false,
 			width: "80%",
 			minWidth: "300",
@@ -123,115 +124,8 @@ var AuthorView = (function() {
 			}
 			return null;
 		}
-		
-		/**
-		 * Retrieves publication objects by id from publications collection.
-		 * @param pubRefs {Array} List of IDs referencing the publications.
-		 * @returns {Array} List of objects from publications collection
-		 */
-		function getPublications (pubRefs) {
-			
-			var pubList = [],
-				pubKey = 0;
-			
-			for (var i = 0; i < pubRefs.length; i++) {
-				if (pubRefs.indexOf(publications[i].id) > -1) {
-					pubList[pubKey] = publications[i];
-					pubKey++;
-				}
-			}
-			
-			return pubList;
-			
-		}
-		
-		function getPubLicationStatistics (name, pubs) {
-			
-			var coauthors = {},
-				coauthorsList = [];
-				activity = {}, // Publications over time
-				activityList = [],
-				minYear = new Date().getFullYear();
-				item = null; // little helper to create lists from objects
-			
-			// Iterate over all publications of this author
-			for (var i = 0; i < pubs.length; i++) {
-				
-				// --- COLLECT COAUTHOR INFORMATION --- //
-				
-				// Iterate over all authors of this publication
-				for (var j = 0; j < pubs[i].authors.length; j++) {
-					
-					// If this author is actually a "coauthor" of that author
-					if (pubs[i].authors[j].name.indexOf(name) === -1) {
-						
-						// If there is no entry for this author in the coauthors collection
-						if (!coauthors.hasOwnProperty(pubs[i].authors[j].name)) {
-							
-							// Initialize
-							coauthors[pubs[i].authors[j].name] = {};
-							coauthors[pubs[i].authors[j].name]["numColab"] = 0;
-							coauthors[pubs[i].authors[j].name]["publications"] = [];
-							
-						}
-							
-						// Add
-						coauthors[pubs[i].authors[j].name]["numColab"] += 1;
-						coauthors[pubs[i].authors[j].name]["publications"].push(pubs[i].id)
-							
-					}
-				}
-				
-				// --- COLLECT ACTIVITY INFORMATION --- //
-				
-				// If there is no entry for the current year yet
-				if (!activity.hasOwnProperty(pubs[i].year)) {
-					
-					// Initialize
-					activity[pubs[i].year] = {};
-					activity[pubs[i].year]["numPub"] = 0;
-					activity[pubs[i].year]["publications"] = []
-					
-				}
-				
-				// 1 up
-				activity[pubs[i].year]["numPub"] += 1;
-				activity[pubs[i].year]["publications"].push(pubs[i].id);
-				
-			}
-			
-			// Turn coauthors object into list (for easier processing during bar chart computation)
-			for (var key in coauthors) {
-				item = coauthors[key];
-				item.name = key;
-				coauthorsList.push(item);
-			}
-			
-			// Sort activity by year (0 to INF) and turn into list
-			for (var key in activity) {
-				item = {};
-				item.year = key;
-				item.numPub = activity[key]["numPub"];
-				item.publications = activity[key]["publications"];
-				if (key < minYear) {
-					activityList.unshift(item);
-					minYear = key;
-				} else {
-					activityList.push(item);
-				}
-			}
-			
-			return {
-				"coauthors": coauthorsList,
-				"activity": activityList,
-				"activeSince": activityList[0].year,
-				"numPub":  pubs.length
-			};
-			
-		}
-		
 
-		function createCoauthorsChart(parentNodeId, data) {
+		function createCoauthorsChart(authorName, parentNodeId, data) {
 
 			var width = $("#author").width()*.8,
 				barHeight = 35;
@@ -255,7 +149,10 @@ var AuthorView = (function() {
 
 			bar.append("rect").attr("width", function(d) {
 				return x(d.numColab);
-			}).attr("height", barHeight - 1);
+			}).attr("height", barHeight - 1)
+			.on("click", function () {
+				colabView.show([authorName, this.__data__.name], this.__data__.publications);
+			});
 
 			bar.append("text").attr("x", function(d) {
 				return x(d.numColab) - 3;
@@ -274,69 +171,6 @@ var AuthorView = (function() {
 			
 			function type(d) {
 				d.numColab = +d.numColab;
-				return d;
-			}
-
-		}
-
-		function createActivityChart(parentId, data) {
-
-			var margin = {
-				top : 20,
-				right : 30,
-				bottom : 30,
-				left : 40
-			}, 
-			width = $("#author").width()*.8 - margin.left - margin.right, 
-			height = 500 - margin.top - margin.bottom;
-
-			var x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
-
-			var y = d3.scale.linear().range([ height, 0 ]);
-
-			var xAxis = d3.svg.axis().scale(x).orient("bottom");
-
-			var yAxis = d3.svg.axis().scale(y).orient("left");
-
-			var chart = d3.select("#" + parentId)
-				.append("svg")
-				.attr("class", "chart")
-				.attr("width", width + margin.left + margin.right)
-				.attr("height", height + margin.top + margin.bottom)
-				.append("g")
-				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-			x.domain(data.map(function(d) {
-				return d.year;
-			}));
-			
-			y.domain([ 0, d3.max(data, function(d) {
-				return d.numPub;
-			}) ]);
-
-			chart.append("g")
-				.attr("class", "x axis")
-				.attr("transform", "translate(0," + height + ")")
-				.call(xAxis);
-
-			chart.append("g")
-				.attr("class", "y axis")
-				.call(yAxis);
-
-			chart.selectAll(".bar")
-				.data(data).enter()
-				.append("rect")
-				.attr("class", "bar")
-				.attr("x", function(d) {
-					return x(d.year);
-				}).attr("y", function(d) {
-					return y(d.numPub);
-				}).attr("height", function(d) {
-					return height - y(d.numPub);
-				}).attr("width", x.rangeBand());
-
-			function type(d) {
-				d.numPub = +d.numPub; // coerce to number
 				return d;
 			}
 
@@ -367,9 +201,9 @@ var AuthorView = (function() {
 						
 						// Filter info
 						if (author.hasOwnProperty("publications")) {
-							authorsPublications = getPublications(author.publications);
+							authorsPublications = Util.getPublications(publications, author.publications);
 						}
-						pubStats = getPubLicationStatistics (authorName, authorsPublications);
+						pubStats = Util.getPubLicationStatistics (authorsPublications, authorName);
 						
 						// Remove old info from view
 						$("#general, #publications, #coauthors, #activity").empty(); 
@@ -407,29 +241,9 @@ var AuthorView = (function() {
 						
 						
 						// --- TAB: Publications --- //
+						Util.showPublications("publications", authorsPublications);
 						
-						$("#publications").empty(); // remove old info
 						
-						for (var i = 0; i < authorsPublications.length; i++) {
-							$("#publications").append("<h3>" + authorsPublications[i].title.name + "</h3>");
-							$("#publications").append("<div id='pub_" + i + "'></div>");
-							
-							// Show authors
-							if (authorsPublications[i].authors.length > 0) {
-								
-								$("#pub_" + i).append("<p id='authors_pub_" + i + "'>Authors: </p>");
-								
-								for (var j = 0; j < authorsPublications[i].authors.length; j++) {
-									href = "\"javascript:AuthorView.getInstance().show('" + authorsPublications[i].authors[j].name + "');\"";
-									$("#authors_pub_" + i).append("<a href=" + href + ">" + authorsPublications[i].authors[j].name + "</a>");
-									if (authorsPublications[i].authors.length > 1 
-											&& j < authorsPublications[i].authors.length-1) {
-										$("#authors_pub_" + i).append(", ");
-									}
-								}
-							}
-							
-						}
 						
 						// Refresh View
 						$(".accordion").accordion("refresh");
@@ -439,18 +253,14 @@ var AuthorView = (function() {
 						
 						
 						// --- TAB: Coauthors --- //
-						
 						// (Needs to be done after the refresh, since createCoauthorsChart uses the elements width)			
-						createCoauthorsChart("coauthors", pubStats.coauthors);
+						createCoauthorsChart(authorName, "coauthors", pubStats.coauthors);
 						
 						
 						
 						// --- TAB: Activity --- //
-						
-						createActivityChart("activity", pubStats.activity);
-						
-						
-						// TODO hide menu items that are not defined for authors
+						// (Needs to be done after the refresh, since createActivityChart uses the elements width)
+						Util.createActivityChart("author", "activity", pubStats.activity);
 											
 					} else {
 						// TODO Throw/ handle author not found error.
@@ -475,6 +285,9 @@ var AuthorView = (function() {
 			if (!((typeof authorsJSON === "undefined") || (typeof publicationsJSON === "undefined"))) {
 				authors = authorsJSON;
 				publications = publicationsJSON;
+				
+				// (Re-)init colabView
+				colabView = ColabView.getInstance(publications);
 			}
 			
 			if (!instance) {
