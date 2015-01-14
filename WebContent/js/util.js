@@ -203,7 +203,66 @@ var Util = (function () {
 				"numPub":  pubs.length
 			};
 			
+		},
+		
+		
+		createDialog: function (param) {
+			
+			var d3_details, d3_tabs, d3_tab, p;
+			
+			d3_details = d3.select("body").append("div")
+					.attr("id", param.id).attr("class", "dialog").append("div")
+					.attr("class", "details");
+
+			d3_tabs = d3_details.append("ul");
+			
+			d3_tab = null;
+			
+			p = param.position || {};
+
+			for (var i = 0; i < param.tabs.length; i++) {
+				d3_tabs.append("li").append("a")
+					.attr("href", "#" + param.tabs[i].id)
+					.html(param.tabs[i].title);
+				
+				d3_tab = d3_details.append("div")
+						.attr("id", param.tabs[i].id);
+				
+				if (param.tabs[i].hasOwnProperty("className")) {
+					d3_tab.attr("class", param.tabs[i].className);
+				}
+						
+			}
+
+			$("#" + param.id).dialog({
+				autoOpen : false,
+				width : p.width || "60%",
+				minWidth : p.minWidth || "300",
+				maxWidth : p.maxWidth || "500",
+				height : p.height || $(window).height() * 0.6,
+				show : {
+					effect : "fade",
+					duration : 500
+				},
+				hide : {
+					effect : "fade",
+					duration : 500
+				},
+			});
+
+			$(".details").tabs({
+				show : {
+					effect : "fade",
+					duration : 500
+				}
+			});
+
+			$(".accordion").accordion({
+				heightStyle : "content",
+				collapsible : true
+			});
 		}
+		
 		
 	};
 	

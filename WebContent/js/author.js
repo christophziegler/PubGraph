@@ -12,71 +12,33 @@ var AuthorView = (function() {
 	var authors = null,
 		publications = null;
 		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/",
-		colabView = null;
+		collabView = null;
 	
 	function init() {
-		
-		// --- Create dialog --- //
-		
-		var d3_details = d3.select("body").append("div")
-				.attr("id", "author")
-				.attr("class", "dialog")
-				.append("div")
-				.attr("class", "details");
 				
-		var d3_tabs = d3_details.append("ul");
 		
-		d3_tabs.append("li")
-			.append("a")
-			.attr("href", "#general")
-			.html("General");
-		
-		d3_tabs.append("li")
-			.append("a")
-			.attr("href", "#publications")
-			.html("Publications");
-		
-		d3_tabs.append("li")
-			.append("a")
-			.attr("href", "#coauthors")
-			.html("Coauthors");
-		
-		d3_tabs.append("li")
-			.append("a")
-			.attr("href", "#activity")
-			.html("Activity");
-		
-		d3_details.append("div").attr("id", "general");
-		d3_details.append("div").attr("id", "publications").attr("class", "accordion");
-		d3_details.append("div").attr("id", "coauthors");
-		d3_details.append("div").attr("id", "activity");
-		
-		$("#author").dialog({
-			autoOpen: false,
-			width: "80%",
-			minWidth: "300",
-			maxWidth: "750",
-			height: $(window).height()*0.8,
-			show: {
-				effect: "fade",
-		        duration: 500
-			},
-			hide: {
-				effect: "fade",
-		        duration: 500
-			},
-		});
-		
-		$(".details").tabs({
-			show : {
-				effect : "fade",
-				duration : 500
+		Util.createDialog({
+			id: "author",
+			tabs: [{
+				id: "general",
+				title: "General"
+			}, {
+				id: "publications",
+				title: "Publications",
+				className: "accordion"
+			}, {
+				id: "coauthors",
+				title: "Coauthors",
+			}, {
+				id: "activity",
+				title: "Activity"
+			}],
+			position: {
+				width: "80%",
+				minWidth: "300",
+				maxWidth: "750",
+				height: $(window).height()*0.8
 			}
-		});
-
-		$(".accordion").accordion({
-			heightStyle : "content",
-			collapsible : true
 		});
 		
 		
@@ -151,7 +113,7 @@ var AuthorView = (function() {
 				return x(d.numColab);
 			}).attr("height", barHeight - 1)
 			.on("click", function () {
-				colabView.show([authorName, this.__data__.name], this.__data__.publications);
+				collabView.show([authorName, this.__data__.name], this.__data__.publications);
 			});
 
 			bar.append("text").attr("x", function(d) {
@@ -286,8 +248,8 @@ var AuthorView = (function() {
 				authors = authorsJSON;
 				publications = publicationsJSON;
 				
-				// (Re-)init colabView
-				colabView = ColabView.getInstance(publications);
+				// (Re-)init collabView
+				collabView = CollabView.getInstance(publications);
 			}
 			
 			if (!instance) {
