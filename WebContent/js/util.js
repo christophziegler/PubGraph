@@ -10,8 +10,7 @@ var Util = (function () {
 		 */
 		getPublications: function  (publications, pubRefs) {
 			
-			var pubList = [],
-				pubKey = 0;
+			var pubList = [], pubKey = 0;
 			
 			for (var i = 0; i < publications.length; i++) {
 				if (pubRefs.indexOf(publications[i].id) > -1) {
@@ -53,24 +52,28 @@ var Util = (function () {
 		
 		createActivityChart: function (dialogId, parentId, data) {
 
-			var margin = {
+			var margin, width, height, x, y, xAxis, yAxis, chart;
+			
+			margin = {
 				top : 20,
 				right : 30,
 				bottom : 30,
 				left : 40
 			}, 
-			width = $("#" + dialogId).width()*.8 - margin.left - margin.right, 
+			
+			width = $("#" + dialogId).width()*.8 - margin.left - margin.right;
+			
 			height = $("#" + dialogId).height()*.8 - margin.top - margin.bottom;
 
-			var x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
+			x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
 
-			var y = d3.scale.linear().range([ height, 0 ]);
+			y = d3.scale.linear().range([ height, 0 ]);
 
-			var xAxis = d3.svg.axis().scale(x).orient("bottom");
+			xAxis = d3.svg.axis().scale(x).orient("bottom");
 
-			var yAxis = d3.svg.axis().scale(y).orient("left");
+			yAxis = d3.svg.axis().scale(y).orient("left");
 
-			var chart = d3.select("#" + parentId)
+			chart = d3.select("#" + parentId)
 				.append("svg")
 				.attr("class", "chart")
 				.attr("width", width + margin.left + margin.right)
