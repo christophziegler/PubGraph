@@ -1,5 +1,28 @@
 var Util = (function () {
 	
+	var pubDBbaseUrl = "http://www.medien.ifi.lmu.de";
+	
+	function checkFileFormat (downloadLink) {
+		
+		// TODO extend lists
+		commonAVFormats = [".mp4", ".m4p", ".mpg", ".mpeg", ".mov", ".ogg", ".wmv", ".flv"];
+		commonImageFormats = [".tif", ".tiff", ".gif", ".jpeg", "jpg", ".png", ".bmp", ".svg"];
+		
+		dlFormat = downloadLink.toLowerCase().match(/\.[0-9a-z]+$/i)[0];
+		
+		if (dlFormat.indexOf(".pdf") > -1) {
+			return "PDF";
+		} else if (commonAVFormats.indexOf(dlFormat) > -1) {
+			return "Video";
+		} else if (commonImageFormats.indexOf(dlFormat) > -1) {
+			return "Image";
+		} else {
+			// Found nothing --> return dowmload URL
+			return pubDBbaseUrl + downloadLink;
+		}
+		
+	}
+	
 	return {
 		
 		/**
@@ -25,24 +48,54 @@ var Util = (function () {
 	
 		showPublications: function (nodeId, publications) {
 			
+			var d3_container, d3_dropdown, d3_authors, d3_downloads, href, dlFormat;
+			
 			$("#" + nodeId).empty(); // remove old info
+			
+			d3_container = d3.select("#" + nodeId);
 			
 			for (var i = 0; i < publications.length; i++) {
 				
-				$("#" + nodeId).append("<h3>" + publications[i].title.name + "</h3>");
-				$("#" + nodeId).append("<div id='" + nodeId + "_pub_" + i + "'></div>");
+				d3_container.append("h3").html(publications[i].title.name);
+				d3_dropdown = d3_container.append("div").append("ul");
 				
-				// Show authors
+				
+				// --- Show authors --- //
 				if (publications[i].authors.length > 0) {
 					
-					$("#" + nodeId + "_pub_" + i).append("<p id='" + nodeId + "_authors_pub_" + i + "'>Authors: </p>");
+					d3_authors = d3_dropdown.append("li");
+					d3_authors.append("span").text("Authors: ");
 					
 					for (var j = 0; j < publications[i].authors.length; j++) {
-						href = "\"javascript:AuthorView.getInstance().show('" + publications[i].authors[j].name + "');\"";
-						$("#" + nodeId + "_authors_pub_" + i).append("<a href=" + href + ">" + publications[i].authors[j].name + "</a>");
-						if (publications[i].authors.length > 1 
-								&& j < publications[i].authors.length-1) {
-							$("#" + nodeId + "_authors_pub_" + i).append(", ");
+						
+						href = "javascript:AuthorView.getInstance().show('" + publications[i].authors[j].name + "');";
+						d3_authors.append("a").attr("href", href).text(publications[i].authors[j].name);
+						
+						if (publications[i].authors.length > 1 && j < publications[i].authors.length-1) {
+							d3_authors.append("span").text(", ");
+						}
+					}
+				}
+				
+				
+				// --- Show downloads --- //
+				if (publications[i].hasOwnProperty("downloads")
+						&& publications[i].downloads.length > 0) {
+					
+					d3_downloads = d3_dropdown.append("li").text("Downloads: ");
+					
+					for (var j = 0; j < publications[i].downloads.length; j++) {
+															
+						dlFormat = checkFileFormat(publications[i].downloads[j]);
+							
+						d3_downloads.append("a")
+							.attr("href", pubDBbaseUrl + publications[i].downloads[j])
+							.attr("target", "_blank")
+							.text(dlFormat);
+							
+						if (publications[i].downloads.length > 1 
+								&& j < publications[i].downloads.length-1) {
+							d3_downloads.append("span").text(", ");
 						}
 					}
 				}
@@ -50,7 +103,7 @@ var Util = (function () {
 			}
 		},
 		
-		createActivityChart: function (dialogId, parentId, data) {
+		createActivityChart: function (dialogId, parentId, data, periodView, authorName) {
 
 			var margin, width, height, x, y, xAxis, yAxis, chart;
 			
@@ -108,7 +161,12 @@ var Util = (function () {
 					return y(d.numPub);
 				}).attr("height", function(d) {
 					return height - y(d.numPub);
-				}).attr("width", x.rangeBand());
+				}).attr("width", x.rangeBand())
+				.on("click", function () {
+					if (typeof periodView !== "undefined") {
+						periodView.show(authorName, this.__data__.year, this.__data__.publications);
+					}
+				});
 
 			function type(d) {
 				d.numPub = +d.numPub; // coerce to number
@@ -264,6 +322,64 @@ var Util = (function () {
 				heightStyle : "content",
 				collapsible : true
 			});
+		
+		},
+		
+		
+		createCoauthorsChart: function (authorName, dialogId, parentNodeId, data, collabView) {
+			
+			var width, barHeight, x, chart, bar;
+			
+			width = $("#" + dialogId).width()*.8;
+			barHeight = 35;
+
+			x = d3.scale.linear().range([0, width*.8 ]);
+
+			x.domain([ 0, d3.max(data, function(d) {
+				return d.numColab;
+			}) ]);
+
+			chart = d3.select("#" + parentNodeId).append("svg")
+				.attr("class", "chart")
+				.attr("id", "#coauthorsChart")
+				.attr("width", width);
+			
+			chart.attr("height", barHeight * data.length);
+
+			bar = chart.selectAll("g").data(data).enter().append("g").attr(
+					"transform", function(d, i) {
+						return "translate(" + width*.2 + "," + i * barHeight + ")";
+					});
+
+			bar.append("rect").attr("width", function(d) {
+				return x(d.numColab);
+			}).attr("height", barHeight - 1)
+			.on("click", function () {
+				if (typeof collabView !== "undefined") {
+					collabView.show([authorName, this.__data__.name], this.__data__.publications);
+				}
+			});
+
+			bar.append("text").attr("x", function(d) {
+				return x(d.numColab) - 3;
+			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
+				return d.numColab;
+			}).attr("class", "num");
+			
+			bar.append("text").attr("x", function(d) {
+				return -5;
+			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
+				return d.name;
+			}).attr("class", "name")
+			.on("click", function () {
+				AuthorView.getInstance().show(this.innerHTML);
+			});
+			
+			function type(d) {
+				d.numColab = +d.numColab;
+				return d;
+			}
+
 		}
 		
 		

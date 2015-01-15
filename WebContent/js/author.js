@@ -10,9 +10,10 @@ var AuthorView = (function() {
 	var instance;
 	
 	var authors = null,
-		publications = null;
+		publications = null,
 		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/",
-		collabView = null;
+		collabView = null,
+		periodView = null;
 	
 	function init() {
 				
@@ -87,56 +88,6 @@ var AuthorView = (function() {
 			return null;
 		}
 
-		function createCoauthorsChart(authorName, parentNodeId, data) {
-
-			var width = $("#author").width()*.8,
-				barHeight = 35;
-
-			var x = d3.scale.linear().range([0, width*.8 ]);
-
-			var chart = d3.select("#" + parentNodeId).append("svg")
-					.attr("class", "chart").attr("id", "#coauthorsChart")
-					.attr("width", width);
-
-			x.domain([ 0, d3.max(data, function(d) {
-				return d.numColab;
-			}) ]);
-
-			chart.attr("height", barHeight * data.length);
-
-			var bar = chart.selectAll("g").data(data).enter().append("g").attr(
-					"transform", function(d, i) {
-						return "translate(" + width*.2 + "," + i * barHeight + ")";
-					});
-
-			bar.append("rect").attr("width", function(d) {
-				return x(d.numColab);
-			}).attr("height", barHeight - 1)
-			.on("click", function () {
-				collabView.show([authorName, this.__data__.name], this.__data__.publications);
-			});
-
-			bar.append("text").attr("x", function(d) {
-				return x(d.numColab) - 3;
-			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
-				return d.numColab;
-			}).attr("class", "num");
-			
-			bar.append("text").attr("x", function(d) {
-				return -5;
-			}).attr("y", barHeight / 2).attr("dy", ".35em").text(function(d) {
-				return d.name;
-			}).attr("class", "name")
-			.on("click", function () {
-				AuthorView.getInstance().show(this.innerHTML);
-			});
-			
-			function type(d) {
-				d.numColab = +d.numColab;
-				return d;
-			}
-
-		}
 		
 		return {
 
@@ -148,7 +99,6 @@ var AuthorView = (function() {
 			show : function (authorName) {
 				
 				var authorsPublications = [], // List of publication objects for this author
-					href = "", // Link to authors view
 					pubStats = null, // Publications statistics for this author
 					d3_info = null; // Refernce to d3 selection for general info on author
 				
@@ -188,7 +138,7 @@ var AuthorView = (function() {
 						d3_info = d3.select("#general").append("div").attr("id", "generalInfo").append("ul");
 						d3_info.append("li").html("Active since: " + pubStats.activeSince);
 						d3_info.append("li").html("Number of publications: " + pubStats.numPub);
-						d3_info.append("li").html("Rank: " + "... TODO ..."); // TODO Compute rank (Quartile)
+						d3_info.append("li").html("Reputation: " + "... TODO ..."); // TODO Compute rank (Quantile)
 						
 						if (author.hasOwnProperty("url")) {
 							
@@ -216,13 +166,13 @@ var AuthorView = (function() {
 						
 						// --- TAB: Coauthors --- //
 						// (Needs to be done after the refresh, since createCoauthorsChart uses the elements width)			
-						createCoauthorsChart(authorName, "coauthors", pubStats.coauthors);
+						Util.createCoauthorsChart(authorName, "author", "coauthors", pubStats.coauthors, collabView);
 						
 						
 						
 						// --- TAB: Activity --- //
 						// (Needs to be done after the refresh, since createActivityChart uses the elements width)
-						Util.createActivityChart("author", "activity", pubStats.activity);
+						Util.createActivityChart("author", "activity", pubStats.activity, periodView, authorName);
 											
 					} else {
 						// TODO Throw/ handle author not found error.
@@ -248,8 +198,9 @@ var AuthorView = (function() {
 				authors = authorsJSON;
 				publications = publicationsJSON;
 				
-				// (Re-)init collabView
+				// (Re-)init collabView, periodView
 				collabView = CollabView.getInstance(publications);
+				periodView = PeriodView.getInstance(publications);
 			}
 			
 			if (!instance) {

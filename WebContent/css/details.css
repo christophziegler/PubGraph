@@ -59,9 +59,13 @@ img {
 	text-anchor: end;
 }
 
-.chart rect:HOVER {
+#author rect:HOVER {
 	fill: #ccc;
 	cursor: pointer;
+}
+
+.dialog li {
+	padding: 6px 0;
 }
 
 text.num {

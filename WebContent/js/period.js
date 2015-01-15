@@ -1,10 +1,10 @@
 /**
- * Object to control collaboration detail view.
+ * Object to control period detail view.
  * 
- * CollabView is implemented as singleton (==> there can only be one dialog
+ * PeriodView is implemented as singleton (==> there can only be one dialog
  * opened at a time).
  */
-var CollabView = (function() {
+var PeriodView = (function() {
 
 	var publications = null;
 
@@ -15,14 +15,14 @@ var CollabView = (function() {
 		
 		
 		Util.createDialog({
-			id: "collab",
+			id: "period",
 			tabs: [{
-				id: "publicationsCollab",
+				id: "publicationsPeriod",
 				title: "Publications",
 				className: "accordion"
 			}, {
-				id: "activityCollab",
-				title: "Activity"
+				id: "coauthorsPeriod",
+				title: "Coauthors"
 			}]
 		});
 		
@@ -30,44 +30,43 @@ var CollabView = (function() {
 		return {
 
 			/**
-			 * Displays the details for a specific author team.
+			 * Displays the details for a specific time period for a specific author.
 			 * 
-			 * @param {Array}
-			 *            authorNames List of name of the authors
+			 * @param {String}
+			 *            authorName name of  authors
 			 * @param {Array}
 			 *            pubRefs List of publications references. pubRefs refer
 			 *            to publications in the collection that have been filed
-			 *            collaboratively by the authors listed in authorNames.
+			 *            by the author.
 			 */
-			show : function (authorNames, pubRefs) {
+			show : function (authorName, year, pubRefs) {
 				
 				// Filter info
 				var pubs = Util.getPublications(publications, pubRefs);
-				var activity = Util.getPubLicationStatistics(pubs).activity;
+				var coauthors = Util.getPubLicationStatistics(pubs, authorName).coauthors;
 				
 				
 				// Remove old info from view
-				$("#publicationsCollab, #activityCollab").empty(); 
+				$("#publicationsPeriod, #coauthorsPeriod").empty(); 
 				
 				
 				// Show author name
-				// (Assumes there are only two names in the list.)
-				$("#collab").dialog("option", "title", authorNames[0] + " & " + authorNames[1]);
+				$("#period").dialog("option", "title", authorName + " in " + year);
 
 				
 				// --- TAB: Publications --- //
-				Util.showPublications("publicationsCollab", pubs);
+				Util.showPublications("publicationsPeriod", pubs);
 				
 				
 				// Refresh View
 				$(".accordion").accordion("refresh");
-				$("#collab").dialog("open");
+				$("#period").dialog("open");
 				
 				
 				
-				// --- TAB: Activity --- //
+				// --- TAB: Coauthors --- //
 				// (Needs to be done after the refresh, since createActivityChart uses the elements width)		
-				Util.createActivityChart("collab", "activityCollab", activity);
+				Util.createCoauthorsChart(authorName, "period", "coauthorsPeriod", coauthors);
 
 			}
 		};
