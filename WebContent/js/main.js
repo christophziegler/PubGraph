@@ -9,7 +9,9 @@ $(document).ready(function() {
 	var publicationsJSON = []
 	var	authorsJSON = [];
 	
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+		scrollOverflow: true
+	});
 	
 	// create a new pubDB json object
 	var converter = new pubDB.json();

@@ -2,216 +2,110 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<title>PubGraph</title>
 
-<!-- jQuery -->
-<script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-<!-- PubDB Parser -->
-<script type="text/javascript" src="js/pubdb.js"></script>
-
-
-
-
-<link href="css/details.css" type="text/css" rel="stylesheet"></link>
-
-
-<!-- PubGraph Style Sheets -->
-<style type="text/css">
-@CHARSET "UTF-8";
-
-body, .stage 
-{
-	font-family: monospace;
-	background: #042029;
-}
-
-h1 {
-	font-size: 40px;
-	text-align: center;
-}
-
-h1, h2 {
-	color: white;
-}
-
-#graph
-{
-	position: relative;
-/* 	margin-top: 30px; */
-/* 	margin-left: 20px; */
-	width: 80%;
-	margin: 0 auto;
-	
-/* 	border: solid 1px white; */
-}
-
-#headline
-{
-	position: relative;
-	text-align: center;
-	top: 20px;
-	left: 20px;
-	width: 65%;
-	border: solid 1px white;
-}
-
-.text
-{
-	color: white;
-	font-family: Helvetica;
-	font-size: 25px;
-	padding: 8px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
-
-#headline_text
-{
-	color: white;
-	font-family: Helvetica;
-	font-size: 25px;
-	padding: 8px;
-}
-
-#graph_filter
-{
-	float: right;
-	
-	margin-right: 20px; 
-	margin-top: 30px;
-	border: solid 1px white;
-	width: 32%;
-}
-
-#name_text
-{
-	margin-top: 30px;
-}
-
-
-
-.margin
-{
-	margin-left: 18px;
-	margin-right: 18px;
-	margin-top: 8px;
-	margin-bottom: 8px;
-}
-
-#autocomplete
-{
-	margin-top: 0px;
-	margin-bottom: 20px;
-}
-
-
-
-
-
-</style>
+<!----- EXTERNAL RESOURCES ----->
 
 <!-- D3 -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+<!-- jQuery UI -->
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
+<!-- PubDB Parser -->
+<script type="text/javascript" src="js/pubdb.js"></script>
+
+<!-- Fish-Eye Distortion -->
 <script type="text/javascript" src="js/fisheye.js"></script>
 
+<!-- Data Map -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+
+<!-- Slim Scroll -->
+<script type="text/javascript" src="https://rawgit.com/rochal/jQuery-slimScroll/master/jquery.slimscroll.min.js"></script>
+
+<!-- Full Page -->
+<link href="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css" type="text/css" rel="stylesheet"></link>
+<script src="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js"></script>
+
+
+<!----- PUPGRAPH RESOURCES ----->
+
+<!-- PubGraph Scripts -->
 <script type="text/javascript" src="js/author.js"></script>
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/collab.js"></script>
 <script type="text/javascript" src="js/period.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
 
 
-<!-- jQuery UI -->
-<link rel="stylesheet"
-	href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
-<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
-
-<script type="text/javascript" src="js/testobj.js"></script>
-
-<script type="text/javascript">
-	
-</script>
-
+<!-- PubGraph Style Sheets -->
+<link href="css/main.css" type="text/css" rel="stylesheet"></link>
+<link href="css/graph.css" type="text/css" rel="stylesheet"></link>
 <link href="css/details.css" type="text/css" rel="stylesheet"></link>
-
-
-<title>Test</title>
 </head>
+
 <body>
 
-
-<!-- PubGraph Scripts -->
-<script type="text/javascript" src="js/graph.js"></script>
-<script type="text/javascript">
-//global variable graph
-var graph = null;
-var globalAuthors = [];
-var globalPubs = [];
-
-
-$(document).ready(function() {
-	var start = new Date();
-
-	var publicationsJSON = []
-	var	authorsJSON = [];
-	
-	// create a new pubDB json object
-	var converter = new pubDB.json();
- 
-	// initialize -> get a jQuery object of html contents in callback function
-	converter.init(function(dbObject) {
-		// pass dbObject to buildJSON method -> get a json object back (<- created on client side)
-		converter.buildPublicationJSON(dbObject, function(pubData) {
-			publicationsJSON = pubData;
-			//console.log(publicationsJSON);
-
-			converter.buildAuthorJSON(pubData, function(authorData) {
-				authorsJSON = authorData;
-				//console.log(authorsJSON);
-				
-				$("#loadingContainer").fadeOut();
-				
-				//start Graph	
-				globalAuthors = authorsJSON;
-				globalPubs = publicationsJSON;
-				loadGraph();
-				
-				graph.init(authorsJSON, publicationsJSON, time_range, null);
-
-			});
-		});
-	});
-
-});
-	
-</script>
-
-<div id="fullpage">
-	<div class="section">
-		<div style="text-align: center;">
-			<h1>Welcome to PubVis</h1>
-			<h2>Scroll down to get to the visuals</h2>
-			<h2>Scroll down again to get to the filter settings</h2>
+	<div id="fullpage">
+		<div class="section">
+			<div style="text-align: center;">
+				<h1>Welcome to PubVis</h1>
+				<h2>Scroll down to get to the visuals</h2>
+				<h2>Scroll down again to get to the filter settings</h2>
+			</div>
+		</div>
+		<div class="section">
+			<div class="slide">
+				<div id="graph"></div>
+				<div id="loadingContainer">
+					<div id="loadingJello">
+						<img alt="Loading ..." src="img/loading.gif">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
+			</div>
+		</div>
+		<div class="section">
+			<h1>Filters</h1>
+			<div id="graph_filter">
+				<div id="slider_text" class="text">Time Range: 2014 - 2015</div>
+				<div id="slider-range" class="margin"></div>
+				<input id="slider_button" value="Build Graph" class="margin">
+				<div id="name_text" class="text">Authors:</div>
+				<input id="autocomplete" class="margin">
+			</div>
+		</div>
+		<div class="section" id="author" data-anchor="author">
+			<div class="slide">
+				<div class="detail" id="general"></div>
+			</div>
+			<div class="slide">
+				<div class="detail accordion" id="publications">
+			</div>
+			<div class="slide">
+				<div class="detail" id="coauthors"></div>
+			</div>
+			</div>
+			<div class="slide">
+				<div class="detail" id="activity"></div>
+			</div>
 		</div>
 	</div>
-    <div class="section">
-    	<div class="slide">
-    		<div id="graph"></div>
-    	</div>
-    	<div class="slide">
-    		<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
-    	</div>
-	</div>
-	<div class="section">
-    	<h1>Filters will be here</h1>
-    </div>
-</div>
 
-<script>
-    
-</script>
 
 </body>
+<script type="text/javascript" src="js/graph.js"></script>
+
+<!-- main.js to load data -->
+<script type="text/javascript" src="js/main.js"></script>
+
+
 </html>

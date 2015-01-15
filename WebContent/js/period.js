@@ -13,18 +13,26 @@ var PeriodView = (function() {
 
 	function init() {
 		
+		var viewInitialised = false;
 		
-		Util.createDialog({
-			id: "period",
-			tabs: [{
-				id: "publicationsPeriod",
-				title: "Publications",
-				className: "accordion"
-			}, {
-				id: "coauthorsPeriod",
-				title: "Coauthors"
-			}]
-		});
+		function initView () {
+			
+			if (!viewInitialised) {
+				
+				Util.createDialog({
+					id: "period",
+					tabs: [{
+						id: "publicationsPeriod",
+						title: "Publications",
+						className: "accordion"
+					}, {
+						id: "coauthorsPeriod",
+						title: "Coauthors"
+					}]
+				});
+			}
+		}
+		
 		
 		
 		return {
@@ -45,6 +53,7 @@ var PeriodView = (function() {
 				var pubs = Util.getPublications(publications, pubRefs);
 				var coauthors = Util.getPubLicationStatistics(pubs, authorName).coauthors;
 				
+				initView();
 				
 				// Remove old info from view
 				$("#publicationsPeriod, #coauthorsPeriod").empty(); 

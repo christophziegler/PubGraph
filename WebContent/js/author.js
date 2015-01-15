@@ -43,7 +43,6 @@ var AuthorView = (function() {
 		});
 		
 		
-		
 		// --- Define private methods --- //
 		
 		function getAuthor (authorName, onready) {
@@ -125,7 +124,7 @@ var AuthorView = (function() {
 						// --- TAB: "General" --- //
 						
 						// Show author name
-						$("#author").dialog("option", "title", authorName);
+//						$("#author").dialog("option", "title", authorName);
 						
 						if (author.hasOwnProperty("imgUrl")) {
 							
@@ -158,10 +157,12 @@ var AuthorView = (function() {
 						
 						
 						// Refresh View
-						$(".accordion").accordion("refresh");
-						$(".details").tabs("option", "active", 0);
-						$("#author").dialog("open");
 						
+						$(".accordion").accordion("refresh");
+//						$(".details").tabs("option", "active", 0);
+//						$("#author").dialog("open");
+						
+						// TODO goto anchor
 						
 						
 						// --- TAB: Coauthors --- //
@@ -173,6 +174,11 @@ var AuthorView = (function() {
 						// --- TAB: Activity --- //
 						// (Needs to be done after the refresh, since createActivityChart uses the elements width)
 						Util.createActivityChart("author", "activity", pubStats.activity, periodView, authorName);
+						
+						
+						// Update fullpage
+						$.fn.fullpage.reBuild();
+						$.fn.fullpage.moveTo("author");
 											
 					} else {
 						// TODO Throw/ handle author not found error.

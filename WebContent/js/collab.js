@@ -13,19 +13,28 @@ var CollabView = (function() {
 
 	function init() {
 		
+		var viewInitialised = false;
 		
-		Util.createDialog({
-			id: "collab",
-			tabs: [{
-				id: "publicationsCollab",
-				title: "Publications",
-				className: "accordion"
-			}, {
-				id: "activityCollab",
-				title: "Activity"
-			}]
-		});
-		
+		function initView () {
+			
+			if (!viewInitialised) {
+				
+				Util.createDialog({
+					id: "collab",
+					tabs: [{
+						id: "publicationsCollab",
+						title: "Publications",
+						className: "accordion"
+					}, {
+						id: "activityCollab",
+						title: "Activity"
+					}]
+				});
+				
+				viewInitialised = true;
+				
+			}
+		}
 		
 		return {
 
@@ -45,6 +54,7 @@ var CollabView = (function() {
 				var pubs = Util.getPublications(publications, pubRefs);
 				var activity = Util.getPubLicationStatistics(pubs).activity;
 				
+				initView();
 				
 				// Remove old info from view
 				$("#publicationsCollab, #activityCollab").empty(); 

@@ -11,10 +11,10 @@ img {
 	width: 100%;
 }
 
-.details {
-	width: 100%;
-	min-height: 100%;
-	margin: 0 auto;
+.detail {
+	width: 80%;
+	margin: 0 10%;
+	max-height: 90%;
 }
 
 .author_img_container {
@@ -51,7 +51,9 @@ img {
 }
 
 .chart rect {
-	fill: #042029;
+	fill: #819090;
+	opacity: .2;
+	
 }
 
 .chart text {
@@ -60,7 +62,8 @@ img {
 }
 
 #author rect:HOVER {
-	fill: #ccc;
+	fill: white;
+	opacity: 1;
 	cursor: pointer;
 }
 
@@ -68,12 +71,8 @@ img {
 	padding: 6px 0;
 }
 
-text.num {
+text {
 	fill: white;
-}
-
-text.name {
-	fill: #042029;
 }
 
 text.name:HOVER {
@@ -82,16 +81,12 @@ text.name:HOVER {
 }
 
 .axis text {
-	font: 14px sans-serif;
+	font: 14px;
 }
 
 .axis path,
 .axis line {
 	fill: none;
-	stroke: #000;
+	stroke: white;
 	shape-rendering: crispEdges;
 }
-
-/* .x.axis path { */
-/*   display: none; */
-/* } */
