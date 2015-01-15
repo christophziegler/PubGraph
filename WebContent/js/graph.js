@@ -1,6 +1,7 @@
 
 var time_range = ["2014", "2015"];
 var tagNames = [];
+var searchName = "";
 $(function() 
 {
 	$("#autocomplete").autocomplete({
@@ -9,15 +10,22 @@ $(function()
 		{ 
 			$.each(ui, function(elem, val) 
 			{
-				var selectedName = val.value;
+				searchName = val.value;
+				console.log(val.value);
 				
-				d3.select("svg").remove();
-				loadGraph();
+				if(val.value === "")
+				{
+					searchName = null;
+				}
 				
-				graph.init(globalAuthors, globalPubs, time_range, selectedName);
 					
 			});
+	    },
+	    search: function(event, ui)
+	    {
+	    	searchName = null;	
 	    }
+		
 	});
 	
 	
@@ -25,7 +33,7 @@ $(function()
 	
 	$("#slider-range").slider({
 		range: true,
-		min: 2007,
+		min: 1994,
 		max: 2015,
 		values: [2014, 2015],
 		slide: function( event, ui ) 
@@ -69,9 +77,18 @@ $(function()
 		d3.select("svg").remove();
 		loadGraph();
 		
-		$("#autocomplete").val('');
 		
-		graph.init(globalAuthors, globalPubs, time_range, null);
+		console.log($('#autocomplete').text());
+		
+		/*Scrolling to the section with the anchor link `firstSlide` and to the 2nd Slide */
+		$.fn.fullpage.moveTo(2, 0);
+		
+		graph.init(globalAuthors, globalPubs, time_range, searchName);
+		
+		
+		//$("#autocomplete").val('');
+		//searchName = null;
+		
 	});
 		
 });
@@ -163,7 +180,7 @@ graph = (function ()
 
 	function createNodes()
 	{
-		
+		console.log();
 		//console.log(authorsJSON);
 		var i = 0;
 		
@@ -174,13 +191,14 @@ graph = (function ()
 			
 			if(authorsJSON[elem].name.indexOf("'") != -1)
 			{
-				console.log(authorsJSON[elem].name);
+				//console.log(authorsJSON[elem].name);
 				var tempName = authorsJSON[elem].name.replace("'", "");
 				authorsJSON[elem].name = tempName;
-				console.log(authorsJSON[elem].name);
+				//console.log(authorsJSON[elem].name);
 			}
 			var object = authorsJSON[elem];
 			var nodeName = object.name;
+			
 			
 			
 			
@@ -195,6 +213,8 @@ graph = (function ()
 			
 			$.each(object.publications, function(elem, val) 
 			{
+				
+				
 				//console.log(object.publications[elem]);
 				var pub_id = object.publications[elem];
 				var pub_nr = pub_id.replace("pub_", "");
@@ -203,11 +223,13 @@ graph = (function ()
 								
 					var time_flag = false;
 					//console.log(publicationsJSON[14]);
+					
 						
 					$.each(time, function(elem, val) 
 					{
 						if(typeof publications[pub_nr] == 'undefined')
 						{
+							
 							//console.log("ScheißPub: " + pub_nr)
 						}
 						else if(publications[pub_nr].year == time[elem])
@@ -220,6 +242,8 @@ graph = (function ()
 								
 				if(time_flag)
 				{
+					
+					
 					year_pub = publications[pub_nr].year;
 					pub_size++;
 					//console.log(pub_size);
@@ -232,6 +256,7 @@ graph = (function ()
 					{
 						if(connections[elem].number == temp_connection.number)
 						{
+							
 							//console.log(temp_connection.number + " Gibts Schon!");
 							connection_exists = true;
 						}
@@ -239,6 +264,7 @@ graph = (function ()
 									
 					if(!connection_exists)
 					{
+						
 						connections.push(temp_connection);
 						//console.log("PUSH");
 						

@@ -25,7 +25,7 @@ h2 {
 {
 	position: relative;
 	margin: 0 auto;
-	width: 65%;
+	width: 80%;
 }
 
 #headline
@@ -41,11 +41,10 @@ h2 {
 .text
 {
 	color: white;
-	font-family: Helvetica;
+	font-family: Monospace;
 	font-size: 25px;
 	padding: 8px;
-	margin-left: 10px;
-	margin-right: 10px;
+
 }
 
 #headline_text
@@ -59,30 +58,48 @@ h2 {
 #graph_filter
 {
 	margin: 0 auto;
-	border: solid 1px white;
-	width: 32%;
+	width: 50%;
+}
+
+#slider-range
+{
+	width: 75%;
+	margin-left: 12.5%;
 }
 
 #name_text
 {
+	text-align: center;
 	margin-top: 30px;
+}
+
+
+
+#slider_text
+{
+	margin-top: 45px;
+	text-align: center;
 }
 
 
 
 .margin
 {
-	margin-left: 18px;
-	margin-right: 18px;
-	margin-top: 8px;
-	margin-bottom: 8px;
+
 }
 
 #autocomplete
 {
-	margin-top: 0px;
-	margin-bottom: 20px;
+	margin: 0 auto;
+	margin-left: 12.5%;
+	width: 75%;
 }
 
-
+#slider_button
+{
+	position: relative;
+	width: 25%;
+	margin-top: 45px;
+	margin-left: 37.5%;
+}
 
