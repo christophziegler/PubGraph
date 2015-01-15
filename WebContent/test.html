@@ -13,7 +13,7 @@
 
 
 
-
+<link href="css/details.css" type="text/css" rel="stylesheet"></link>
 
 
 <!-- PubGraph Style Sheets -->
@@ -29,6 +29,7 @@ body, .stage
 
 h1 {
 	font-size: 40px;
+	text-align: center;
 }
 
 #graph
@@ -143,20 +144,68 @@ h1 {
 
 <!-- PubGraph Scripts -->
 <script type="text/javascript" src="js/graph.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript">
+//global variable graph
+var graph = null;
+var globalAuthors = [];
+var globalPubs = [];
+
+
+$(document).ready(function() {
+	var start = new Date();
+
+	var publicationsJSON = []
+	var	authorsJSON = [];
+	
+	// create a new pubDB json object
+	var converter = new pubDB.json();
+ 
+	// initialize -> get a jQuery object of html contents in callback function
+	converter.init(function(dbObject) {
+		// pass dbObject to buildJSON method -> get a json object back (<- created on client side)
+		converter.buildPublicationJSON(dbObject, function(pubData) {
+			publicationsJSON = pubData;
+			//console.log(publicationsJSON);
+
+			converter.buildAuthorJSON(pubData, function(authorData) {
+				authorsJSON = authorData;
+				//console.log(authorsJSON);
+				
+				$("#loadingContainer").fadeOut();
+				
+				//start Graph	
+				globalAuthors = authorsJSON;
+				globalPubs = publicationsJSON;
+				loadGraph();
+				
+				graph.init(authorsJSON, publicationsJSON, time_range, null);
+
+			});
+		});
+	});
+
+});
+	
+</script>
 
 <div id="fullpage">
 	<div class="section">
 		<div style="text-align: center;">
 			<h1>Welcome to PubVis</h1>
-			<h2>Scroll up and down to switch between views</h2>
+			<h2>Scroll down to get to the visuals</h2>
+			<h2>Scroll down again to get to the filter settings</h2>
 		</div>
 	</div>
     <div class="section">
-		<div id="graph"></div>
+    	<div class="slide">
+    		<div id="graph"></div>
+    		</div>
+    	<div class="slide">
+    		<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
+    	</div>
 	</div>
-	 <div class="section">
-    	<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
+	<div class="section">
+    	<h1>Filters will be here</h1>
     </div>
 </div>
 
