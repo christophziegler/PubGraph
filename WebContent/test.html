@@ -10,10 +10,107 @@
 <!-- PubDB Parser -->
 <script type="text/javascript" src="js/pubdb.js"></script>
 
-<script type="text/javascript" src="js/author.js"></script>
+
+
+
+
+
+
+<!-- PubGraph Style Sheets -->
+<style type="text/css">
+@CHARSET "UTF-8";
+
+body, .stage 
+{
+	background: #042029;
+}
+
+#graph
+{
+	position: relative;
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 65%;
+	
+/* 	border: solid 1px white; */
+}
+
+#headline
+{
+	position: relative;
+	text-align: center;
+	top: 20px;
+	left: 20px;
+	width: 65%;
+	border: solid 1px white;
+}
+
+.text
+{
+	color: white;
+	font-family: Helvetica;
+	font-size: 25px;
+	padding: 8px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#headline_text
+{
+	color: white;
+	font-family: Helvetica;
+	font-size: 25px;
+	padding: 8px;
+}
+
+#graph_filter
+{
+	float: right;
+	
+	margin-right: 20px; 
+	margin-top: 30px;
+	border: solid 1px white;
+	width: 32%;
+}
+
+#name_text
+{
+	margin-top: 30px;
+}
+
+
+
+.margin
+{
+	margin-left: 18px;
+	margin-right: 18px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+#autocomplete
+{
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+</style>
 
 <!-- D3 -->
 <script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+<script type="text/javascript" src="js/fisheye.js"></script>
+
+<script type="text/javascript" src="js/author.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/collab.js"></script>
+<script type="text/javascript" src="js/period.js"></script>
+
 
 <!-- jQuery UI -->
 <link rel="stylesheet"
@@ -23,104 +120,39 @@
 <script type="text/javascript" src="js/testobj.js"></script>
 
 <script type="text/javascript">
-	function createActivityChart(parentId, data) {
-
-		var margin = {
-			top : 20,
-			right : 30,
-			bottom : 30,
-			left : 40
-		}, width = 960 - margin.left - margin.right, height = 500 - margin.top
-				- margin.bottom;
-
-		var x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
-
-		var y = d3.scale.linear().range([ height, 0 ]);
-
-		var xAxis = d3.svg.axis().scale(x).orient("bottom");
-
-		var yAxis = d3.svg.axis().scale(y).orient("left");
-
-		var chart = d3.select("#" + parentId)
-			.append("svg")
-			.attr("width", width + margin.left + margin.right)
-			.attr("height", height + margin.top + margin.bottom)
-			.append("g")
-			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-		x.domain(data.map(function(d) {
-			return d.year;
-		}));
-		
-		y.domain([ 0, d3.max(data, function(d) {
-			return d.numPub;
-		}) ]);
-
-		chart.append("g")
-			.attr("class", "x axis")
-			.attr("transform", "translate(0," + height + ")")
-			.call(xAxis);
-
-		chart.append("g")
-			.attr("class", "y axis")
-			.call(yAxis);
-
-		chart.selectAll(".bar")
-			.data(data).enter()
-			.append("rect")
-			.attr("class", "bar")
-			.attr("x", function(d) {
-				return x(d.year);
-			}).attr("y", function(d) {
-				return y(d.numPub);
-			}).attr("height", function(d) {
-				return height - y(d.numPub);
-			}).attr("width", x.rangeBand());
-
-		function type(d) {
-			d.numPub = +d.numPub; // coerce to number
-			return d;
-		}
-
-	}
-
-	$(function() {
-
-		createActivityChart("view", butzActivity);
-
-		$("#loadingContainer").fadeOut();
-
-	});
+	
 </script>
 
 <link href="css/details.css" type="text/css" rel="stylesheet"></link>
+<link href="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css" type="text/css" rel="stylesheet"></link>
 
 <title>Test</title>
 </head>
 <body>
 
-	<div id="view"></div>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+<script src="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js"></script>
 
-	<div id="author" class="dialog">
-		<div class="details">
-			<ul>
-				<li><a href="#general">General</a></li>
-				<li><a href="#publications">Publications</a></li>
-				<li><a href="#coauthors">Coauthors</a></li>
-				<li><a href="#activity">Activity</a></li>
-			</ul>
-			<div id="general"></div>
-			<div id="publications" class="accordion"></div>
-			<div id="coauthors" class="accordion"></div>
-			<div id="activity"></div>
-		</div>
-	</div>
+<!-- PubGraph Scripts -->
+<script type="text/javascript" src="js/graph.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
-	<div id="loadingContainer">
-		<div id="loadingJello">
-			<img alt="Loading ..." src="img/loading.gif">
-		</div>
+<div id="fullpage">
+    <div class="section">
+    	<div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
+    </div>
+    <div class="section">
+		<div id="graph"></div>
 	</div>
+</div>
+
+<script>
+    var map = new Datamap({element: document.getElementById('container')});
+    $(document).ready(function() {
+        $('#fullpage').fullpage();
+    });
+</script>
 
 </body>
 </html>
