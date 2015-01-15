@@ -479,8 +479,7 @@ graph = (function ()
 	      //MOUSEOVER
 	    .on("mouseover", function(d,i) 
 	    {
-	    	
-			        
+			 this;      
 	    	//CIRCLE
 	    	d3.select(this).selectAll("circle")
 	    	.transition()
@@ -522,8 +521,6 @@ graph = (function ()
 			var circle_id = circle.id.replace("node:","");
 			
 			//console.log(circle_id);
-			
-			
 
 				node.forEach(function(links_dom)
 				{
@@ -533,8 +530,9 @@ graph = (function ()
 					for(var i=0; i < nodes.length; i++)
 					{
 						
-						text = links_dom[i].children[1];
+						text = links_dom[i].children[2];
 						node = links_dom[i].children[0];
+						node_circle = links_dom[i].children[1];
 						//console.log(node);
 						var circle_toText = links_dom[i];
 								
@@ -542,13 +540,17 @@ graph = (function ()
 						{
 							node.setAttribute("opacity", "0.2");
 							node.setAttribute("fill", palette.lightgray);
+							node_circle.setAttribute("opacity", "0.1");
+							node_circle.setAttribute("fill", "white");
 							text.setAttribute("opacity", "0.5");
 							text.setAttribute("fill", palette.lightgray);
+							text.setAttribute("visibility", "hidden");
 						}
 						else
 						{
 							text.setAttribute("opacity", "1");
 							text.setAttribute("fill", "white");
+							text.setAttribute("visibility", "visible");
 							
 							
 							node.setAttribute("opacity", "1");
@@ -570,7 +572,7 @@ graph = (function ()
 					{
 						if(links_dom[i].getAttribute("link_id").indexOf(circle_id) == -1)
 						{
-							links_dom[i].setAttribute("opacity", "0.2");
+							links_dom[i].setAttribute("opacity", "0.3");
 							links_dom[i].setAttribute("stroke", palette.lightgray);
 							//var text = links_dom[i].nextSibling;
 						}
@@ -587,7 +589,8 @@ graph = (function ()
 								document.getElementById("node:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
 								document.getElementById("node:" + temp_nodeName).setAttribute("opacity", "0.8");
 								document.getElementById("text:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
-								document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");								
+								document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");	
+								document.getElementById("text:" + temp_nodeName).setAttribute("visibility", "visible");
 							}
 							else
 							{
@@ -595,6 +598,7 @@ graph = (function ()
 								document.getElementById("node:" + requestName).setAttribute("opacity", "0.8");
 								document.getElementById("text:" + requestName).setAttribute("fill", palette.paleryellow);
 								document.getElementById("text:" + requestName).setAttribute("opacity", "0.8");
+								document.getElementById("text:" + requestName).setAttribute("visibility", "visible");
 							}
 							//console.log("text:" + temp_nodeName);
 						}
@@ -654,6 +658,13 @@ graph = (function ()
 		.attr("r", circleWidth)
 		.attr("fill", function(d, i) { return  palette.lightgray; } )
   
+		node.append("svg:circle")
+		.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; })
+		.attr("r", "20")
+		.attr("fill", "white")
+		.attr("opacity", "0.1");
+		
 				
 		//TEXT
 		node.append("text")
@@ -664,6 +675,7 @@ graph = (function ()
 		.attr("fill",         function(d, i) {  return  palette.paleryellow;  })
 		.attr("font-size",    function(d, i) {  return  "1em"; })
 		.attr("text-anchor",  function(d, i) {  return  "beginning";  })
+		.attr("visibility",  "hidden");
 		
 		//Append different cicle sizes + node IDs + text IDs
 		node.forEach(function(links_dom)
@@ -674,7 +686,7 @@ graph = (function ()
 				circle.setAttribute("r", nodes[i].size);
 				circle.setAttribute("id", "node:" + nodes[i].name);
 				
-				var text = links_dom[i].children[1];
+				var text = links_dom[i].children[2];
 				//console.log(text);
 				text.setAttribute("id", "text:" + nodes[i].name);
 			}
