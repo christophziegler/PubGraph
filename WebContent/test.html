@@ -22,15 +22,22 @@
 
 body, .stage 
 {
+	font-family: monospace;
 	background: #042029;
+	color: white;
+}
+
+h1 {
+	font-size: 40px;
 }
 
 #graph
 {
 	position: relative;
-	margin-top: 30px;
-	margin-left: 20px;
-	width: 65%;
+/* 	margin-top: 30px; */
+/* 	margin-left: 20px; */
+	width: 80%;
+	margin: 0 auto;
 	
 /* 	border: solid 1px white; */
 }
@@ -139,12 +146,18 @@ body, .stage
 <script type="text/javascript" src="js/main.js"></script>
 
 <div id="fullpage">
-    <div class="section">
-    	<div id="container" style="position: relative; width: 1000px; height: 600px;"></div>
-    </div>
+	<div class="section">
+		<div style="text-align: center;">
+			<h1>Welcome to PubVis</h1>
+			<h2>Scroll up and down to switch between views</h2>
+		</div>
+	</div>
     <div class="section">
 		<div id="graph"></div>
 	</div>
+	 <div class="section">
+    	<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
+    </div>
 </div>
 
 <script>
