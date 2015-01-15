@@ -3,12 +3,13 @@ var graph = null;
 var globalAuthors = [];
 var globalPubs = [];
 
-
 $(document).ready(function() {
 	var start = new Date();
 
 	var publicationsJSON = []
 	var	authorsJSON = [];
+	
+	$('#fullpage').fullpage();
 	
 	// create a new pubDB json object
 	var converter = new pubDB.json();

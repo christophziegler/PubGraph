@@ -135,15 +135,12 @@ h1, h2 {
 </script>
 
 <link href="css/details.css" type="text/css" rel="stylesheet"></link>
-<link href="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css" type="text/css" rel="stylesheet"></link>
+
 
 <title>Test</title>
 </head>
 <body>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
-<script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
-<script src="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js"></script>
 
 <!-- PubGraph Scripts -->
 <script type="text/javascript" src="js/graph.js"></script>
@@ -202,7 +199,7 @@ $(document).ready(function() {
     <div class="section">
     	<div class="slide">
     		<div id="graph"></div>
-    		</div>
+    	</div>
     	<div class="slide">
     		<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
     	</div>
@@ -213,10 +210,7 @@ $(document).ready(function() {
 </div>
 
 <script>
-    var map = new Datamap({element: document.getElementById('container')});
-    $(document).ready(function() {
-        $('#fullpage').fullpage();
-    });
+    
 </script>
 
 </body>

@@ -22,6 +22,14 @@
 <!-- Fisheye distortion -->
 <script type="text/javascript" src="js/fisheye.js"></script>
 
+<!-- Data map -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://datamaps.github.io/scripts/datamaps.world.min.js"></script>
+
+<!-- Fullpage -->
+<link href="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.css" type="text/css" rel="stylesheet"></link>
+<script src="https://rawgit.com/alvarotrigo/fullPage.js/master/jquery.fullPage.min.js"></script>
+
 
 <!----- PUPGRAPH RESOURCES ----->
 
@@ -30,6 +38,7 @@
 <script type="text/javascript" src="js/util.js"></script>
 <script type="text/javascript" src="js/collab.js"></script>
 <script type="text/javascript" src="js/period.js"></script>
+<script type="text/javascript" src="js/map.js"></script>
 
 
 <!-- PubGraph Style Sheets -->
@@ -40,24 +49,36 @@
 
 <body>
 
-	<div id="headline">
-		<div id="headline_text">Publikationen des Instituts für
-			Informatik der LMU</div>
-	</div>
-
-	<div id="graph_filter">
-		<div id="slider_text" class="text">Time Range: 2014 - 2015</div>
-		<div id="slider-range" class="margin"></div>
-		<input id="slider_button" value="Build Graph" class="margin">
-		<div id="name_text" class="text">Authors:</div>
-		<input id="autocomplete" class="margin">
-	</div>
-
-	<div id="graph"></div>
-	
-	<div id="loadingContainer">
-		<div id="loadingJello">
-			<img alt="Loading ..." src="img/loading.gif">
+	<div id="fullpage">
+		<div class="section">
+			<div style="text-align: center;">
+				<h1>Welcome to PubVis</h1>
+				<h2>Scroll down to get to the visuals</h2>
+				<h2>Scroll down again to get to the filter settings</h2>
+			</div>
+		</div>
+		<div class="section">
+			<div class="slide">
+				<div id="graph"></div>
+				<div id="loadingContainer">
+					<div id="loadingJello">
+						<img alt="Loading ..." src="img/loading.gif">
+					</div>
+				</div>
+			</div>
+			<div class="slide">
+				<div id="container" style="position: relative; width: 1000px; height: 600px; margin: 0 auto;"></div>
+			</div>
+		</div>
+		<div class="section">
+			<h1>Filters</h1>
+			<div id="graph_filter">
+				<div id="slider_text" class="text">Time Range: 2014 - 2015</div>
+				<div id="slider-range" class="margin"></div>
+				<input id="slider_button" value="Build Graph" class="margin">
+				<div id="name_text" class="text">Authors:</div>
+				<input id="autocomplete" class="margin">
+			</div>
 		</div>
 	</div>
 
