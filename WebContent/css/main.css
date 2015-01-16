@@ -14,12 +14,22 @@ body, .stage
 	background: #042029; 
 }
 
-.title {
+.title h1 {
 	font-size: 112px;
+}
+
+.title p {
+	font-family: super-font,  monospace;
+	font-size: 32px;
+	color: white;
 }
 
 h1 {
 	font-size: 64px;
+}
+
+h2 {
+	font-size: 48px;
 }
 
 h1, h2 {

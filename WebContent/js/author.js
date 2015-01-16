@@ -120,11 +120,23 @@ var AuthorView = (function() {
 						$("#general, #publications, #coauthors, #activity").empty(); 
 						
 						
+						// Set tab headings
+//						d3.select("#general").append("h1").html(authorName);
+//						d3.select("#publications").append("h1").html("Publications of " + authorName);
+//						d3.select("#coauthors").append("h1").html("Coauthors of " + authorName);
+//						d3.select("#activity").append("h1").html("Anual activity of " + authorName);
+						
+//						var t = $("#general").siblings(".details");
+//						var tt = $(t).children("h1");
+//						tt.text(authorName);
+						
+						$(".general").children("h1").text(authorName);
+						$(".publications").children("h2").text("Publications of " + authorName);
+						$(".coauthors").children("h2").text("Coauthors of " + authorName);
+						$(".activity").children("h2").text("Anual activity of " + authorName);
+						
 						
 						// --- TAB: "General" --- //
-						
-						// Show author name
-//						$("#author").dialog("option", "title", authorName);
 						
 						if (author.hasOwnProperty("imgUrl")) {
 							
@@ -137,7 +149,7 @@ var AuthorView = (function() {
 						d3_info = d3.select("#general").append("div").attr("id", "generalInfo").append("ul");
 						d3_info.append("li").html("Active since: " + pubStats.activeSince);
 						d3_info.append("li").html("Number of publications: " + pubStats.numPub);
-						d3_info.append("li").html("Reputation: " + "... TODO ..."); // TODO Compute rank (Quantile)
+						d3_info.append("li").html("Rank: " + "... TODO ..."); // TODO Compute rank (Quantile)
 						
 						if (author.hasOwnProperty("url")) {
 							

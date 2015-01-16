@@ -61,13 +61,18 @@
 	</div>
 	
 	<div id="fullpage">
+	
+		<!-- Welcome Page -->
 		<div class="section">
-			<div id="welcome">
-				<h1 class="title">Welcome to PubVis 1.0</h1>
-				<h2>Scroll down to get the visuals</h2>
-				<h2>Scroll down again to get the filter settings</h2>
+			<div class="title" id="welcome">
+				<h1>Welcome to PubVis 1.0</h1>
+				<p>Scroll down to get the visuals</p>
+				<p>Scroll down again to get the filter settings</p>
 			</div>
 		</div>
+		
+		
+		<!-- Visuals -->
 		<div class="section">
 			<div class="slide">
 				<div id="graph"></div>
@@ -77,6 +82,9 @@
 				<div id="map"></div>
 			</div>
 		</div>
+		
+		
+		<!-- Filter Settings -->
 		<div class="section" data-anchor="graph_anchor">
 			<h1>Filters</h1>
 			<div id="graph_filter">
@@ -87,21 +95,35 @@
 					id="slider_button" value="Apply" class="margin">
 			</div>
 		</div>
+		
+		
+		<!-- Author Details -->
 		<div class="section" id="author" data-anchor="author">
 			<div class="slide">
+				<div class="detail general">
+					<h1></h1>
+				</div>
 				<div class="detail" id="general"></div>
 			</div>
 			<div class="slide">
-				<div class="detail accordion" id="publications"></div>
-				<div class="slide">
-					<div class="detail" id="coauthors"></div>
+				<div class="detail publications">
+					<h2></h2>
 				</div>
+				<div class="detail accordion" id="publications"></div>
 			</div>
 			<div class="slide">
+				<div class="detail coauthors">
+					<h2></h2>
+				</div>
+				<div class="detail" id="coauthors"></div>
+			</div>
+			<div class="slide">
+				<div class="detail activity">
+					<h2></h2>
+				</div>
 				<div class="detail" id="activity"></div>
 			</div>
 		</div>
-
 	</div>
 
 

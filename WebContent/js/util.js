@@ -50,7 +50,7 @@ var Util = (function () {
 			
 			var d3_container, d3_dropdown, d3_authors, d3_downloads, href, dlFormat;
 			
-			$("#" + nodeId).empty(); // remove old info
+//			$("#" + nodeId).empty(); // remove old info
 			
 			d3_container = d3.select("#" + nodeId);
 			
@@ -98,14 +98,8 @@ var Util = (function () {
 							d3_downloads.append("span").text(", ");
 						}
 					}
-				}
-				
+				}	
 			}
-			
-//			if ($("#" + nodeId).height() > $(window).height()*.9) {
-//				$("#" + nodeId).css("overflow", "scroll");
-//			}
-			
 		},
 		
 		createActivityChart: function (dialogId, parentId, data, periodView, authorName) {
