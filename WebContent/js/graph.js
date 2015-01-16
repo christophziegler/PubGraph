@@ -11,21 +11,20 @@ $(function()
 			$.each(ui, function(elem, val) 
 			{
 				searchName = val.value;
-				console.log(val.value);
+				//console.log(val.value);
 				
-				if(val.value === "")
-				{
-					searchName = null;
-				}
+				$.fn.fullpage.setKeyboardScrolling(true);
 				
 					
 			});
 	    },
 	    search: function(event, ui)
 	    {
+	    	
 	    	searchName = null;	
+	    	$.fn.fullpage.setKeyboardScrolling(false);
 	    }
-		
+	    
 	});
 	
 	
@@ -82,7 +81,7 @@ $(function()
 		
 		/*Scrolling to the section with the anchor link `firstSlide` and to the 2nd Slide */
 		$.fn.fullpage.moveTo(2, 0);
-		
+		$.fn.fullpage.setKeyboardScrolling(true);
 		graph.init(globalAuthors, globalPubs, time_range, searchName);
 		
 		

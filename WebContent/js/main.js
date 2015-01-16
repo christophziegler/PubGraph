@@ -10,7 +10,10 @@ $(document).ready(function() {
 	var	authorsJSON = [];
 	
 	$('#fullpage').fullpage({
-		scrollOverflow: true
+		scrollOverflow: true,
+		normalScrollElements: $('.ui-menu-item')
+		//, .ui-autocomplete ui-front ui-menu ui-widget ui-widget-content, #ui-id-1, '
+		
 	});
 	
 	// create a new pubDB json object
