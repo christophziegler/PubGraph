@@ -101,7 +101,7 @@ var AuthorView = (function() {
 					pubStats = null, // Publications statistics for this author
 					d3_info = null; // Refernce to d3 selection for general info on author
 				
-				$("#loadingContainer").fadeIn();
+				var t = $("#loadingContainer").fadeIn();
 				
 				getAuthor(authorName, function (author) {
 					

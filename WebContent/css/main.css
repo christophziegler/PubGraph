@@ -1,1 +1,13 @@
 @CHARSET "UTF-8";
+
+#welcome {
+	text-align: center;
+	visibility: hidden;
+}
+
+#map {
+	position: relative;
+	width: 1000px;
+	height: 600px;
+	margin: 0 auto;
+}

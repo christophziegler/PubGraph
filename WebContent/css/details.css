@@ -91,5 +91,5 @@ text.name:HOVER {
 .axis line {
 	fill: none;
 	stroke: white;
-	shape-rendering: crispEdges;
+/* 	shape-rendering: crispEdges; */
 }

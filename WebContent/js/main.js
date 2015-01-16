@@ -11,7 +11,7 @@ $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
-		normalScrollElements: $('.ui-menu-item')
+//		normalScrollElements: $('.ui-menu-item')
 		//, .ui-autocomplete ui-front ui-menu ui-widget ui-widget-content, #ui-id-1, '
 		
 	});
@@ -30,6 +30,8 @@ $(document).ready(function() {
 				authorsJSON = authorData;
 				//console.log(authorsJSON);
 				
+				$("#welcome").css("visibility", "visible");
+				$("#welcome").fadeIn();
 				$("#loadingContainer").fadeOut();
 				
 				//start Graph	
