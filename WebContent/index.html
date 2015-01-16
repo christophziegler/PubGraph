@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PubGraph</title>
+<title>PubVis 1.0</title>
 
 <!----- EXTERNAL RESOURCES ----->
 
@@ -49,12 +49,13 @@
 <link href="css/main.css" type="text/css" rel="stylesheet"></link>
 <link href="css/graph.css" type="text/css" rel="stylesheet"></link>
 <link href="css/details.css" type="text/css" rel="stylesheet"></link>
+<link href="css/map.css" type="text/css" rel="stylesheet"></link>
 </head>
 
 <body>
 	
 	<div id="loadingContainer">
-		<div id="loadingJello">
+		<div>
 			<img alt="Loading ..." src="img/loading.gif">
 		</div>
 	</div>
@@ -123,6 +124,24 @@
 				<div class="detail" id="activity"></div>
 			</div>
 		</div>
+		
+		
+		<div class="section disabled" id="collab" data-anchor="collab">
+			<div class="slide">
+				<div class="detail publicationsCollab">
+					<h2></h2>
+				</div>
+				<div class="detail accordion" id="publicationsCollab"></div>
+			</div>
+			<div class="slide">
+				<div class="detail activityCollab">
+					<h2></h2>
+				</div>
+				<div class="detail" id="activityCollab"></div>
+			</div>
+		</div>
+		
+		
 	</div>
 
 

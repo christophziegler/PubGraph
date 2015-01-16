@@ -19,17 +19,7 @@ var CollabView = (function() {
 			
 			if (!viewInitialised) {
 				
-				Util.createDialog({
-					id: "collab",
-					tabs: [{
-						id: "publicationsCollab",
-						title: "Publications",
-						className: "accordion"
-					}, {
-						id: "activityCollab",
-						title: "Activity"
-					}]
-				});
+				Util.createDialog();
 				
 				viewInitialised = true;
 				
@@ -60,24 +50,29 @@ var CollabView = (function() {
 				$("#publicationsCollab, #activityCollab").empty(); 
 				
 				
-				// Show author name
-				// (Assumes there are only two names in the list.)
-				$("#collab").dialog("option", "title", authorNames[0] + " & " + authorNames[1]);
-
+				
+				// Set tab headings
+				$(".publicationsCollab").children("h2").text("Publications of " + authorNames[0] + " & " + authorNames[1]);
+				$(".activityCollab").children("h2").text("Anual activity of " + authorNames[0] + " & " + authorNames[1]);
+				
+				
 				
 				// --- TAB: Publications --- //
 				Util.showPublications("publicationsCollab", pubs);
 				
-				
-				// Refresh View
+				// Refresh Accordion
 				$(".accordion").accordion("refresh");
-				$("#collab").dialog("open");
 				
 				
 				
-				// --- TAB: Activity --- //
-				// (Needs to be done after the refresh, since createActivityChart uses the elements width)		
+				// --- TAB: Activity --- //		
 				Util.createActivityChart("collab", "activityCollab", activity);
+				
+				
+				
+				// Update fullpage
+				$.fn.fullpage.reBuild();
+				$.fn.fullpage.moveTo("collab", 0);
 
 			}
 		};

@@ -18,29 +18,7 @@ var AuthorView = (function() {
 	function init() {
 				
 		
-		Util.createDialog({
-			id: "author",
-			tabs: [{
-				id: "general",
-				title: "General"
-			}, {
-				id: "publications",
-				title: "Publications",
-				className: "accordion"
-			}, {
-				id: "coauthors",
-				title: "Coauthors",
-			}, {
-				id: "activity",
-				title: "Activity"
-			}],
-			position: {
-				width: "80%",
-				minWidth: "300",
-				maxWidth: "750",
-				height: $(window).height()*0.8
-			}
-		});
+		Util.createDialog();
 		
 		
 		// --- Define private methods --- //
@@ -124,19 +102,11 @@ var AuthorView = (function() {
 						
 						
 						// Set tab headings
-//						d3.select("#general").append("h1").html(authorName);
-//						d3.select("#publications").append("h1").html("Publications of " + authorName);
-//						d3.select("#coauthors").append("h1").html("Coauthors of " + authorName);
-//						d3.select("#activity").append("h1").html("Anual activity of " + authorName);
-						
-//						var t = $("#general").siblings(".details");
-//						var tt = $(t).children("h1");
-//						tt.text(authorName);
-						
 						$(".general").children("h1").text(authorName);
 						$(".publications").children("h2").text("Publications of " + authorName);
 						$(".coauthors").children("h2").text("Coauthors of " + authorName);
 						$(".activity").children("h2").text("Anual activity of " + authorName);
+						
 						
 						
 						// --- TAB: "General" --- //
@@ -169,15 +139,9 @@ var AuthorView = (function() {
 						// --- TAB: Publications --- //
 						Util.showPublications("publications", authorsPublications);
 						
-						
-						
 						// Refresh View
-						
 						$(".accordion").accordion("refresh");
-//						$(".details").tabs("option", "active", 0);
-//						$("#author").dialog("open");
 						
-						// TODO goto anchor
 						
 						
 						// --- TAB: Coauthors --- //
@@ -189,6 +153,7 @@ var AuthorView = (function() {
 						// --- TAB: Activity --- //
 						// (Needs to be done after the refresh, since createActivityChart uses the elements width)
 						Util.createActivityChart("author", "activity", pubStats.activity, periodView, authorName);
+						
 						
 						
 						// Update fullpage

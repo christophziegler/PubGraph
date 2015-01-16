@@ -266,66 +266,8 @@ var Util = (function () {
 		},
 		
 		
-		createDialog: function (param) {
+		createDialog: function () {
 			
-//			var d3_details, 
-////				d3_tabs, 
-//				d3_tab, p;
-//			
-////			d3_details = d3.select("body").append("div")
-////					.attr("id", param.id).attr("class", "dialog").append("div")
-////					.attr("class", "details");
-//			
-//			d3_details = d3.select("#fullpage").append("div")
-//					.attr("class", "section");
-//
-////			d3_tabs = d3_details.append("div");
-//			
-//			d3_tab = null;
-//			
-//			p = param.position || {};
-//
-//			for (var i = 0; i < param.tabs.length; i++) {
-////				d3_tabs.append("li").append("a")
-////					.attr("href", "#" + param.tabs[i].id)
-////					.html(param.tabs[i].title);
-//				
-//				d3_tab = d3.select("#" + param.tabs[i].id)
-//						.attr("class", "slide");
-////						.attr("id", param.tabs[i].id);
-//				
-//				if (param.tabs[i].hasOwnProperty("className")) {
-//					d3_tab.append("div")
-//						.attr("class", "slide")
-//						.append("div")
-//						.attr("class", "slide").attr("class", param.tabs[i].className);
-//				}
-//						
-//			}
-//
-//			$("#" + param.id).dialog({
-//				autoOpen : false,
-//				width : p.width || "60%",
-//				minWidth : p.minWidth || "300",
-//				maxWidth : p.maxWidth || "500",
-//				height : p.height || $(window).height() * 0.6,
-//				show : {
-//					effect : "fade",
-//					duration : 500
-//				},
-//				hide : {
-//					effect : "fade",
-//					duration : 500
-//				},
-//			});
-//
-//			$(".details").tabs({
-//				show : {
-//					effect : "fade",
-//					duration : 500
-//				}
-//			});
-
 			$(".accordion").accordion({
 				heightStyle : "content",
 				collapsible : true
@@ -387,10 +329,7 @@ var Util = (function () {
 				d.numColab = +d.numColab;
 				return d;
 			}
-
-		}
-		
-		
+		}	
 	};
 	
 }());

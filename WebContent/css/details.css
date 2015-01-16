@@ -17,7 +17,6 @@ img {
 
 .detail h1 {
 	text-align: left;
-/* 	margin: 2% 4%; */
 }
 
 .detail h2 {
@@ -37,24 +36,6 @@ img {
 
 .dialog {
 	display: none;
-}
-
-#loadingContainer {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: #042029;
-	opacity: 0.7;
-	
-	/* On top of all */
-	z-index: 1000;
-}
-
-#loadingJello {
-	position: relative;
-	width: 20%;
-	max-width: 75px;
-	margin: 20% auto;
 }
 
 .chart rect {
@@ -77,12 +58,6 @@ img {
 .section li {
 	padding: 6px 0;
 }
-
-/* #general li { */
-/* 	font-family: super-font; */
-/* 	font-size: 24px; */
-/* 	color: white; */
-/* } */
 
 #general li, #general a {
 	font-family: monospace;
