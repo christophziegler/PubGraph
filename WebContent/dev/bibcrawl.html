@@ -10,7 +10,7 @@
 <!-- PubDB Parser -->
 <script type="text/javascript" src="../js/pubdb.js"></script>
 
-<!-- BibTex parser -->
+<!-- BibTex parser (source: https://github.com/mikolalysenko/bibtex-parser) -->
 <script type="text/javascript" src="bibtex-parser.js"></script>
 
 <!-- Bib crawler -->
@@ -26,7 +26,9 @@ $(document).ready(function () {
 	}
 	
 	BibCrawler.onready = function (resultSet) {
-		resultSet;
+		var bibJSON = JSON.stringify(resultSet.bibJSON);
+		var corruptBibs = JSON.stringify(resultSet.corruptBibs);
+		return;
 	}
 	
 	BibCrawler.start();

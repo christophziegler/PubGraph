@@ -64,19 +64,22 @@ var BibCrawler = (function () {
 				
 				loadBib(mmiBaseUrl + publicationsJSON[pubIndex].bibfile, function (bibfile) {
 					
-					pubIndex++;
-					
 					try {
-						bibJSON.push(doParse(bibfile));
+						bibJSON.push({
+							id: publicationsJSON[pubIndex].id,
+							bib: doParse(bibfile)
+						});
 						
 					} catch (e) {
 						BibCrawler.onstatechange(e);
 						corruptBibtex.push({
+							id: publicationsJSON[pubIndex].id,
 							file: bibfile,
 							errorText: e
 						});
 					}
 					
+					pubIndex++;
 					getNextBib(onreachedlast);
 					
 				});
