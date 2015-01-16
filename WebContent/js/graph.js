@@ -149,9 +149,7 @@ graph = (function ()
 				authorsJSON = authors_JSON;
 				
 			}
-			
-			
-			
+
 			{
 				publicationsJSON = null; 
 				publications = publications_JSON;
@@ -198,6 +196,10 @@ graph = (function ()
 			var object = authorsJSON[elem];
 			var nodeName = object.name;
 			
+			if(nodeName.indexOf("Rohit") != -1)
+			{
+				console.log(authorsJSON[elem]);
+			}
 			
 			
 			
@@ -241,8 +243,6 @@ graph = (function ()
 								
 				if(time_flag)
 				{
-					
-					
 					year_pub = publications[pub_nr].year;
 					pub_size++;
 					//console.log(pub_size);
@@ -255,6 +255,10 @@ graph = (function ()
 					{
 						if(connections[elem].number == temp_connection.number)
 						{
+							if(nodeName.indexOf("Rohit") != -1)
+							{
+								console.log(temp_connection.number);
+							}
 							
 							//console.log(temp_connection.number + " Gibts Schon!");
 							connection_exists = true;
@@ -263,6 +267,8 @@ graph = (function ()
 									
 					if(!connection_exists)
 					{
+						
+						
 						
 						connections.push(temp_connection);
 						//console.log("PUSH");
@@ -308,10 +314,28 @@ graph = (function ()
 	function buildLinks()
 	{
 		
+		
+		
 		$.each(connections, function(elem, val) 
 		{
+			var tempConnectNumber = val.number;
+			var obj = null;
+			
 			//console.log(val.number);
-			var obj = publications[val.number];
+			$.each(publications, function(elem, val)
+			{
+				var tempPubNr = val.id.replace("pub_", "");
+				if(tempPubNr === tempConnectNumber)
+				{
+					//console.log(tempConnectNumber);
+					//console.log(publications[elem]);
+					obj = publications[elem];
+				}
+			});
+			
+			
+			
+			
 			//console.log(publicationsJSON);
 			
 			//console.log(publicationsJSON);
