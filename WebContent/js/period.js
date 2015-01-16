@@ -65,6 +65,7 @@ var PeriodView = (function() {
 				
 				// Refresh Accordion
 				$(".accordion").accordion("refresh");
+				$(".accordion").accordion( "option", "active", false);
 				
 
 				

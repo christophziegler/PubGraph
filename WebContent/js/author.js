@@ -152,6 +152,7 @@ var AuthorView = (function() {
 						
 						// Refresh View
 						$(".accordion").accordion("refresh");
+						$(".accordion").accordion( "option", "active", false);
 						
 						
 						
