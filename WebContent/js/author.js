@@ -178,7 +178,8 @@ var AuthorView = (function() {
 						
 						// Update fullpage
 						$.fn.fullpage.reBuild();
-						$.fn.fullpage.moveTo("author");
+						$.fn.fullpage.moveTo("author", 0);
+						
 											
 					} else {
 						// TODO Throw/ handle author not found error.
