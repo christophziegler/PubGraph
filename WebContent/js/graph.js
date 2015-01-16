@@ -1,7 +1,7 @@
 
 var time_range = ["2014", "2015"];
 var tagNames = [];
-var searchName = "";
+var searchName = null;
 $(function() 
 {
 	$("#autocomplete").autocomplete({
