@@ -13,17 +13,23 @@ $(document).ready(function() {
 		scrollOverflow: true,
 		afterLoad: function (anchor, index) {
 			
+			/* Prohibit scrolling to disabled sections
+			 * (i.e. these views have not been initialized. Thus there is no content
+			 * and the user should not get there. Unfortunately the current version of
+			 * fullpage.js does not allow prohibiting keyboard scrolling by direction.
+			 * This is why there is currently no neat way to fully prevent the user from
+			 * scrolling scrolling to empty sections.) */
+			
 			if (index === 3 && $("#author").hasClass("disabled")) {
 				$.fn.fullpage.setAllowScrolling(false, "down");
+				
+			} else if (index === 4 && $("#authorZoom1").hasClass("disabled")) {
+				$.fn.fullpage.setAllowScrolling(false, "down");
+				
 			} else {
 				$.fn.fullpage.setAllowScrolling(true, "down");
 			}
 			
-			if (index === 4 && $("#authorZoom1").hasClass("disabled")) {
-				$.fn.fullpage.setAllowScrolling(false, "down");
-			} else {
-				$.fn.fullpage.setAllowScrolling(true, "down");
-			}
 		}
 		
 	});
