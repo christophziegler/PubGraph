@@ -103,6 +103,9 @@ var AuthorView = (function() {
 				
 				var t = $("#loadingContainer").fadeIn();
 				
+				$("#author").removeClass("disabled");
+				$("#author").addClass("enabled");
+				
 				getAuthor(authorName, function (author) {
 					
 					$(".dialog").css("display", "block");
