@@ -69,7 +69,14 @@ img {
 	padding: 6px 0;
 }
 
-#general li {
+/* #general li { */
+/* 	font-family: super-font; */
+/* 	font-size: 24px; */
+/* 	color: white; */
+/* } */
+
+#general li, #general a {
+	font-family: monospace;
 	font-size: 24px;
 	color: white;
 }

@@ -1,35 +1,5 @@
 @CHARSET "UTF-8";
 
-@font-face {
-	font-family: "super-font";
-	src: url('../fonts/Capture_it.ttf') format('truetype');;
-}
-
-* {
-	font-family: monospace;
-}
-
-body, .stage 
-{
-	background: #042029; 
-}
-
-h1, h2 {
-	font-family: super-font,  monospace;
-	font-weight: normal;
-}
-
-h1 {
-	font-size: 112px;
-	text-align: center;
-	color: white;
-}
-
-h2 {
-	text-align: center;
-	color: white;
-}
-
 
 #graph
 {
@@ -90,8 +60,6 @@ h2 {
 	margin-top: 45px;
 	text-align: center;
 }
-
-
 
 .margin
 {
