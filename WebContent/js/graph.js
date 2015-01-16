@@ -77,7 +77,7 @@ $(function()
 		loadGraph();
 		
 		
-		console.log($('#autocomplete').text());
+		//console.log($('#autocomplete').text());
 		
 		/*Scrolling to the section with the anchor link `firstSlide` and to the 2nd Slide */
 		$.fn.fullpage.moveTo(2, 0);
@@ -196,10 +196,7 @@ graph = (function ()
 			var object = authorsJSON[elem];
 			var nodeName = object.name;
 			
-			if(nodeName.indexOf("Rohit") != -1)
-			{
-				console.log(authorsJSON[elem]);
-			}
+			
 			
 			
 			
@@ -255,10 +252,7 @@ graph = (function ()
 					{
 						if(connections[elem].number == temp_connection.number)
 						{
-							if(nodeName.indexOf("Rohit") != -1)
-							{
-								console.log(temp_connection.number);
-							}
+							
 							
 							//console.log(temp_connection.number + " Gibts Schon!");
 							connection_exists = true;
