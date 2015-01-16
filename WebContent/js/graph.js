@@ -97,7 +97,7 @@ $(function()
 function loadGraph()
 {
 	
-
+//safetypush
 
 graph = (function () 
 {
