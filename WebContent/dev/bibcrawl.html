@@ -2,13 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Bib crawler</title>
+
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <!-- PubDB Parser -->
-<script type="text/javascript" src="js/pubdb.js"></script>
+<script type="text/javascript" src="../js/pubdb.js"></script>
+
+<!-- BibTex parser -->
+<script type="text/javascript" src="bibtex-parser.js"></script>
+
+<!-- Bib crawler -->
+<script type="text/javascript" src="bibcrawl.js"></script>
+
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+	
+	BibCrawler.onstatechange = function (state) {
+		$("#statelog").append("<p>" + state + "</p>");
+	}
+	
+	BibCrawler.onready = function (resultSet) {
+		resultSet;
+	}
+	
+	BibCrawler.start();
+})
+
+</script>
 
 </head>
 <body>
+
+<div id="statelog"></div>
 
 </body>
 </html>

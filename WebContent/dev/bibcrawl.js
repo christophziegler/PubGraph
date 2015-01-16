@@ -1,44 +1,135 @@
 var BibCrawler = (function () {
 	
-	var publicationsJSON = []
-	var	authorsJSON = [];
+	var publicationsJSON = [],
+		proxyPath = "http://pubdbproxy-ivsz.rhcloud.com/",
+		mmiBaseUrl = "http://www.medien.ifi.lmu.de",
+		pubIndex = 0,
+		bibJSON = [],
+		corruptBibtex = [];
+		
 	
 	
-	// create a new pubDB json object
-	var converter = new pubDB.json();
- 
-	// initialize -> get a jQuery object of html contents in callback function
-	converter.init(function(dbObject) {
-		// pass dbObject to buildJSON method -> get a json object back (<- created on client side)
-		converter.buildPublicationJSON(dbObject, function(pubData) {
-			publicationsJSON = pubData;
-			//console.log(publicationsJSON);
-
-			converter.buildAuthorJSON(pubData, function(authorData) {
-				authorsJSON = authorData;
-				//console.log(authorsJSON);
+	
+	function getPublications (onready) {
+		
+		var onready = onready || function () {};
+			converter = new pubDB.json();
+		
+		BibCrawler.onstatechange("Started loading publications.");
+		converter.init(function(dbObject) {
+			
+			BibCrawler.onstatechange("Finished loading publications.");
+			
+			BibCrawler.onstatechange("Started loading publications.");
+			converter.buildPublicationJSON(dbObject, function(pubData) {
 				
-				$("#welcome").css("visibility", "visible");
-				$("#welcome").fadeIn();
-				$("#loadingContainer").fadeOut();
+				publicationsJSON = pubData;
+				BibCrawler.onstatechange("Finished parsing publications.");
 				
-				//start Graph	
-				globalAuthors = authorsJSON;
-				globalPubs = publicationsJSON;
-				loadGraph();
-				
-				graph.init(authorsJSON, publicationsJSON, time_range, null);
-
+				onready();
 			});
 		});
-	});
+	}
 	
-	return {
+	
+	function getBibs (onready) {
 		
-		start: function (publications) {
+		var onready = onready || function () {};
+		
+		BibCrawler.onstatechange("Started fetching bib files.");
+		
+		getNextBib(function () {
+			BibCrawler.onstatechange("Finished fetching bib files.");
+			onready();
+		});
+	}
+	
+	
+	function getNextBib (onreachedlast) {
+		
+		var onreachedlast = onreachedlast || function () {};
+			state = pubIndex+1;
+		
+		if (pubIndex < publicationsJSON.length) {
+//		if (pubIndex < 10) {
 			
-		}
+			BibCrawler.onstatechange("Parsing publication " + 
+					state + " of " + publicationsJSON.length + 
+					" for bib link.");
+			
+			if (publicationsJSON[pubIndex].hasOwnProperty("bibfile") 
+					&& typeof publicationsJSON[pubIndex].bibfile === "string") {
+				
+				BibCrawler.onstatechange("Found bib link.");
+				
+				loadBib(mmiBaseUrl + publicationsJSON[pubIndex].bibfile, function (bibfile) {
+					
+					pubIndex++;
+					
+					try {
+						bibJSON.push(doParse(bibfile));
+						
+					} catch (e) {
+						BibCrawler.onstatechange(e);
+						corruptBibtex.push({
+							file: bibfile,
+							errorText: e
+						});
+					}
+					
+					getNextBib(onreachedlast);
+					
+				});
+				
+			} else {
+				pubIndex++;
+				getNextBib(onreachedlast);
+			}
+			
+		} else {
+			
+			onreachedlast();
+			
+		} 
+	}
+	
+	
+	
+	function loadBib (bibUrl, onloadready) {
+		
+		var onready = onloadready || function () {};
+		
+		BibCrawler.onstatechange("Start loading bib file from: " + bibUrl);
+		
+		$.get(proxyPath, {url: bibUrl}, function (bibfile) {
+			
+			BibCrawler.onstatechange("Finished loading bib file from: " + bibUrl);
+			onready(bibfile);
+			
+		});
 		
 	}
 	
-});
+	
+	return {
+		
+		start: function (onfinished) {
+			BibCrawler.onstatechange("Start");
+			getPublications(function () {
+				getBibs(function () {
+					BibCrawler.onstatechange("Finished!");
+					BibCrawler.onready({
+						bibJSON: bibJSON,
+						corruptBibs: corruptBibtex
+					});
+				});
+			});
+		},
+		
+		onstatechange: function () {},
+		
+		onready: function () {}
+		
+	};
+	
+}());
