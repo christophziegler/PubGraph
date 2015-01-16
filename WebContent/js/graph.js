@@ -314,7 +314,7 @@ graph = (function ()
 	function buildLinks()
 	{
 		
-		
+		//Sicherheitspush
 		
 		$.each(connections, function(elem, val) 
 		{
