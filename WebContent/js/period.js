@@ -19,20 +19,13 @@ var PeriodView = (function() {
 			
 			if (!viewInitialised) {
 				
-				Util.createDialog({
-					id: "period",
-					tabs: [{
-						id: "publicationsPeriod",
-						title: "Publications",
-						className: "accordion"
-					}, {
-						id: "coauthorsPeriod",
-						title: "Coauthors"
-					}]
-				});
+				$("#authorZoom1").removeClass("disabled");
+				$("#authorZoom1").addClass("enabled");
+				Util.createDialog();
+				viewInitialised = true;
+				
 			}
 		}
-		
 		
 		
 		return {
@@ -55,27 +48,33 @@ var PeriodView = (function() {
 				
 				initView();
 				
-				// Remove old info from view
-				$("#publicationsPeriod, #coauthorsPeriod").empty(); 
+				
+				// Remove old info
+				$("#publicationsAuthorZoom1, #activityAuthorZoom1").empty(); 
 				
 				
-				// Show author name
-				$("#period").dialog("option", "title", authorName + " in " + year);
 
+				// Set tab headings
+				$(".publicationsAuthorZoom1").children("h2").text("Publications of " + authorName + " in " + year);
+				$(".activityAuthorZoom1").children("h2").text("Coauthors of " + authorName + " in " + year);
+				
+				
 				
 				// --- TAB: Publications --- //
-				Util.showPublications("publicationsPeriod", pubs);
+				Util.showPublications("publicationsAuthorZoom1", pubs);
 				
-				
-				// Refresh View
+				// Refresh Accordion
 				$(".accordion").accordion("refresh");
-				$("#period").dialog("open");
+				
+
+				
+				// --- TAB: Activity --- //		
+				Util.createCoauthorsChart(authorName, "authorZoom1", "activityAuthorZoom1", coauthors);
 				
 				
-				
-				// --- TAB: Coauthors --- //
-				// (Needs to be done after the refresh, since createActivityChart uses the elements width)		
-				Util.createCoauthorsChart(authorName, "period", "coauthorsPeriod", coauthors);
+				// Update fullpage
+				$.fn.fullpage.reBuild();
+				$.fn.fullpage.moveTo("authorZoom1", 0);
 
 			}
 		};

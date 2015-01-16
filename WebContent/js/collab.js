@@ -19,8 +19,9 @@ var CollabView = (function() {
 			
 			if (!viewInitialised) {
 				
+				$("#authorZoom1").removeClass("disabled");
+				$("#authorZoom1").addClass("enabled");
 				Util.createDialog();
-				
 				viewInitialised = true;
 				
 			}
@@ -47,18 +48,18 @@ var CollabView = (function() {
 				initView();
 				
 				// Remove old info from view
-				$("#publicationsCollab, #activityCollab").empty(); 
+				$("#publicationsAuthorZoom1, #activityAuthorZoom1").empty(); 
 				
 				
 				
 				// Set tab headings
-				$(".publicationsCollab").children("h2").text("Publications of " + authorNames[0] + " & " + authorNames[1]);
-				$(".activityCollab").children("h2").text("Anual activity of " + authorNames[0] + " & " + authorNames[1]);
+				$(".publicationsAuthorZoom1").children("h2").text("Publications of " + authorNames[0] + " & " + authorNames[1]);
+				$(".activityAuthorZoom1").children("h2").text("Anual activity of " + authorNames[0] + " & " + authorNames[1]);
 				
 				
 				
 				// --- TAB: Publications --- //
-				Util.showPublications("publicationsCollab", pubs);
+				Util.showPublications("publicationsAuthorZoom1", pubs);
 				
 				// Refresh Accordion
 				$(".accordion").accordion("refresh");
@@ -66,13 +67,13 @@ var CollabView = (function() {
 				
 				
 				// --- TAB: Activity --- //		
-				Util.createActivityChart("collab", "activityCollab", activity);
+				Util.createActivityChart("authorZoom1", "activityAuthorZoom1", activity);
 				
 				
 				
 				// Update fullpage
 				$.fn.fullpage.reBuild();
-				$.fn.fullpage.moveTo("collab", 0);
+				$.fn.fullpage.moveTo("authorZoom1", 0);
 
 			}
 		};

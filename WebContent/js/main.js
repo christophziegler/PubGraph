@@ -12,7 +12,14 @@ $(document).ready(function() {
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
 		afterLoad: function (anchor, index) {
+			
 			if (index === 3 && $("#author").hasClass("disabled")) {
+				$.fn.fullpage.setAllowScrolling(false, "down");
+			} else {
+				$.fn.fullpage.setAllowScrolling(true, "down");
+			}
+			
+			if (index === 4 && $("#authorZoom1").hasClass("disabled")) {
 				$.fn.fullpage.setAllowScrolling(false, "down");
 			} else {
 				$.fn.fullpage.setAllowScrolling(true, "down");

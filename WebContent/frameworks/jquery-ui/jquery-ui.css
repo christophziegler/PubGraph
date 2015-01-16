@@ -180,7 +180,7 @@
 	margin: 2px 0 0 0;
 	padding: .5em .5em .5em .7em;
 	min-height: 0; /* support: IE7 */
-	font-size: 100%;
+	font-size: 18px;
 }
 .ui-accordion .ui-accordion-icons {
 	padding-left: 2.2em;
@@ -831,7 +831,7 @@ body .ui-tooltip {
 ----------------------------------*/
 .ui-widget {
 	font-family: monospace;
-	font-size: 1.1em;
+	font-size: 18px;
 }
 .ui-widget .ui-widget {
 	font-size: 1em;

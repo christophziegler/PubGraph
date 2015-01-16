@@ -18,7 +18,19 @@ var AuthorView = (function() {
 	function init() {
 				
 		
-		Util.createDialog();
+		var viewInitialised = false;
+		
+		function initView () {
+			
+			if (!viewInitialised) {
+				
+				$("#author").removeClass("disabled");
+				$("#author").addClass("enabled");
+				Util.createDialog();
+				viewInitialised = true;
+				
+			}
+		}
 		
 		
 		// --- Define private methods --- //
@@ -81,8 +93,7 @@ var AuthorView = (function() {
 				
 				var t = $("#loadingContainer").fadeIn();
 				
-				$("#author").removeClass("disabled");
-				$("#author").addClass("enabled");
+				initView();
 				
 				getAuthor(authorName, function (author) {
 					
