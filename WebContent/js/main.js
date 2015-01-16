@@ -11,8 +11,13 @@ $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
-//		normalScrollElements: $('.ui-menu-item')
-		//, .ui-autocomplete ui-front ui-menu ui-widget ui-widget-content, #ui-id-1, '
+		afterLoad: function (anchor, index) {
+			if (index === 3 && $("#author").hasClass("disabled")) {
+				$.fn.fullpage.setAllowScrolling(false, "down");
+			} else {
+				$.fn.fullpage.setAllowScrolling(true, "down");
+			}
+		}
 		
 	});
 	
