@@ -519,7 +519,26 @@ graph = (function ()
 	    .enter().append("g")
 	    .attr("class", "node")
 
-	      //MOUSEOVER
+	    		
+
+		.call(force.drag);
+
+
+		//CIRCLE
+		node.append("svg:circle")
+		.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; })
+		.attr("r", circleWidth)
+		.attr("fill", function(d, i) { return  palette.lightgray; } )
+  
+		node.append("svg:circle")
+		.attr("class", "catch")
+		.attr("cx", function(d) { return d.x; })
+		.attr("cy", function(d) { return d.y; })
+		.attr("r", "20")
+		.attr("fill", "white")
+		.attr("opacity", "0.1")
+		  //MOUSEOVER
 	    .on("mouseover", function(d,i) 
 	    {
 			 this;      
@@ -551,14 +570,17 @@ graph = (function ()
 
 			//TEXT
 			d3.select(this).select("text")
-			.style("cursor", "none")  
+			.style("cursor", "none")
+			
+			var tempNode = this.parentNode;
+			//console.log(tempNode)
+			
+			//var obj = tempNode.selectAll("circle");
+			var sub_obj = tempNode;
+			//console.log(sub_obj);
 			
 			
-			var obj = d3.select(this).selectAll("circle");
-			var sub_obj = obj[0];
-			
-			
-			var circle = sub_obj[0];
+			var circle = sub_obj.childNodes[0];
 			
 			
 			var circle_id = circle.id.replace("node:","");
@@ -653,21 +675,44 @@ graph = (function ()
 		//MOUSEOUT
 		.on("mouseout", function(d,i) 
 		{
-			        
-			//CIRCLE
-			d3.select(this).selectAll("circle")
-			.transition()
-			.duration(250);
-			//.attr("r", circleWidth)
-			//.attr("fill",palette.green);
-
-			//TEXT
-			d3.select(this).select("text")
-			.transition()
-			.duration(250)
-			.attr("font-size","1em")
-			.attr("x", circleWidth + 5 )
-			.attr("y",  (circleWidth/2))
+			//console.log("Raus");
+			
+			link.forEach(function(links_dom)
+			{
+				for(var i=0; i < links.length; i++)
+				{
+					links_dom[i].setAttribute("opacity", "0.3");
+					links_dom[i].setAttribute("stroke", palette.lightgray);
+					//console.log("text:" + temp_nodeName);
+				}
+							
+			});
+		
+			
+			node.forEach(function(nodes_dom)
+			{
+				for(var i=0; i < nodes.length; i++)
+				{
+					
+					text_dom = nodes_dom[i].children[2];
+					node_dom = nodes_dom[i].children[0];
+					node_circle = nodes_dom[i].children[1];
+					//console.log(node);
+					var circle_toText = nodes_dom[i];
+					node_dom.setAttribute("opacity", "0.2");
+					node_dom.setAttribute("fill", palette.lightgray);
+					node_circle.setAttribute("opacity", "0.1");
+					node_circle.setAttribute("fill", "white");
+					text_dom.setAttribute("opacity", "0.5");
+					text_dom.setAttribute("fill", palette.lightgray);
+					text_dom.setAttribute("visibility", "hidden");
+									
+									
+					//var text = links_dom[i].children[1];
+					//text.setAttribute("id", "text:" + nodes[i].name);
+				}
+			})
+			 
 			        
 		 })
 		
@@ -677,36 +722,22 @@ graph = (function ()
 			
 			
 			var obj = d3.select(this).selectAll("circle");
-			var sub_obj = obj[0];
+			var tempNode = this.parentNode;
+			//console.log(tempNode)
+			
+			//var obj = tempNode.selectAll("circle");
+			var sub_obj = tempNode;
+			//console.log(sub_obj);
 			
 			
-			var circle = sub_obj[0];
+			var circle = sub_obj.childNodes[0];
 			
 			
 			var circle_id = circle.id.replace("node:","");
-			console.log("Angeklickt: " + circle_id);
+			//console.log("Angeklickt: " + circle_id);
 			
 			authorView.show(circle_id);
-		})
-		
-		
-
-		.call(force.drag);
-
-
-		//CIRCLE
-		node.append("svg:circle")
-		.attr("cx", function(d) { return d.x; })
-		.attr("cy", function(d) { return d.y; })
-		.attr("r", circleWidth)
-		.attr("fill", function(d, i) { return  palette.lightgray; } )
-  
-		node.append("svg:circle")
-		.attr("cx", function(d) { return d.x; })
-		.attr("cy", function(d) { return d.y; })
-		.attr("r", "20")
-		.attr("fill", "white")
-		.attr("opacity", "0.1");
+		});
 		
 				
 		//TEXT
