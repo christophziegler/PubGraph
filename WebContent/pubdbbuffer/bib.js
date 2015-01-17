@@ -77,7 +77,7 @@ var bibJSON = [
 			"keywords" : null
 		},
 		{
-			"id" : "pub_31",
+			"id" : "pub_31", 
 			"location" : "DNK",
 			"keywords" : null
 		},
