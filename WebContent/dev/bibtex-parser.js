@@ -2,7 +2,7 @@
 //
 // CommonJS port by Mikola Lysenko 2013
 //
-//
+// source: https://github.com/mikolalysenko/bibtex-parser
 
 // Issues:
 //  no comment handling within strings

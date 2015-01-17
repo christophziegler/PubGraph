@@ -1,8 +1,7 @@
 /**
- * Content of the bib files referenced PubDB (http://www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all).
- * Crawled with dev/bibcrawl.js
+ * Content of the bib files referenced in PubDB (http://www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all).
+ * Locations mapped to alpha-3 country codes.
  */
-
 var bibJSON = [
 		{
 			"id" : "pub_8",
@@ -10,7 +9,7 @@ var bibJSON = [
 				"STUSAK2014IEEEVIS" : {
 					"entryType" : "ARTICLE",
 					"TITLE" : "{Activity Sculptures: Exploring the Impact of Physical \n    Visualizations on Running Activity}",
-					"AUTHOR" : "Simon {Stusak} and Aurélien {Tabard} and Franziska {Sauka} \n    and Rohit {Ashok Khot} and Andreas {Butz}",
+					"AUTHOR" : "Simon {Stusak} and AurÃ©lien {Tabard} and Franziska {Sauka} \n    and Rohit {Ashok Khot} and Andreas {Butz}",
 					"YEAR" : "2014",
 					"MONTH" : "December",
 					"JOURNAL" : "IEEE Transactions on Visualization and Computer Graphics",
@@ -20,7 +19,8 @@ var bibJSON = [
 					"DOI" : "10.1109/TVCG.2014.2352953",
 					"LANGUAGE" : "en"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -44,7 +44,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "mobile devices, passwords, performance, usability"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FIN"
 			}
 		},
 		{
@@ -52,12 +53,13 @@ var bibJSON = [
 			"bib" : {
 				"STRENG2008ELEARNINGHS" : {
 					"entryType" : "PROCEEDINGS",
-					"EDITOR" : "Alina Hang, Daniel Buschek, Alenxader De Luca, Axel Hösl, Sebastian Löhmann, Henri Palleis, Simon Stusak, Sarah Tausch",
+					"EDITOR" : "Alina Hang, Daniel Buschek, Alenxader De Luca, Axel HÃ¶sl, Sebastian LÃ¶hmann, Henri Palleis, Simon Stusak, Sarah Tausch",
 					"TITLE" : "Special Aspects of Usability",
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2014"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -81,7 +83,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "finger smudge traces, graphical passwords, touch input"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -105,7 +108,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Paper prototyping, augmented reality, head-mounted displays, in-vehicle user interfaces, mixed reality"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -130,7 +134,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Interaction in cars, automotive user interfaces, gestures, head-mounted display, head-up display, indirect interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -149,7 +154,8 @@ var bibJSON = [
 					"URL" : "https://www.usenix.org/conference/soups2014/proceedings/presentation/harbach",
 					"PUBLISHER" : "USENIX Association"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -164,7 +170,8 @@ var bibJSON = [
 					"PUBLISHER" : "Morgan and Claypool Publishers",
 					"TIMESTAMP" : "2010.06.02"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -172,7 +179,7 @@ var bibJSON = [
 			"bib" : {
 				"BEYER2014DIS" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Beyer, Gilbert and Binder, Vincent and Jäger, Nina and Butz, Andreas",
+					"AUTHOR" : "Beyer, Gilbert and Binder, Vincent and JÃ¤ger, Nina and Butz, Andreas",
 					"TITLE" : "The Puppeteer Display: Attracting and Actively Shaping the Audience with an Interactive Public Banner Display",
 					"BOOKTITLE" : "Proceedings of the 10th International ACM Conference on Designing Interactive Systems",
 					"SERIES" : "DIS '14",
@@ -188,7 +195,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Wide Displays, Public Displays, Adaptive Displays, Attention, Interactivity, Framing, Visual Signifiers"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -206,7 +214,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://www.socialnui.unimelb.edu.au/dis2014workshop/}",
 					"KEYWORDS" : "Social interaction, touchless NUI, adaptive displays, public displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -230,7 +239,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "automotive user interfaces, head-up-display, indirect interaction, interaction in cars, touch displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -251,7 +261,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.11"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -259,7 +270,7 @@ var bibJSON = [
 			"bib" : {
 				"SCHNEEGASS2014PERDIS1" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Schneegass, Stefan and Alt, Florian AND Scheible, JÃ¼rgen AND Schmidt, Albrecht",
+					"AUTHOR" : "Schneegass, Stefan and Alt, Florian AND Scheible, JÃƒÂ¼rgen AND Schmidt, Albrecht",
 					"TITLE" : "Midair Displays: Exploring the Concept of Free-Floating Pervasive Displays",
 					"BOOKTITLE" : "Proceedings of the 3rd ACM International Symposium on Pervasive Displays",
 					"YEAR" : "2014",
@@ -272,7 +283,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.11"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -293,7 +305,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.11"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -301,7 +314,7 @@ var bibJSON = [
 			"bib" : {
 				"SCHNEEGASS2014PERDIS1" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Nora Broy AND Simone HÃ¶ckh AND Annette Frederiksen AND Michael Gilowski AND Felix Eichhorn AND Felix Naser AND Horst Jung AND Julia Niemann AND Martin Schell AND Albrecht Schmidt AND Florian Alt",
+					"AUTHOR" : "Nora Broy AND Simone HÃƒÂ¶ckh AND Annette Frederiksen AND Michael Gilowski AND Felix Eichhorn AND Felix Naser AND Horst Jung AND Julia Niemann AND Martin Schell AND Albrecht Schmidt AND Florian Alt",
 					"TITLE" : "Exploring Design Parameters for a 3D Head-Up Display",
 					"BOOKTITLE" : "Proceedings of the 3rd ACM International Symposium on Pervasive Displays",
 					"YEAR" : "2014",
@@ -314,7 +327,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.11"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -333,7 +347,8 @@ var bibJSON = [
 					"NUMPAGES" : "10",
 					"TIMESTAMP" : "2014.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -352,7 +367,8 @@ var bibJSON = [
 					"NUMPAGES" : "10",
 					"TIMESTAMP" : "2014.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -371,7 +387,8 @@ var bibJSON = [
 					"NUMPAGES" : "10",
 					"TIMESTAMP" : "2014.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -395,7 +412,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "design process, information visualization, physical visualization, tangible user interfaces"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -414,7 +432,8 @@ var bibJSON = [
 					"NUMPAGES" : "6",
 					"TIMESTAMP" : "2014.04.27"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -438,7 +457,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "multi-finger chord; chord-command mapping; finger identification; hand-held tablet"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -462,7 +482,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "driver safety, head-mounted displays, head-up displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -486,7 +507,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "authentication, back-of-device interaction, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -505,7 +527,8 @@ var bibJSON = [
 					"NUMPAGES" : "6",
 					"TIMESTAMP" : "2014.04.27"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -522,7 +545,8 @@ var bibJSON = [
 					"NUMPAGES" : "6",
 					"TIMESTAMP" : "2014.04.26"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -542,7 +566,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2014.03.28"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ISR"
 			}
 		},
 		{
@@ -555,7 +580,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2014"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -574,7 +600,8 @@ var bibJSON = [
 					"NUMPAGES" : "6",
 					"TIMESTAMP" : "2014.03.07"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "JPN"
 			}
 		},
 		{
@@ -595,7 +622,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2014.02.24"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ISR"
 			}
 		},
 		{
@@ -603,7 +631,7 @@ var bibJSON = [
 			"bib" : {
 				"RUEMELIN2014TEI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Sonja Rümelin, Verena Lerch",
+					"AUTHOR" : "Sonja RÃ¼melin, Verena Lerch",
 					"TITLE" : "Enhancing Flat Interactive Surfaces With Hollows: Prototyping And \nInteraction Approaches",
 					"BOOKTITLE" : "Work-In-Progress in conjunction with the 8th ACM Conference on Tangible, Embedded and Embodied Interaction (TEI '14), February 16-19, 2014, Munich, Germany.",
 					"SERIES" : "TEI '14",
@@ -619,7 +647,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Automotive user interfaces, hollows, interactive surfaces, prototyping, touch gesture"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -627,7 +656,7 @@ var bibJSON = [
 			"bib" : {
 				"RUEMELIN2014TEI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Simone Zimmermann, Sonja Rümelin, Andreas Butz",
+					"AUTHOR" : "Simone Zimmermann, Sonja RÃ¼melin, Andreas Butz",
 					"TITLE" : "I Feel it in my Fingers: Haptic Guidance on Touch Surfaces",
 					"BOOKTITLE" : "Proceedings of the 8th ACM Conference on Tangible, Embedded and Embodied Interaction (TEI '14), February 16-19, 2014, Munich, Germany.",
 					"SERIES" : "TEI '14",
@@ -643,7 +672,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Automotive user interfaces, haptic guidance, prototyping, \nstatic haptics, touch"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -662,7 +692,8 @@ var bibJSON = [
 					"PUBLISHER" : "",
 					"KEYWORDS" : "fallback authentication, smartphones, icon arrangement"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -678,7 +709,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.17"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -704,7 +736,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2013.06.12",
 					"URL" : "http://doi.acm.org/10.1145/2470654.2466226"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -718,7 +751,8 @@ var bibJSON = [
 					"SERIES" : "AutomotiveUI '13",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -732,7 +766,8 @@ var bibJSON = [
 					"SERIES" : "AutomotiveUI '13",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -746,7 +781,8 @@ var bibJSON = [
 					"SERIES" : "AutomotiveUI '13",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -766,7 +802,8 @@ var bibJSON = [
 					"TITLE" : "A Case Study of Object and Occlusion Management on the eLabBench, a Mixed Physical/Digital Tabletop.",
 					"PAGES" : "?--?"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -785,7 +822,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "GBR"
 			}
 		},
 		{
@@ -800,7 +838,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.10.04"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -817,7 +856,8 @@ var bibJSON = [
 					"KEYWORDS" : "driver assistance;head-mounted display;head-up display;mixed reality;view management",
 					"DOI" : "10.1109/ISMAR.2013.6671828"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -834,7 +874,8 @@ var bibJSON = [
 					"KEYWORDS" : "automobiles;automotive components;data visualisation;ergonomics;head-up displays;helmet mounted displays;traffic engineering computing;HMD visualization;HUD visualization;automotive head-up displays;baseline output technology;driving performance;ergonomics;field of view;head-mounted displays;physical uneasiness;technological limitations;technological maturity;visual distraction;windshield;Augmented reality;Automotive engineering;Data visualization;Educational institutions;Mirrors;Vehicles;Visualization;head-mounted display;head-up display;mixed reality",
 					"DOI" : "10.1109/ISMAR.2013.6671798"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -851,7 +892,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.09.20"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -865,7 +907,8 @@ var bibJSON = [
 					"SERIES" : "Mensch und Computer '13",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -885,7 +928,8 @@ var bibJSON = [
 					"TITLE" : "Survival of the Shortest: A Retrospective Analysis of Influencing Factors on Password Composition",
 					"PAGES" : "460--467"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -905,7 +949,8 @@ var bibJSON = [
 					"TITLE" : "TIDE: Lightweight Device Composition for Enhancing Tabletop Environments with Smartphone Applications",
 					"PAGES" : "177--194"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -925,7 +970,8 @@ var bibJSON = [
 					"PUBLISHER" : "Springer",
 					"KEYWORDS" : "voice user interfaces, voice authentication"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ZAF"
 			}
 		},
 		{
@@ -949,7 +995,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "authentication, likeability, pattern, pin, usability"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -957,12 +1004,13 @@ var bibJSON = [
 			"bib" : {
 				"HAUSEN2013VISUALIZEHS" : {
 					"entryType" : "PROCEEDINGS",
-					"EDITOR" : "Doris Hausen, Fabian Hennecke, Norah Broy, Alina Hang, Sebastian Lhmann, Max-Emanuel Maurer, Sonja Rmelin, Sarah Tausch, Emanuel von Zezschwitz, Andreas Butz, Heinrich Hussmann",
+					"EDITOR" : "Doris Hausen, Fabian Hennecke, Norah Broy, Alina Hang, Sebastian LÂšhmann, Max-Emanuel Maurer, Sonja RÂŸmelin, Sarah Tausch, Emanuel von Zezschwitz, Andreas Butz, Heinrich Hussmann",
 					"TITLE" : "Visualize!",
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -988,7 +1036,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2013.06.11",
 					"URL" : "http://doi.acm.org/10.1145/2491568.2491572"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1014,7 +1063,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2013.06.11",
 					"URL" : "http://doi.acm.org/10.1145/2491568.2491596"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1040,7 +1090,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2013.06.11",
 					"URL" : "http://doi.acm.org/10.1145/2491568.2491590"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1066,7 +1117,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2013.06.11",
 					"URL" : "http://doi.acm.org/10.1145/2491568.2491582"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1082,7 +1134,8 @@ var bibJSON = [
 					"OWNER" : "florianalt",
 					"TIMESTAMP" : "2013.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1090,7 +1143,7 @@ var bibJSON = [
 			"bib" : {
 				"BEYER2013CHI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Beyer, Gilbert and Köttner, Florian and Schiewe, Manuel and Haulsen, Ivo and Butz, Andreas",
+					"AUTHOR" : "Beyer, Gilbert and KÃ¶ttner, Florian and Schiewe, Manuel and Haulsen, Ivo and Butz, Andreas",
 					"TITLE" : "Squaring the Circle: How Framing Influences User Behavior around a Seamless Cylindrical Display",
 					"BOOKTITLE" : "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
 					"SERIES" : "CHI '13",
@@ -1106,7 +1159,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Public Displays, Non-flat Displays, Seamless, Framing, Form Factor, Audience Behavior"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -1121,7 +1175,8 @@ var bibJSON = [
 					"YEAR" : "2013",
 					"HOWPUBLISHED" : "\\url{http://displayworkshop.media.mit.edu/CHI2013/}"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1139,7 +1194,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://displayworkshop.media.mit.edu/CHI2013/}",
 					"KEYWORDS" : "Shaped displays, communicating interactivity, implicit interaction, public displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -1163,7 +1219,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "body-centric design space, multi-surface interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -1187,7 +1244,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "authentication, back of device interaction, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -1211,7 +1269,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "authentication, ninja cursors, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FRA"
 			}
 		},
 		{
@@ -1219,12 +1278,13 @@ var bibJSON = [
 			"bib" : {
 				"PALLEIS2012BEYONDDESKTOPHS" : {
 					"entryType" : "PROCEEDINGS",
-					"EDITOR" : "Henri Palleis, Alina Hang, Doris Hausen, Fabian Hennecke, Felix Lauber, Sonja Rümelin, Simon Stusak, Sarah Tausch, Emanuel von Zezschwitz, Andreas Butz, Heinrich Hussmann",
+					"EDITOR" : "Henri Palleis, Alina Hang, Doris Hausen, Fabian Hennecke, Felix Lauber, Sonja RÃ¼melin, Simon Stusak, Sarah Tausch, Emanuel von Zezschwitz, Andreas Butz, Heinrich Hussmann",
 					"TITLE" : "Beyond the Desktop",
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2013"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1248,7 +1308,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "attacks, authentication, mobile, security, smudge"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1256,7 +1317,7 @@ var bibJSON = [
 			"bib" : {
 				"SCHMID2013TEI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Magdalena Schmid, Sonja Rümelin, Hendrik Richter",
+					"AUTHOR" : "Magdalena Schmid, Sonja RÃ¼melin, Hendrik Richter",
 					"TITLE" : "Empowering Materiality: Inspiring the Design of Tangible Interactions",
 					"BOOKTITLE" : "Proceedings of the 7th ACM Conference on Tangible, Embedded and Embodied Interaction (TEI 2013), February 10-13, 2013, Barcelona, Spain.",
 					"SERIES" : "TEI'13",
@@ -1272,7 +1333,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Design,  Prototyping,  Materiality, Glass,  Interaction, Tangible user interface, Organic user interface, Natural user interface, Guides, Craftsmanship, Immateriality"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ESP"
 			}
 		},
 		{
@@ -1296,7 +1358,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "liquid, water, tactile feedback, interactive surfaces"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ESP"
 			}
 		},
 		{
@@ -1320,7 +1383,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "formal language, gestures, interaction, user interface"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -1328,14 +1392,15 @@ var bibJSON = [
 			"bib" : {
 				"RUEMELIN2012DESIGNSPACE" : {
 					"entryType" : "MISC",
-					"AUTHOR" : "Sonja R\\\"umelin, Gilbert Beyer, Fabian Hennecke, Aurélien Tabard, Andreas Butz",
+					"AUTHOR" : "Sonja R\\\"umelin, Gilbert Beyer, Fabian Hennecke, AurÃ©lien Tabard, Andreas Butz",
 					"TITLE" : "Towards a Design Space for Non-Flat Interactive Displays",
 					"BOOKTITLE" : "To be presented at the workshop 'Beyond Flat Displays: Towards Shaped and Deformable Interactive Surfaces' in conjunction with the ACM SIGCHI Interactive Tabletops and Surfaces 2012 Conference (ITS), November 2012, Cambridge, MA, USA.",
 					"SERIES" : "ITS '12",
 					"YEAR" : "2012",
 					"HOWPUBLISHED" : "\\url{http://displayworkshop.media.mit.edu/}"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1355,7 +1420,8 @@ var bibJSON = [
 					"KEYWORDS" : "community interaction, identity cognition, public displays, Public space, urban computing, urban informatics",
 					"TIMESTAMP" : "2012.11.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1379,7 +1445,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "thermal stimuli, material discrimination, remote tactile feedback, interactive surfaces, touch input"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1399,7 +1466,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.10.19"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1418,7 +1486,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.10.18"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1432,7 +1501,8 @@ var bibJSON = [
 					"SERIES" : "AutoUI '12",
 					"YEAR" : "2012"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1445,7 +1515,8 @@ var bibJSON = [
 					"BOOKTITLE" : "Ergo'IHM 2012-24th French Speaking Conference on Human-Computer Interaction",
 					"YEAR" : "2012"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1469,7 +1540,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "device sharing, mobile devices, privacy, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -1487,7 +1559,8 @@ var bibJSON = [
 					"EE" : "http://doi.ieeecomputersociety.org/10.1109/TVCG.2012.255",
 					"BIBSOURCE" : "DBLP, http://dblp.uni-trier.de"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1495,12 +1568,13 @@ var bibJSON = [
 			"bib" : {
 				"STRENG2008ELEARNINGHS" : {
 					"entryType" : "PROCEEDINGS",
-					"EDITOR" : "Alina Hang, Fabian Hennecke, Sebastian Löhmann, Max Maurer, Henri Palleis, Sonja Rümelin, Emanuel von Zezschwitz, Andreas Butz, Heinrich Hußmann",
+					"EDITOR" : "Alina Hang, Fabian Hennecke, Sebastian LÃ¶hmann, Max Maurer, Henri Palleis, Sonja RÃ¼melin, Emanuel von Zezschwitz, Andreas Butz, Heinrich HuÃŸmann",
 					"TITLE" : "Ubiquitous Computing",
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1514,7 +1588,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2012"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1532,7 +1607,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.09.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1550,7 +1626,8 @@ var bibJSON = [
 					"JOURNAL" : "Proceedings of the 10th International Conference on Mobile Systems, Applications, and Services",
 					"TIMESTAMP" : "2012.06.25"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1574,7 +1651,8 @@ var bibJSON = [
 					"ADDRESS" : "heidelberg, germany",
 					"KEYWORDS" : "remote tactile feedback, interactive surfaces, touch input"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FIN"
 			}
 		},
 		{
@@ -1591,7 +1669,8 @@ var bibJSON = [
 					"NUMPAGES" : "5",
 					"KEYWORDS" : "visualization, music, listening histories, timeline, conversations"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUT"
 			}
 		},
 		{
@@ -1618,7 +1697,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2012.06.01",
 					"URL" : "http://doi.acm.org/10.1145/2307798.2307805"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -1634,7 +1714,8 @@ var bibJSON = [
 					"MONTH" : "June",
 					"TIMESTAMP" : "2012.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1658,7 +1739,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "MoodyBoard, ambient information, awareness, privacy, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -1676,7 +1758,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Around-device interaction, Depth Camera, Mobile Interaction, 3DUI, 3D Rotation"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -1703,7 +1786,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2012.05.01",
 					"URL" : "http://doi.acm.org/10.1145/2207676.2207718"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1729,7 +1813,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2012.05.01",
 					"URL" : "http://doi.acm.org/10.1145/2207676.2208712"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1745,7 +1830,8 @@ var bibJSON = [
 					"EE" : "http://doi.acm.org/10.1145/2207676.2208581",
 					"BIBSOURCE" : "DBLP, http://dblp.uni-trier.de"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1762,7 +1848,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1782,7 +1869,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "data type based, security awareness, web browsing"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1806,7 +1894,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "implicit authentication, password pattern, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1825,7 +1914,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM Press",
 					"KEYWORDS" : "wearable, gestures, gesture et set, shoe, sensor placement, mobile"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1845,7 +1935,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.05.02"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1865,7 +1956,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.05.02"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1885,7 +1977,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1905,7 +1998,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2012.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1925,7 +2019,8 @@ var bibJSON = [
 					"EE" : "http://doi.ieeecomputersociety.org/10.1109/MC.2012.150",
 					"TIMESTAMP" : "2012.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1949,7 +2044,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "bimanual interaction, bipad, bitouch design space, hand-held tablets, multi-touch tablets"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -1968,7 +2064,8 @@ var bibJSON = [
 					"EE" : "http://doi.ieeecomputersociety.org/10.1109/MPRV.2011.81",
 					"TIMESTAMP" : "2012.04.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -1986,7 +2083,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2012.04.01",
 					"URL" : "http://pd-net.org/wp-content/uploads/2012/01/percom_WIP_1.2.pdf"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CHE"
 			}
 		},
 		{
@@ -2005,7 +2103,8 @@ var bibJSON = [
 					"DOI" : "10.1109/MC.2012.110",
 					"ISSN" : "0018-9162"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2021,7 +2120,8 @@ var bibJSON = [
 					"YEAR" : "2012",
 					"PUBLISHER" : "Nova Science Publishers"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2045,7 +2145,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "touch input, push buttons, remote tactile feedback"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2058,7 +2159,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2080,7 +2182,8 @@ var bibJSON = [
 					"ADDRESS" : "Berlin, Heidelberg",
 					"KEYWORDS" : "dual-task, gestures, interruption, microinteractions, multitask"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -2106,7 +2209,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.12.01",
 					"URL" : "http://doi.acm.org/10.1145/2107596.2107605"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CHN"
 			}
 		},
 		{
@@ -2132,7 +2236,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.12.01",
 					"URL" : "http://doi.acm.org/10.1145/2107596.2107618"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CHN"
 			}
 		},
 		{
@@ -2149,7 +2254,8 @@ var bibJSON = [
 					"KEYWORDS" : "Interactive Lighting Design, Interface",
 					"ABSTRACT" : "Embedding lighting systems into architectural structures offers new interaction possibilities. They can be exposed to a large number of users, thus there is a demand for such interface solutions that fit the context of use. Using two examples of experimental, novel interaction methods with light, we propose that there are various potential approaches to using implicit and explicit control mechanisms. We share our implementations in hopes that they will inspire possible future projects and have applications in other contexts."
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2166,7 +2272,8 @@ var bibJSON = [
 					"KEYWORDS" : "interactive surfaces, haptics, tactile feedback, touch, actuators",
 					"ABSTRACT" : "Interactive surfaces  form an integral component of intelligent environments.  In the paper, we describe  HapticArmrest,  a  simple  tactile interface that communicates  tactual  surface characteristic and form of interactive elements on direct touch surfaces. Spatially separating manual touch input and active tactile output allows for the combination of various types of tactile actuators for versatile haptic feedback. In a preliminary experiment, we indicate  that our approach enables a reliable discrimination of virtual elements on touch surfaces solely based on tactile representations. We also assessed the hedonic and pragmatic qualities of the generated tactile stimuli by applying methods from the field of usability research. "
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2181,7 +2288,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"KEYWORDS" : "pressure, sensing, tracking, tangible user interface, FTIR, DI, DSI, interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2205,7 +2313,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "ambient light, android, interaction, mobile devices, novel hardware, off-screen locations, visualization"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2223,7 +2332,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "touch sensing, time domain reflectometry, TDR, wearable, deformable, input, capacitive sensing"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2241,7 +2351,8 @@ var bibJSON = [
 					"KEYWORDS" : "interactive surfaces, tactile feedback, actuator technology",
 					"ABSTRACT" : "Multi-touch screens and surfaces for manipulating  digital content  play a crucial role in mobile and ubiquitous computing.  Augmenting  these  interactive surfaces with tactile feedback  has been found  to increase interaction speed, reduce operating errors and minimize visual and cognitive load.  Communicating detailed tactile characteristics of virtual elements, however, requires complex electromechanical or electrostatic actuator setups. This increase in complexity makes tactile interfaces intricate, costly or poorly scalable.\r\nIn order to  provide sophisticated tactile sensations with simple actuator technology,  we  exploit  a haptic psychophysical phenomenon called Phantom Sensation. We present a comparison of  three  standard  tactile actuator technologies to  see which one can  recreate the  Phantom Sensation with maximum effect. Our results show the way to a simple and scalable implementation of illusion-based tactile feedback for interactive surfaces. We explore the notion of the Phantom Sensation and its possible applications within a ubicomp scenario."
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2261,7 +2372,8 @@ var bibJSON = [
 					"TITLE" : "Shining Chrome: Using Web Browser Personas to Enhance SSL Certificate Visualization",
 					"PAGES" : "44--51"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2278,7 +2390,8 @@ var bibJSON = [
 					"TITLE" : "Gesture-based User Authentication for Mobile Devices",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2296,7 +2409,8 @@ var bibJSON = [
 					"ISBN" : "978-0-85729-351-0",
 					"TIMESTAMP" : "2011.09.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2304,12 +2418,13 @@ var bibJSON = [
 			"bib" : {
 				"HAUSEN2011UBIQUITOUSHS" : {
 					"entryType" : "PROCEEDINGS",
-					"EDITOR" : "Doris Hausen, Bettina Conradi, Alina Hang, Fabian Hennecke, Sven Kratz, Sebastian Löhmann, Hendrik Richter, Andreas Butz, Heinrich Hussmann",
+					"EDITOR" : "Doris Hausen, Bettina Conradi, Alina Hang, Fabian Hennecke, Sven Kratz, Sebastian LÃ¶hmann, Hendrik Richter, Andreas Butz, Heinrich Hussmann",
 					"TITLE" : "Ubiquitous Computing",
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2325,7 +2440,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.08.01",
 					"URL" : "http://pd-net.org/wp-content/uploads/2011/11/memarovic-CI2011.pdf"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -2339,7 +2455,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2352,7 +2469,8 @@ var bibJSON = [
 					"AUTHOR" : "Max-Emanuel Maurer and De Luca,, Alexander and Kempe,, Sylvia",
 					"TITLE" : "Using Data Type Based Security Alert Dialogs to Raise Online Security Awareness"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2360,13 +2478,14 @@ var bibJSON = [
 			"bib" : {
 				"STRENG2011CSCL" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Sara Streng, Karsten Stegmann, Christine Wagner, Sonja Böhm, Frank Fischer and Heinrich Hussmann",
+					"AUTHOR" : "Sara Streng, Karsten Stegmann, Christine Wagner, Sonja BÃ¶hm, Frank Fischer and Heinrich Hussmann",
 					"TITLE" : "{Supporting Argumentative Knowledge Construction in Face-to-Face Settings: From ArgueTable to ArgueWall}",
 					"BOOKTITLE" : "Proceedings of the 9th International Conference on Computer Supported Collaborative Learning (CSCL2011), Hong Kong, July 2011",
 					"MONTH" : "jul",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2383,7 +2502,8 @@ var bibJSON = [
 					"YEAR" : "2011",
 					"NOTE" : "to appear"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2399,7 +2519,8 @@ var bibJSON = [
 					"TITLE" : "Poster: Usability of Gesture-based Authentication",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2426,7 +2547,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2012.06.01",
 					"URL" : "http://doi.acm.org/10.1145/2307798.2307815"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -2434,7 +2556,7 @@ var bibJSON = [
 			"bib" : {
 				"SPIESSL2011" : {
 					"entryType" : "ARTICLE",
-					"AUTHOR" : "W. Spießl and H. Hußmann",
+					"AUTHOR" : "W. SpieÃŸl and H. HuÃŸmann",
 					"TITLE" : "Assessing Error Recognition in Automated Driving",
 					"JOURNAL" : "IET Intelligent Transport Systems",
 					"YEAR" : "2011",
@@ -2443,7 +2565,8 @@ var bibJSON = [
 					"NUMBER" : "2",
 					"MONTH" : "June"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2460,7 +2583,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2011.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2485,7 +2609,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.06.01",
 					"URL" : "http://dl.acm.org/citation.cfm?id=2021975.2021999"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2504,7 +2629,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2011.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2522,7 +2648,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.05.30",
 					"URL" : "http://www.pervasive.wiwi.uni-due.de/uploads/tx_itochairt3/publications/PURBA-7_cr.pdf"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2546,7 +2673,8 @@ var bibJSON = [
 					"ADDRESS" : "Oslo, Norway",
 					"KEYWORDS" : "Interactive music, public displays, user experience, out-of-home media, algorithmic composition, soft constraints"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "NOR"
 			}
 		},
 		{
@@ -2560,7 +2688,8 @@ var bibJSON = [
 					"YEAR" : "2011",
 					"MONTH" : "May"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2584,7 +2713,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "automotive, field study, in-car communication, visual analytics, visualization"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2592,7 +2722,7 @@ var bibJSON = [
 			"bib" : {
 				"BEYER2011CHI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Beyer, Gilbert and Alt, Florian and Müller, Jörg and Schmidt, Albrecht and Isakovic, Karsten and Klose, Stefan and Schiewe, Manuel and Haulsen, Ivo",
+					"AUTHOR" : "Beyer, Gilbert and Alt, Florian and MÃ¼ller, JÃ¶rg and Schmidt, Albrecht and Isakovic, Karsten and Klose, Stefan and Schiewe, Manuel and Haulsen, Ivo",
 					"TITLE" : "Audience Behavior around Large Interactive Cylindrical Screens",
 					"BOOKTITLE" : "Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
 					"SERIES" : "CHI '11",
@@ -2608,7 +2738,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Cylindrical screens, digital columns, display formats, public displays, interactive surfaces, non-planar screens"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2616,14 +2747,15 @@ var bibJSON = [
 			"bib" : {
 				"BORING2010TOUCHPROJECTOR" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Sebastian Boring, Sven Gehring, Alexander Wiethoff, Magdalena Blöckner, Johannes Schöning, Andreas Butz",
+					"AUTHOR" : "Sebastian Boring, Sven Gehring, Alexander Wiethoff, Magdalena BlÃ¶ckner, Johannes SchÃ¶ning, Andreas Butz",
 					"TITLE" : "{Multi-User Interaction on Media Facades through Live Video on Mobile Devices}",
 					"BOOKTITLE" : "Proceedings of the 29th ACM International Conference on Human Factors in Computing Systems - CHI 2011, Vancouver, BC, Canada, May 2011",
 					"MONTH" : "May",
 					"YEAR" : "2011",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2637,7 +2769,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2011"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2661,7 +2794,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "data type based, security awareness, web browsing"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2676,7 +2810,8 @@ var bibJSON = [
 					"YEAR" : "2011",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2700,7 +2835,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "MoodyBoard, ambient visualization, awareness, security"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2718,7 +2854,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://largedisplaysinurbanlife.cpsc.ucalgary.ca/}",
 					"KEYWORDS" : "Large displays, non-planar screens, interaction techniques, content design, social interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2732,7 +2869,8 @@ var bibJSON = [
 					"YEAR" : "2011",
 					"MONTH" : "May"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2750,7 +2888,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{}",
 					"KEYWORDS" : ""
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2769,7 +2908,8 @@ var bibJSON = [
 					"NUMPAGES" : "4",
 					"PUBLISHER" : "Procedia Computer Science"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "HUN"
 			}
 		},
 		{
@@ -2795,7 +2935,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2011.05.01",
 					"URL" : "http://doi.acm.org/10.1145/1979742.1979760"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2819,7 +2960,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "mid-air interaction techniques, multi-scale interfaces, navigation, pan \\&\\#38; zoom, wall-sized displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -2838,7 +2980,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Gesture recognition, gesture-based interaction, template matching, rotation invariance, nearest neighbor approach"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2856,7 +2999,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Gesture recognition, gesture-based interaction, template matching, rotation invariance, nearest neighbor approach"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2880,7 +3024,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "automation, interaction, mobile, music, recommendation"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -2888,13 +3033,14 @@ var bibJSON = [
 			"bib" : {
 				"DANGELO2011AAL" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Lorenzo T. D'Angelo, J. Parlow, Wolfgang Spiessl, Stefan Hoch, Tim C. Lüth",
+					"AUTHOR" : "Lorenzo T. D'Angelo, J. Parlow, Wolfgang Spiessl, Stefan Hoch, Tim C. LÃ¼th",
 					"TITLE" : "Fahrzeugintegrierte Erfassung und Verarbeitung von Vitalparameter",
 					"HOWPUBLISHED" : "In Proceedings of the 4th International Conference on Pervasive Computing Technologies for Healthcare 2010s",
 					"YEAR" : "2011",
 					"ADDRESS" : "Berlin"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2913,7 +3059,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "grasp recognition, tangible user interface, grasp, meaning, model"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -2937,13 +3084,15 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "Tactile Feedback, Pin Array, Tactual Display, Interactive Surfaces, Multi Touch"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
 			"id" : "pub_266",
 			"bib" : {
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2953,7 +3102,7 @@ var bibJSON = [
 					"entryType" : "INPROCEEDINGS",
 					"AUTHOR" : "Meier, Max and Beyer, Gilbert",
 					"TITLE" : "Interacting with Sound",
-					"BOOKTITLE" : "Pervasive Advertising, Jörg Müller, Florian Alt, Daniel Michelis (Eds.)",
+					"BOOKTITLE" : "Pervasive Advertising, JÃ¶rg MÃ¼ller, Florian Alt, Daniel Michelis (Eds.)",
 					"SERIES" : "Springer HCI Series 2011",
 					"YEAR" : "2011",
 					"ISBN" : "978-0-85729-351-0",
@@ -2962,7 +3111,8 @@ var bibJSON = [
 					"PUBLISHER" : "Springer",
 					"ADDRESS" : "Berlin, Germany"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2978,7 +3128,8 @@ var bibJSON = [
 					"EE" : "http://dl.acm.org/citation.cfm?id=1994528",
 					"BIBSOURCE" : "DBLP, http://dblp.uni-trier.de"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -2996,7 +3147,8 @@ var bibJSON = [
 					"KEYWORDS" : "Haptics; Tactile Feedback; Exploration; In-Vehicle Information System;\r\nMultitasking; Touchscreen",
 					"ABSTRACT" : "Haptic feedback on touch-sensitive displays provides significant benefits\r\nin terms of reducing error rates, increasing interaction speed and\r\nminimizing visual distraction. This particularly holds true for\r\nmultitasking situations such as the interaction with mobile devices or\r\ntouch-based in-vehicle systems. In this paper, we explore how the\r\ninteraction with tactile touchscreens can be modeled and enriched using a\r\n2+1 state transition model. The model expands an approach presented by\r\nBuxton. We present HapTouch - a force-sensitive touchscreen device with\r\nhaptic feedback that allows the user to explore and manipulate interactive\r\nelements using the sense of touch. We describe the results of a first\r\nquantitative study to investigate the effects of tactile feedback on the\r\ndriver's visual attention, driving performance and operating error rate. In\r\nparticular, we focus on how active tactile feedback allows the accurate\r\ninteraction with small on-screen elements during driving. Our results show\r\nsignificantly reduced error rates and input time when haptic feedback is\r\ngiven."
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3014,7 +3166,8 @@ var bibJSON = [
 					"KEYWORDS" : "Automotive HCI, touch screens, touch gestures, in-vehicle information\r\nsystem (IVIS), pie menu, automotive user studies.",
 					"ABSTRACT" : "Recent in-vehicle information systems are increasingly equipped with touch\r\nscreens. While classic (i.e. point-based) direct touch interaction has\r\nknown benefits in non-automotive environments, it primarily relies on\r\nvisual attention, which makes it a bad candidate for interaction in the\r\ncar, where visual attention should be on the road. We have designed an\r\ninteraction scheme for IVIS based on touch gestures and pie menus and\r\nimplemented several versions of it featuring visual cues as improvements to\r\nthe original idea. In an extensive user study with a primary driving task,\r\nwe were able to show that our interaction scheme is significantly faster\r\nthan classic touch interaction, that it demands less visual attention (as\r\nconfirmed by improved driving performance) and that our improvements\r\nfurther increased these effects."
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3032,7 +3185,8 @@ var bibJSON = [
 					"ORGANIZATION" : "ACM",
 					"TIMESTAMP" : "2010.11.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3040,7 +3194,7 @@ var bibJSON = [
 			"bib" : {
 				"WIMMER2009CURVE" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Raphael Wimmer, Fabian Hennecke, Florian Schulz, Sebastian Boring, Andreas Butz, Heinrich HuÃmann",
+					"AUTHOR" : "Raphael Wimmer, Fabian Hennecke, Florian Schulz, Sebastian Boring, Andreas Butz, Heinrich HuÃƒÂŸmann",
 					"TITLE" : "{Curve: Revisiting the Digital Desk}",
 					"BOOKTITLE" : "NordiCHI 2010: Proceedings of the 6th Nordic Conference on Human-Computer Interaction",
 					"MONTH" : "October",
@@ -3050,7 +3204,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ISL"
 			}
 		},
 		{
@@ -3058,14 +3213,15 @@ var bibJSON = [
 			"bib" : {
 				"STRENG2010NORDICHI" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Sara Streng, Karsten Stegmann, Sebastian Boring, Sonja Böhm, Frank Fischer and Heinrich Hussmann",
+					"AUTHOR" : "Sara Streng, Karsten Stegmann, Sebastian Boring, Sonja BÃ¶hm, Frank Fischer and Heinrich Hussmann",
 					"TITLE" : "{Measuring Effects of Private and Shared Displays in Small-Group Knowledge Sharing Processes}",
 					"BOOKTITLE" : "Proceedings of the 6th  Nordic Conference on Human-Computer Interaction (NordiCHI), Reykjavik, Iceland, Oct. 2010",
 					"MONTH" : "October",
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3084,7 +3240,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ISL"
 			}
 		},
 		{
@@ -3111,7 +3268,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2010.10.01",
 					"URL" : "http://doi.acm.org/10.1145/1868914.1868921"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ISL"
 			}
 		},
 		{
@@ -3124,7 +3282,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3140,7 +3299,8 @@ var bibJSON = [
 					"LOCATION" : "Copenhagen, Denmark",
 					"KEYWORDS" : "mobile applications, mobile social networking, opinion sharing, real-time feedback, sports"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -3156,7 +3316,8 @@ var bibJSON = [
 					"LOCATION" : "Copenhagen, Denmark",
 					"KEYWORDS" : "Paper prototyping, mobile user interface, tabletop, mobile device, participatory design, evaluation"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -3180,7 +3341,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "device pairing, gesture, large display, mobile phone, multi-device interaction, tabletop, user-defined gesture"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -3204,7 +3366,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "SDAZ, automatic zoom, dynamics, mobile devices, tilt input, zooming-scrolling ui"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "PRT"
 			}
 		},
 		{
@@ -3217,7 +3380,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"AUTHOR" : "Kadri Januzaj and Hendrik Richter"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3242,7 +3406,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2010.09.01",
 					"URL" : "http://doi.acm.org/10.1145/1873951.1874203"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -3261,7 +3426,8 @@ var bibJSON = [
 					"PUBLISHER" : "IEEE Computer Society",
 					"ADDRESS" : "Los Alamitos, CA, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3280,7 +3446,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DNK"
 			}
 		},
 		{
@@ -3288,13 +3455,14 @@ var bibJSON = [
 			"bib" : {
 				"CHEN2008SG" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Ya-Xi Chen and René Klüber",
+					"AUTHOR" : "Ya-Xi Chen and RenÃ© KlÃ¼ber",
 					"TITLE" : "{ThumbnailDJ: Visual Thumbnails of Music Content}",
 					"BOOKTITLE" : "11th International Soceity for Music Information Retrieval Conference, ISMIR 2010, Utrecht, Netherlands, August 9-12, 2010. Proceedings",
 					"MONTH" : "August",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3302,14 +3470,15 @@ var bibJSON = [
 			"bib" : {
 				"BAUR2010ISMIR" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Dominikus Baur, Bartholomäus Steinmayr, Andreas Butz",
+					"AUTHOR" : "Dominikus Baur, BartholomÃ¤us Steinmayr, Andreas Butz",
 					"TITLE" : "{Songwords: Exploring Music Collections Through Lyrics}",
 					"BOOKTITLE" : "In Proceedings of the 11th International Society for Music Information Retrieval Conference (ISMIR 2010), Utrecht, Netherlands, Aug. 2010",
 					"MONTH" : "August",
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ISMIR"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3339,7 +3508,8 @@ var bibJSON = [
 					"RESEARCH_PROJECTS" : "GATE: Games for Advanced Training and Entertainment",
 					"INTERNATIONAL" : "Yes"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3352,7 +3522,8 @@ var bibJSON = [
 					"BOOKTITLE" : "6th Symposium on Usable Privacy and Security (SOUPS), Redmond, WA",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3371,7 +3542,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3386,7 +3558,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"KEYWORDS" : "multitouch, tangible input, gesture recognition, user interface"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3396,13 +3569,14 @@ var bibJSON = [
 					"entryType" : "MISC",
 					"AUTHOR" : "Raphael Wimmer, Fabian Hennecke",
 					"TITLE" : "Everything is a Window: Utilizing the Window Manager for Multi-Touch Interaction",
-					"BOOKTITLE" : "Workshop Engineering Patterns for Multi-Touch Interfaces in conjunction with the 2nd ACM SIGCHI symposium on Engineering interactive computing systems (EICS) 2010, Berlin, Germany.",
+					"BOOKTITLE" : "Workshop Â”Engineering Patterns for Multi-Touch InterfacesÂ” in conjunction with the 2nd ACM SIGCHI symposium on Engineering interactive computing systems (EICS) 2010, Berlin, Germany.",
 					"SERIES" : "EICS '10",
 					"YEAR" : "2010",
 					"LOCATION" : "Berlin, Germany",
 					"KEYWORDS" : "window manager, unix, compiz, x11, multi-touch, curve"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -3418,7 +3592,8 @@ var bibJSON = [
 					"LOCATION" : "Sydney, Australia",
 					"KEYWORDS" : "Force, impact, pressure, multi-touch, mobile phone, mobile music making"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUS"
 			}
 		},
 		{
@@ -3428,10 +3603,11 @@ var bibJSON = [
 					"entryType" : "MASTERSTHESIS",
 					"AUTHOR" : "Emanuel von Zezschwitz",
 					"TITLE" : "{An Evaluation of the Influence of External Factors on Authentication Performance and Memorability}",
-					"SCHOOL" : "Ludwig-Maximilians-Universitäat Müunchen, Germany",
+					"SCHOOL" : "Ludwig-Maximilians-UniversitÃ¤at MÃ¼unchen, Germany",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3448,7 +3624,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2010.06.02"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3466,7 +3643,8 @@ var bibJSON = [
 					"JOURNAL" : "Proceedings of the 2010 Conference on New Interfaces for Musical Expression",
 					"TIMESTAMP" : "2010.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3488,7 +3666,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"PAGES" : "130--137"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3502,7 +3681,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3516,7 +3696,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3530,7 +3711,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3548,7 +3730,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://pervasiveadvertising.org/}",
 					"KEYWORDS" : "cylindrical screens, digital columns, display formats, design space, interaction techniques, screen layout, advertising displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3573,7 +3756,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2010.05.01",
 					"URL" : "http://doi.acm.org/10.1145/1753846.1754010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3589,7 +3773,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2010.05.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3607,7 +3792,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://pervasiveadvertising.org/}",
 					"KEYWORDS" : "music generation, sound branding, sonic mnemonics, city soundscapes, advertising displays, algorithmic composition, soft constraints"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3631,7 +3817,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "printing, reusable paper, sustainability, sustainable design"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3645,7 +3832,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"ADDRESS" : "Berlin, Germany"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3664,7 +3852,8 @@ var bibJSON = [
 					"ISSN" : "1862-5207",
 					"NOTE" : "Technical Report"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3677,7 +3866,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3692,7 +3882,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3711,7 +3902,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3735,7 +3927,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "haptic feedback, input device, interaction technique, mobile device, pressure input, pressure-based interaction, tactile feedback"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3750,7 +3943,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM Press",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3765,7 +3959,8 @@ var bibJSON = [
 					"LOCATION" : "Atlanta, Georgia, USA",
 					"KEYWORDS" : "Natural user interfaces, physical interaction, mobile interaction, mobile devices, mobile phones"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3784,7 +3979,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3799,7 +3995,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ACM New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3820,7 +4017,8 @@ var bibJSON = [
 					"EE" : "http://dx.doi.org/10.1109/PERCOMW.2010.5470542",
 					"TIMESTAMP" : "2010.04.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3828,13 +4026,14 @@ var bibJSON = [
 			"bib" : {
 				"SPIESSL2010PH10" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Lorenzo T. D'Angelo, J. Parlow, Wolfgang Spiessl, Stefan Hoch, Tim C. Lüth",
+					"AUTHOR" : "Lorenzo T. D'Angelo, J. Parlow, Wolfgang Spiessl, Stefan Hoch, Tim C. LÃ¼th",
 					"TITLE" : "A System for Unobtrusive In-Car Vital Parameter Acquisition and Processing",
 					"HOWPUBLISHED" : "In Proceedings of the 4th International Conference on Pervasive Computing Technologies for Healthcare 2010s",
 					"YEAR" : "2010",
 					"ADDRESS" : "Garching, Germany"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3851,7 +4050,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2010.03.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3865,7 +4065,8 @@ var bibJSON = [
 					"MONTH" : "February",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3878,7 +4079,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2010"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3893,7 +4095,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ACM New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3917,7 +4120,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "3D gestures, classifier, gesture recognition, rapid prototyping, recognition rates, user interfaces"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CHN"
 			}
 		},
 		{
@@ -3932,7 +4136,8 @@ var bibJSON = [
 					"YEAR" : "2010",
 					"ORGANIZATION" : "ACM New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -3956,7 +4161,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "computer vision, grasp recognition, optical fiber, tangible user interface"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -3981,13 +4187,15 @@ var bibJSON = [
 					"TIMESTAMP" : "2010.01.01",
 					"URL" : "http://doi.acm.org/10.1145/1753326.1753585"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
 			"id" : "pub_351",
 			"bib" : {
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4003,7 +4211,8 @@ var bibJSON = [
 					"BOOKTITLE" : "GI Jahrestagung (2)",
 					"CROSSREF" : "DBLP:conf/gi/2010-2"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4027,7 +4236,8 @@ var bibJSON = [
 					"ADDRESS" : "Berlin, Germany",
 					"KEYWORDS" : "driver assistance systems, sensor-actuator supported interaction, psycho-physiological sensing, computer vision, adaptive control, implicit interaction, adaptive user interfaces, head-up displays"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUS"
 			}
 		},
 		{
@@ -4042,7 +4252,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4061,7 +4272,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUS"
 			}
 		},
 		{
@@ -4076,7 +4288,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"ORGANIZATION" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4084,13 +4297,14 @@ var bibJSON = [
 			"bib" : {
 				"WIMMER2009CURVEPOSTER" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Raphael Wimmer, Florian Schulz, Fabian Hennecke, Sebastian Boring, Heinrich HuÃmann",
+					"AUTHOR" : "Raphael Wimmer, Florian Schulz, Fabian Hennecke, Sebastian Boring, Heinrich HuÃƒÂŸmann",
 					"TITLE" : "{Curve: Blending Horizontal and Vertical Interactive Surfaces}",
 					"BOOKTITLE" : "Adjunct Proceedings of the 4th IEEE Workshop on Tabletops and Interactive Surfaces (IEEE Tabletop 2009)",
 					"MONTH" : "November",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4104,7 +4318,8 @@ var bibJSON = [
 					"YEAR" : "2009 ",
 					"PAGES" : "85--92 "
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4129,7 +4344,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2009.11.01",
 					"URL" : "alt-ami09-adaptive-profiles.pdf"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUT"
 			}
 		},
 		{
@@ -4143,7 +4359,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4158,7 +4375,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"ORGANIZATION" : "ISMIR"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4172,7 +4390,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"MONTH" : "October"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4190,7 +4409,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2009.10.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4204,7 +4424,8 @@ var bibJSON = [
 					"ADDRESS" : "Vienna, Austria",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4222,7 +4443,8 @@ var bibJSON = [
 					"KEYWORDS" : "Geo-based information, POI selection, In-vehicle Information System,\nautomotive HMI, iDrive Controller",
 					"ABSTRACT" : "The importance of spatial and geo-based information has increased over the\nlast few years. The most prevalent example of this kind of information is\npoints of interest (POI) like hotels, restaurants, gas stations, etc. As\ncars are made for individual transportation, interacting with geo-based\ninformation via the In-vehicle Information System (IVIS) should be\npossible. At present, state-of-the-art IVIS only permit a list based or\ncenter based selection on the map, which makes it difficult to handle a\nhigh closeness of geo-based data. In this paper, we present alternative\napproaches for selecting geo-based data with a multifunctional controller.\nIn our work, visual cues help users predict the selection order. An\nexplorative user study showed potential advantages of our concepts."
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4236,7 +4458,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"LOCATION" : "Bonn, Germany"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4261,7 +4484,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "'you are here' maps, GPS, mobile camera devices, pedestrian navigation"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4286,7 +4510,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "camera phones, dynamic peephole, magic lens, mobile devices, small displays, visual search"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4300,7 +4525,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"LOCATION" : "Bonn, Germany"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4325,7 +4551,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "around-device interaction, gestures, mobile devices, proximity sensors, wearable devices"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4344,7 +4571,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4353,7 +4581,7 @@ var bibJSON = [
 				"BEYER2009MUC" : {
 					"entryType" : "INPROCEEDINGS",
 					"AUTHOR" : "Gilbert Beyer and Karsten Isakovic and Stefan Klose",
-					"TITLE" : "Die Digitale Litfaßsäule als interaktives Werbemedium",
+					"TITLE" : "Die Digitale LitfaÃŸsÃ¤ule als interaktives Werbemedium",
 					"BOOKTITLE" : "Workshop-Proceedings der Tagung Mensch und Computer 2009, Workshop 'Digital Signage mit Interaktiven Displays', September 6, 2009, Berlin, Germany.",
 					"EDITOR" : "S. Kain and D. Struve and H. Wandke",
 					"SERIES" : "Mensch und Computer 2009",
@@ -4368,7 +4596,8 @@ var bibJSON = [
 					"ADDRESS" : "Berlin, Germany",
 					"KEYWORDS" : "digital advertising column, interactive advertising medium, cylindrical screens, implicit initial interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4394,7 +4623,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2009.09.01",
 					"URL" : "http://doi.acm.org/10.1145/1613858.1613897"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -4419,7 +4649,8 @@ var bibJSON = [
 					"ADDRESS" : "Duluth, MN, USA",
 					"KEYWORDS" : "Collocated groups, Mobile phone, Photo sharing, Visuospatial interaction"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4444,7 +4675,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2009.09.01",
 					"URL" : "http://dx.doi.org/10.1007/978-3-642-03655-2_44"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SWE"
 			}
 		},
 		{
@@ -4457,7 +4689,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4475,7 +4708,8 @@ var bibJSON = [
 					"DOI" : "10.1007/978-3-642-02574-7",
 					"PUBLISHER" : "Springer Berlin/Heidelberg"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4489,7 +4723,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4503,7 +4738,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4517,7 +4753,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4530,7 +4767,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4549,7 +4787,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4574,7 +4813,8 @@ var bibJSON = [
 					"ADDRESS" : "London, UK",
 					"KEYWORDS" : "Camera phone, Dynamic peephole, Eye tracking, Focus and context display, Magic lens, Mobile device, Pupil dilation, Saccades, Small display, Visual search"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4584,10 +4824,11 @@ var bibJSON = [
 					"entryType" : "MASTERSTHESIS",
 					"AUTHOR" : "Max-Emanuel Maurer",
 					"TITLE" : "{SeCuUI: Secure and Fast Data Submission to Public Terminals Using an Auto-Complete Mechanism}",
-					"SCHOOL" : "Ludwig-Maximilians-Universitäat Müunchen, Germany",
+					"SCHOOL" : "Ludwig-Maximilians-UniversitÃ¤at MÃ¼unchen, Germany",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4597,10 +4838,11 @@ var bibJSON = [
 					"entryType" : "MASTERSTHESIS",
 					"AUTHOR" : "Doris Hausen",
 					"TITLE" : "{Design and Distribution of Physical and Mobile Interfaces for Multi-Tag Interaction}",
-					"SCHOOL" : "Ludwig-Maximilians-Universitäat Müunchen, Germany",
+					"SCHOOL" : "Ludwig-Maximilians-UniversitÃ¤at MÃ¼unchen, Germany",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4617,7 +4859,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"DOI" : "10.1017/S1355771809000302"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4633,7 +4876,8 @@ var bibJSON = [
 					"LOCATION" : "Rhodes, Greece",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "GRC"
 			}
 		},
 		{
@@ -4658,7 +4902,8 @@ var bibJSON = [
 					"TIMESTAMP" : "2009.06.01",
 					"URL" : "http://dx.doi.org/10.1007/978-3-642-01516-8_2"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "JPN"
 			}
 		},
 		{
@@ -4676,7 +4921,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2009.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4694,7 +4940,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2009.06.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4708,7 +4955,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4722,7 +4970,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4740,7 +4989,8 @@ var bibJSON = [
 					"HOWPUBLISHED" : "\\url{http://pervasiveadvertising.org/}",
 					"KEYWORDS" : "Pervasive advertising, Out-of-home-displays, Interaction techniques, Computer vision, Context-aware computing"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "JPN"
 			}
 		},
 		{
@@ -4751,13 +5001,14 @@ var bibJSON = [
 					"AUTHOR" : "Sara Streng and Karsten Stegmann and Jonas Koch and Heinrich Hussmann and Frank Fischer",
 					"TITLE" : "Computer Support for Practicing Text Understanding in Pairs",
 					"BOOKTITLE" : "Research, Reflections and Innovations in Integrating ICT in Education (Vol. 1)",
-					"EDITOR" : "A. Méndez Vilas and A. Solano Martin and J. Mesa González and J.A. Mesa González",
+					"EDITOR" : "A. MÃ©ndez Vilas and A. Solano Martin and J. Mesa GonzÃ¡lez and J.A. Mesa GonzÃ¡lez",
 					"PUBLISHER" : "FORMATEX",
 					"ADDRESS" : "Badajoz, Spain",
 					"PAGES" : "497--501",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4773,7 +5024,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"PUBLISHER" : "ACM"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4797,7 +5049,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "foot interaction, geographic information system (gis), large screens, multi-touch, multitouch, spatial data, tangible interfaces"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4821,7 +5074,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "magic lens interfaces, mobile augmented reality, projector phones"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4836,7 +5090,8 @@ var bibJSON = [
 					"BOOKTITLE" : "Workshop Multitouch and Surface Computing at CHI'09",
 					"LOCATION" : "Boston, MA, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4855,7 +5110,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4869,7 +5125,8 @@ var bibJSON = [
 					"MONTH" : "February",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4884,7 +5141,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"ORGANIZATION" : "ACM New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4897,7 +5155,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2009"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4906,7 +5165,7 @@ var bibJSON = [
 				"RUHLAND2009IJAC" : {
 					"entryType" : "ARTICLE",
 					"TITLE" : "{LibViz: Data Visualisation of the Old Library}",
-					"AUTHOR" : "Ruhland, K. and Sedlmair, M. and Bioletti, S. and OSullivan, C.",
+					"AUTHOR" : "Ruhland, K. and Sedlmair, M. and Bioletti, S. and OÂ’Sullivan, C.",
 					"JOURNAL" : "International Journal of Architectural Computing",
 					"VOLUME" : "7",
 					"NUMBER" : "1",
@@ -4914,7 +5173,8 @@ var bibJSON = [
 					"YEAR" : "2009",
 					"PUBLISHER" : "Multi-Science Publishing Co Ltd"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4937,7 +5197,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "GBR"
 			}
 		},
 		{
@@ -4961,7 +5222,8 @@ var bibJSON = [
 					"ADDRESS" : "New York, NY, USA",
 					"KEYWORDS" : "augmented virtuality, dynamic relabeling, multi-touch, tabletop interaction, tangible user interfaces, toolkit, transparent widgets"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -4981,7 +5243,8 @@ var bibJSON = [
 					"PUBLISHER" : "IEEE Computer Society Press",
 					"ADDRESS" : "Los Alamitos, CA, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -4999,7 +5262,8 @@ var bibJSON = [
 					"PUBLISHER" : "IEEE Computer Society",
 					"ADDRESS" : "Washington, DC, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5013,7 +5277,8 @@ var bibJSON = [
 					"MONTH" : "November",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5031,7 +5296,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SWE"
 			}
 		},
 		{
@@ -5045,7 +5311,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5059,7 +5326,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5078,7 +5346,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SWE"
 			}
 		},
 		{
@@ -5096,7 +5365,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SWE"
 			}
 		},
 		{
@@ -5119,7 +5389,8 @@ var bibJSON = [
 					"ADDRESS" : "Los Alamitos, CA, USA",
 					"KEYWORDS" : "pervasive adaptation, affective computing, multimedia"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -5133,7 +5404,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5147,7 +5419,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "October"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5164,7 +5437,8 @@ var bibJSON = [
 					"ADDRESS" : "Seoul, South Korea",
 					"TIMESTAMP" : "2008.10.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5178,7 +5452,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "October"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5186,7 +5461,7 @@ var bibJSON = [
 			"bib" : {
 				"STRENG2008GENEME" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "S. Streng, S. Ahrens, K. Anton, and A. Küpper",
+					"AUTHOR" : "S. Streng, S. Ahrens, K. Anton, and A. KÃ¼pper",
 					"TITLE" : "Inhaltezentrierte Virtuelle Gemeinschaften",
 					"BOOKTITLE" : "GeNeMe '08 - Gemeinschaften in Neuen Medien",
 					"EDITOR" : "K. Meissner and M. Engelien",
@@ -5194,7 +5469,8 @@ var bibJSON = [
 					"MONTH" : "september",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5202,13 +5478,14 @@ var bibJSON = [
 			"bib" : {
 				"WIMMER2008WIITRACKING" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Raphael Wimmer, Sebastian Boring, Johannes Müller",
+					"AUTHOR" : "Raphael Wimmer, Sebastian Boring, Johannes MÃ¼ller",
 					"TITLE" : "{Tracking the Wiimote in 3D using ARToolkit}",
 					"BOOKTITLE" : "Proceedings of the Second Workshop on Mobile and Embedded Interactive Systems (MEIS'08)",
 					"MONTH" : "September",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5222,7 +5499,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "September"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5236,7 +5514,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "September"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5255,7 +5534,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5263,13 +5543,14 @@ var bibJSON = [
 			"bib" : {
 				"CHEVERST2008PHOTOMAP" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Keith Cheverst and Johannes Sch\\\"Ã¶ning and Antonio Kr\\\"uger and Michael Rohs",
+					"AUTHOR" : "Keith Cheverst and Johannes Sch\\\"ÃƒÂ¶ning and Antonio Kr\\\"uger and Michael Rohs",
 					"TITLE" : "Photomap: Snap, Grab and Walk away with a \"YOU ARE HERE\" Map",
 					"BOOKTITLE" : "Workshop on Mobile Interaction with the Real World (MIRW at MobileHCI 2008), Amsterdam, The Netherlands, September 2, 2008",
 					"YEAR" : "2008",
 					"MONTH" : "September"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5288,7 +5569,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -5301,7 +5583,8 @@ var bibJSON = [
 					"ADDRESS" : "Munich, Germany",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5315,7 +5598,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "August"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5329,7 +5613,8 @@ var bibJSON = [
 					"MONTH" : "August",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5343,7 +5628,8 @@ var bibJSON = [
 					"MONTH" : "August",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5357,7 +5643,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5371,7 +5658,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5386,7 +5674,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"DOI" : "dx.doi.org/10.1155/2008/450385"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5394,13 +5683,14 @@ var bibJSON = [
 			"bib" : {
 				"SEDLMAIR2008IV" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Sedlmair, M. and Hintermaier, W. and  Stocker, K. and  Büring, T. and Butz, A.",
+					"AUTHOR" : "Sedlmair, M. and Hintermaier, W. and  Stocker, K. and  BÃ¼ring, T. and Butz, A.",
 					"TITLE" : "A Dual-View Visualization of In-Car Communication Processes",
 					"BOOKTITLE" : "Proceedings of the 12th International Conference on Information Visualization, London, UK",
 					"MONTH" : "July",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5414,7 +5704,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5428,7 +5719,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "June"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5442,7 +5734,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "May"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5456,7 +5749,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "May"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5465,11 +5759,12 @@ var bibJSON = [
 				"BEYER2008" : {
 					"entryType" : "MASTERSTHESIS",
 					"AUTHOR" : "Gilbert Beyer",
-					"TITLE" : "{Die Digitale Litfasssäule als Werbemedium. Entwicklung eines Konzepts für Visualisierung und Interaktion.}",
+					"TITLE" : "{Die Digitale LitfasssÃ¤ule als Werbemedium. Entwicklung eines Konzepts fÃ¼r Visualisierung und Interaktion.}",
 					"SCHOOL" : "Berlin University of the Arts (UdK), Germany",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5483,7 +5778,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "April"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5497,7 +5793,8 @@ var bibJSON = [
 					"MONTH" : "April",
 					"BOOKTITLE" : "{Workshop Exertion Interfaces in conjunction with the ACM CHI '08}"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5511,7 +5808,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "April"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5520,12 +5818,13 @@ var bibJSON = [
 				"HILLIGES2008CHIWS" : {
 					"entryType" : "INPROCEEDINGS",
 					"AUTHOR" : "Hilliges, O.",
-					"TITLE" : "{Finding the Unknown  Serendipitous Discovery in Co-Located Consumption of Digital Photo Collections}",
+					"TITLE" : "{Finding the Unknown Â– Serendipitous Discovery in Co-Located Consumption of Digital Photo Collections}",
 					"BOOKTITLE" : "{Workshop Collocated Social Practices Surrounding Photos in conjunction with the ACM CHI '08}",
 					"MONTH" : "April",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5544,7 +5843,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -5563,7 +5863,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ITA"
 			}
 		},
 		{
@@ -5579,7 +5880,8 @@ var bibJSON = [
 					"MONTH" : "march",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "CAN"
 			}
 		},
 		{
@@ -5598,7 +5900,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "ZAF"
 			}
 		},
 		{
@@ -5617,7 +5920,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "DEU"
 			}
 		},
 		{
@@ -5631,7 +5935,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "January"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5645,7 +5950,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "January"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5659,7 +5965,8 @@ var bibJSON = [
 					"YEAR" : "2008",
 					"MONTH" : "January"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5677,7 +5984,8 @@ var bibJSON = [
 					"LOCATION" : "London, UK",
 					"YEAR" : "2008"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5696,7 +6004,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUS"
 			}
 		},
 		{
@@ -5715,7 +6024,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "AUS"
 			}
 		},
 		{
@@ -5729,7 +6039,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5743,7 +6054,8 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5756,7 +6068,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5770,7 +6083,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5784,7 +6098,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5798,7 +6113,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5817,7 +6133,8 @@ var bibJSON = [
 					"EVENTURL" : "http://www.ubicomp2007.org/",
 					"PAGES" : "163--166"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5831,7 +6148,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5850,7 +6168,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SGP"
 			}
 		},
 		{
@@ -5869,7 +6188,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "SGP"
 			}
 		},
 		{
@@ -5883,7 +6203,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5897,7 +6218,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5914,7 +6236,8 @@ var bibJSON = [
 					"DOI" : "10.1109/ISTMWC.2007.4299222",
 					"ISBN" : "963-8111-66-6"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5928,7 +6251,8 @@ var bibJSON = [
 					"MONTH" : "July",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5942,7 +6266,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5956,7 +6281,8 @@ var bibJSON = [
 					"MONTH" : "March",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5970,7 +6296,8 @@ var bibJSON = [
 					"MONTH" : "March",
 					"YEAR" : "2007"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -5987,7 +6314,8 @@ var bibJSON = [
 					"OWNER" : "flo",
 					"TIMESTAMP" : "2007.03.01"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6006,7 +6334,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6025,7 +6354,8 @@ var bibJSON = [
 					"DOI" : "http://dx.doi.org/10.1016/j.pmcj.2007.09.001",
 					"URL" : "http://www.sciencedirect.com/science/article/B7MF1-4PPMXYT-1/2/fbca36992422bb9b391f33ff1b54e3f7"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6038,7 +6368,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6055,7 +6386,8 @@ var bibJSON = [
 					"NUMBER" : "4",
 					"TIMESTAMP" : "2006.10.19"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6074,7 +6406,8 @@ var bibJSON = [
 					"PUBLISHER" : "ACM",
 					"ADDRESS" : "New York, NY, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "FIN"
 			}
 		},
 		{
@@ -6082,13 +6415,14 @@ var bibJSON = [
 			"bib" : {
 				"HILLIGES2006AUDIO" : {
 					"entryType" : "INPROCEEDINGS",
-					"AUTHOR" : "Otmar Hilliges, Phillipp Holzer, Rene Klüber, Andreas Butz",
+					"AUTHOR" : "Otmar Hilliges, Phillipp Holzer, Rene KlÃ¼ber, Andreas Butz",
 					"TITLE" : "{AudioRadar: A metaphorical visualization for the navigation of large music collections}",
 					"BOOKTITLE" : "Proceedings of the International Symposium on Smart Graphics 2006, Vancouver Canada",
 					"MONTH" : "July",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6107,7 +6441,8 @@ var bibJSON = [
 					"PUBLISHER" : "IEEE Computer Society",
 					"ADDRESS" : "Los Alamitos, CA, USA"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6124,7 +6459,8 @@ var bibJSON = [
 					"CROSSREF" : "DBLP:conf/pit/2006",
 					"BIBSOURCE" : "DBLP, http://dblp.uni-trier.de"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6141,7 +6477,8 @@ var bibJSON = [
 					"MONTH" : "April",
 					"NOTE" : "{\\tt urn:nbn:de:0009-6-2948}, \r\n  ISSN 1860-2037"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6155,7 +6492,8 @@ var bibJSON = [
 					"MONTH" : "May",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6168,7 +6506,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6182,7 +6521,8 @@ var bibJSON = [
 					"MONTH" : "March",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6196,7 +6536,8 @@ var bibJSON = [
 					"MONTH" : "February",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6210,7 +6551,8 @@ var bibJSON = [
 					"MONTH" : "February",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6224,7 +6566,8 @@ var bibJSON = [
 					"MONTH" : "February",
 					"YEAR" : "2006"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6238,7 +6581,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2005"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6252,7 +6596,8 @@ var bibJSON = [
 					"MONTH" : "September",
 					"YEAR" : "2005"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6271,7 +6616,8 @@ var bibJSON = [
 					"ISSN" : "1545-0678",
 					"PAGES" : "536--542"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -6290,7 +6636,8 @@ var bibJSON = [
 					"ISSN" : "1545-0678",
 					"PAGES" : "409--505"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : "USA"
 			}
 		},
 		{
@@ -6303,7 +6650,8 @@ var bibJSON = [
 					"SCHOOL" : "Ludwig-Maximilians-Universit\\\"at M\\\"unchen, Germany and Georgia Institute of Technology, Atlanta, GA, USA",
 					"YEAR" : "2005"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6316,7 +6664,8 @@ var bibJSON = [
 					"SCHOOL" : "Technische Universit\\\"at M\\\"unchen, Germany",
 					"YEAR" : "2004"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6325,12 +6674,13 @@ var bibJSON = [
 				"DEY2006ICAP" : {
 					"entryType" : "INPROCEEDINGS",
 					"AUTHOR" : "N. Beyer, J. Claussen, B. Fingerle, S. Streng",
-					"TITLE" : "{mobLAN  Locally Distributed Content Caching}",
+					"TITLE" : "{mobLAN Â– Locally Distributed Content Caching}",
 					"BOOKTITLE" : "Lectures on Pervasive Communications, Ed. M. Olson, M. Alger, Vodafone Group R&D, 2004, ISBN 3-00-015100-1",
 					"MONTH" : "May",
 					"YEAR" : "2004"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6343,7 +6693,8 @@ var bibJSON = [
 					"BOOKTITLE" : "Proc. of the International Workshop on Multi-user and Ubiquitous User Interfaces (MU3I)",
 					"YEAR" : "2004"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		},
 		{
@@ -6357,6 +6708,7 @@ var bibJSON = [
 					"MONTH" : "October",
 					"YEAR" : "2003"
 				},
-				"@comments" : []
+				"@comments" : [],
+				"locationCountryCode" : null
 			}
 		} ];
