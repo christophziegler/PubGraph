@@ -1071,7 +1071,7 @@ var CountryCodeMaper = (function () {
 						
 					}
 					
-					bibraw[i].bib.locationCountryCode = countryCode;
+					bibraw[i].location = countryCode;
 					
 				}
 			}

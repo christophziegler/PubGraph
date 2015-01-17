@@ -11,23 +11,66 @@
 <script type="text/javascript" src="../pubdbbuffer/bibraw.js"></script>
 
 <script type="text/javascript">
+	window.onload = function() {
 
-window.onload = function () {
-	
-	CountryCodeMaper.onstatechange = function (state) {
-		document.getElementById("statelog").innerHTML += "<p>" + state + "</p>";
+		CountryCodeMaper.onstatechange = function(state) {
+			document.getElementById("statelog").innerHTML += "<p>" + state + "</p>";
+		}
+
+		
+		bibJSON = CountryCodeMaper.mapBib(bibJSON);
+		bibJSON = listKeyWords(bibJSON);
+		bibJSON = removeRawBib(bibJSON);
+		
+		bibJSON = JSON.stringify(bibJSON);
+		
+		
+
+		function listKeyWords(bibJSON) {
+			
+			var keywords;
+			
+			for (var i = 0; i < bibJSON.length; i++) {
+				
+				keywords = null;
+				
+				for ( var key in bibJSON[i].bib) {
+					
+					if (bibJSON[i].bib[key].hasOwnProperty("KEYWORDS")) {
+						
+						keywords = bibJSON[i].bib[key].KEYWORDS.split(",");
+						
+						for (var j = 0; j < keywords.length; j++) {
+							keywords[j] = keywords[j].trim();
+						}
+					}
+				}
+				
+				bibJSON[i].keywords = keywords;
+			}
+			
+			return bibJSON;
+		}
+		
+		
+		function removeRawBib (bibJSON) {
+			for (var i = 0; i < bibJSON.length; i++) {
+				if (bibJSON[i].hasOwnProperty("bib")) {
+					delete bibJSON[i].bib;
+				}
+			}
+			return bibJSON;
+		}
+		
+		
+		return;
 	}
-
-	var bib = JSON.stringify(CountryCodeMaper.mapBib(bibJSON));
-	return;
-}
-
 </script>
 
 </head>
 <body>
 
-<div id="statelog"></div>
+	<div id="statelog"></div>
 
 </body>
 </html>
