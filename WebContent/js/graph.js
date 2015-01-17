@@ -488,7 +488,7 @@ graph = (function ()
 	    .nodes(nodes)
 	    .links([])
 	    .gravity(gravity)
-	    .charge(-1000)
+	    .charge(-1500)
 	    .size([w, h]);
 
 
