@@ -1,8 +1,9 @@
-var Filter = function() {
+var Filter = function (authors, pubs) {
 
 	var time_range = [ "2014", "2015" ];
 	var tagNames = [];
 	var searchName = null;
+	var self = this;
 
 	$("#autocomplete").autocomplete({
 		source : tagNames,
@@ -73,9 +74,12 @@ var Filter = function() {
 		 * Scrolling to the section with the anchor link `firstSlide` and to the
 		 * 2nd Slide
 		 */
-		$.fn.fullpage.moveTo(2, 0);
+		$.fn.fullpage.moveTo(2);
 		$.fn.fullpage.setKeyboardScrolling(true);
+		
+		
 		graph.init(globalAuthors, globalPubs, time_range, searchName);
+		Map.draw(self.filterByTimeRange());
 
 		// $("#autocomplete").val('');
 		// searchName = null;
@@ -83,9 +87,22 @@ var Filter = function() {
 		$("#loadingContainer").fadeOut();
 	});
 
+	
+	this.filterByTimeRange = function () {
+		var filteredPubs = [];
+		for (var i = 0; i < pubs.length; i++) {
+			if (time_range[0] <= pubs[i].year && pubs[i].year <= time_range[time_range.length-1]) {
+				filteredPubs.push(pubs[i]);
+			}
+		}
+		return filteredPubs;
+	}
+	
+	
 	this.getTimeRange = function() {
 		return time_range;
 	};
+	
 	this.setTagNames = function(names) {
 		tagNames = names;
 		$("#autocomplete").autocomplete("option", {

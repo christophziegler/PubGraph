@@ -9,7 +9,7 @@ var Map = (function () {
 			
 			var frequencies = {}, freqSum = 0; freqMax = 0, opacity = {};
 
-			bib = bibJSON || {};
+			bib = bibJSON || bib;
 			
 
 			/*
@@ -42,6 +42,8 @@ var Map = (function () {
 			/*
 			 * Create map.
 			 */
+			
+			$("#map").empty();
 			
 			map = new Datamap({
 				element: document.getElementById('map'),

@@ -9,8 +9,6 @@ $(document).ready(function() {
 	var publicationsJSON = []
 	var	authorsJSON = [];
 	
-	filter = new Filter();
-	
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
 		afterLoad: function (anchor, index) {
@@ -59,8 +57,11 @@ $(document).ready(function() {
 				globalPubs = publicationsJSON;
 				loadGraph();
 				
+				filter = new Filter(authorsJSON, publicationsJSON);
+				
 				graph.init(authorsJSON, publicationsJSON, filter.getTimeRange(), null);
-				Map.draw(publicationsJSON, bibJSON);
+				Map.draw(filter.filterByTimeRange(), bibJSON);
+				
 
 			});
 		});
