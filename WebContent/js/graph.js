@@ -716,7 +716,7 @@ graph = (function ()
 			        
 		 })
 		
-		.on("mousedown", function(d,i) 
+		.on("click", function(d,i) 
 		{
 			
 			
