@@ -207,10 +207,6 @@ graph = (function ()
 			
 	    });
 		
-		
-		filter.setTagNames(tagNames);
-		
-		
 	}
 
 	

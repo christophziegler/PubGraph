@@ -1,9 +1,18 @@
-var Filter = function (authors, pubs) {
+var Filter = function (authorsJSON, publicationsJSON) {
 
 	var time_range = [ "2014", "2015" ];
 	var tagNames = [];
 	var searchName = null;
 	var self = this;
+	
+	
+	/*
+	 * Get author names.
+	 */
+	for (var i = 0; i < authorsJSON.length; i++) {
+		tagNames.push(authorsJSON[i].name);
+	}
+	
 
 	$("#autocomplete").autocomplete({
 		source : tagNames,
@@ -62,6 +71,9 @@ var Filter = function (authors, pubs) {
 					});
 
 	$("#slider_button").button().click(function(event) {
+		
+		var pubs;
+		
 		$("#loadingContainer").fadeIn();
 
 		event.preventDefault();
@@ -79,35 +91,49 @@ var Filter = function (authors, pubs) {
 		
 		
 		graph.init(globalAuthors, globalPubs, time_range, searchName);
-		Map.draw(self.filterByTimeRange());
+		
+		pubs = self.filterByName();
+		pubs = self.filterByTimeRange(pubs);
+		Map.draw(pubs);
 
 		// $("#autocomplete").val('');
 		// searchName = null;
 
 		$("#loadingContainer").fadeOut();
 	});
-
 	
-	this.filterByTimeRange = function () {
-		var filteredPubs = [];
+	this.filterByTimeRange = function (publications) {
+		
+		var pubs = publications || publicationsJSON,
+			filteredPubs = [];
+		
 		for (var i = 0; i < pubs.length; i++) {
 			if (time_range[0] <= pubs[i].year && pubs[i].year <= time_range[time_range.length-1]) {
 				filteredPubs.push(pubs[i]);
 			}
 		}
+		
 		return filteredPubs;
-	}
+	};
 	
+	this.filterByName = function (publications) {
+		
+		var pubs = publications || publicationsJSON,
+			filteredPubs = [];
+		
+		for (var i = 0; i < pubs.length; i++) {
+			for (var j = 0; j < pubs[i].authors.length; j++) {
+				if (searchName === pubs[i].authors[j].name) {
+					filteredPubs.push(pubs[i]);
+				}
+			}
+		}
+		
+		return filteredPubs;
+	};
 	
 	this.getTimeRange = function() {
 		return time_range;
 	};
 	
-	this.setTagNames = function(names) {
-		tagNames = names;
-		$("#autocomplete").autocomplete("option", {
-			source : names
-		});
-	};
-
 };
