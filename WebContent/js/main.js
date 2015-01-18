@@ -2,12 +2,14 @@
 var graph = null;
 var globalAuthors = [];
 var globalPubs = [];
+var filter = null;
 
 $(document).ready(function() {
-	var start = new Date();
-
+	
 	var publicationsJSON = []
 	var	authorsJSON = [];
+	
+	filter = new Filter();
 	
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
@@ -57,7 +59,7 @@ $(document).ready(function() {
 				globalPubs = publicationsJSON;
 				loadGraph();
 				
-				graph.init(authorsJSON, publicationsJSON, time_range, null);
+				graph.init(authorsJSON, publicationsJSON, filter.getTimeRange(), null);
 				Map.draw(publicationsJSON, bibJSON);
 
 			});
