@@ -58,6 +58,7 @@ $(document).ready(function() {
 				loadGraph();
 				
 				graph.init(authorsJSON, publicationsJSON, time_range, null);
+				Map.draw(publicationsJSON, bibJSON);
 
 			});
 		});

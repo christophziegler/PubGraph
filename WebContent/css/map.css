@@ -6,3 +6,11 @@
 	height: 600px;
 	margin: 0 auto;
 }
+
+.datamap path {
+	opacity: 0.05;
+}
+
+.datamap path:HOVER {
+	opacity: 1;
+}
