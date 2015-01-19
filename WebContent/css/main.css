@@ -2,11 +2,21 @@
 
 @font-face {
 	font-family: "super-font";
-	src: url('../fonts/Capture_it.ttf') format('truetype');;
+	/*
+	src: url('../fonts/Capture_it.ttf') format('truetype');	
+	src: url('../fonts/Chunkfive.otf') format('truetype');
+	src: url('../fonts/Lobster.otf') format('truetype');
+	*/
+	src: url('../fonts/Helsinki.ttf') format('truetype');
+	
+	
+	
 }
 
 * {
+	
 	font-family: monospace;
+	
 }
 
 body, .stage 

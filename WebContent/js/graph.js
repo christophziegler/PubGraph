@@ -508,6 +508,7 @@ graph = (function ()
 						node_circle.setAttribute("fill", "white");
 						text_dom.setAttribute("opacity", "0.5");
 						text_dom.setAttribute("fill", palette.lightgray);
+						text_dom.setAttribute("visibility", "hidden");
 					}
 				})
 			 }
