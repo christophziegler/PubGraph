@@ -2,7 +2,9 @@ var Filter = function (authorsJSON, publicationsJSON) {
 
 	var time_range = [ "2014", "2015" ];
 	var tagNames = [];
+	var pubNames = [];
 	var searchName = null;
+	var pubRequest = null;
 	var self = this;
 	
 	
@@ -13,12 +15,24 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		tagNames.push(authorsJSON[i].name);
 	}
 	
+	/*
+	 * Get publications title
+	 */
+	for (var i = 0; i < publicationsJSON.length; i++) 
+	{
+		pubNames.push(publicationsJSON[i].title.name);
+	}
+	
+	
+	
 
 	$("#autocomplete").autocomplete({
 		source : tagNames,
 		select : function(event, ui) {
 			$.each(ui, function(elem, val) {
 				searchName = val.value;
+				$("#autocomplete_pubs").val("");
+				pubRequest = null;
 				// console.log(val.value);
 
 				$.fn.fullpage.setKeyboardScrolling(true);
@@ -32,43 +46,73 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		}
 
 	});
+	
+	$("#autocomplete_pubs").autocomplete({
+		source : pubNames,
+		select : function(event, ui) 
+		{
+			$.each(ui, function(elem, val) 
+			{
+				pubRequest = val.value;
+				$("#autocomplete").val("");
+				searchName = null;
+				//console.log(val.value);
 
-	$("#slider-range")
-			.slider(
-					{
-						range : true,
-						min : 1994,
-						max : 2015,
-						values : [ 2014, 2015 ],
-						slide : function(event, ui) {
+				$.fn.fullpage.setKeyboardScrolling(true);
 
-							var values1 = ui.values[0];
-							var values2 = ui.values[1];
-							time_range = [];
-							// console.log(values1 + ":" + values2);
+			});
+		},
+		search : function(event, ui) {
 
-							document.getElementById('slider_text').innerHTML = "Time Range: "
-									+ values1 + " - " + values2;
+			pubRequest = null;
+			$.fn.fullpage.setKeyboardScrolling(false);
+		}
 
-							if (values1 != values2) {
-								var i = 0;
-								var temp = values1;
+	});
 
-								for (i; i <= (values2 - values1); i++) {
-									var push = temp++;
-									// console.log(push);
-									time_range.push(push);
-								}
+	
+	
+	
 
-								// graph.init(globalAuthors, globalPubs, time);
-							}
+	$("#slider-range").slider({
+		range : true,
+		min : 1994,
+		max : 2015,
+		values : [ 2014, 2015 ],
+		slide : function(event, ui) 
+		{
+			var values1 = ui.values[0];
+			var values2 = ui.values[1];
+			time_range = [];
+			// console.log(values1 + ":" + values2);
 
-							if (values1 == values2) {
-								time_range = [];
-								time_range.push(values1);
-							}
-						}
-					});
+			document.getElementById('slider_text').innerHTML = "Time Range: "+ values1 + " - " + values2;
+
+			if (values1 != values2) 
+			{
+				var i = 0;
+				var temp = values1;
+
+				for (i; i <= (values2 - values1); i++) {
+				var push = temp++;
+				// console.log(push);
+				time_range.push(push);
+			}
+
+			// graph.init(globalAuthors, globalPubs, time);
+			}
+
+			if (values1 == values2) 
+			{
+				time_range = [];
+				time_range.push(values1);
+			}
+			
+			$("#autocomplete_pubs").val("");
+			pubRequest = null;
+			
+		}
+	});
 
 	$("#slider_button").button().click(function(event) {
 		
@@ -90,7 +134,7 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		$.fn.fullpage.setKeyboardScrolling(true);
 		
 		
-		graph.init(globalAuthors, globalPubs, time_range, searchName);
+		graph.init(globalAuthors, globalPubs, time_range, searchName, pubRequest);
 		
 		pubs = self.filterByName();
 		pubs = self.filterByTimeRange(pubs);

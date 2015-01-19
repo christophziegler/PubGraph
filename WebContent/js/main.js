@@ -59,7 +59,7 @@ $(document).ready(function() {
 				
 				filter = new Filter(authorsJSON, publicationsJSON);
 				
-				graph.init(authorsJSON, publicationsJSON, filter.getTimeRange(), null);
+				graph.init(authorsJSON, publicationsJSON, filter.getTimeRange(), null, null);
 				Map.draw(filter.filterByTimeRange(), bibJSON);
 				
 

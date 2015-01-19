@@ -24,6 +24,9 @@ graph = (function ()
 	var requestName = null;
 	var name_flag = false;
 	
+	var requestPub = [];
+	pub_flag = false;
+	
 	var authorView = null; 
 	
 	var authorsJSON = [];
@@ -33,8 +36,13 @@ graph = (function ()
 	
 	// Öffentliche Funktionen (public)
 	return{
-		init: function(authors_JSON, publications_JSON, year_range, nameRequest)
+		init: function(authors_JSON, publications_JSON, year_range, nameRequest, pubRequest)
 		{
+			authorsJSON = authors_JSON;
+			
+			//publicationsJSON = null; 
+			publications = publications_JSON;
+			
 			time = year_range;
 			
 			if (nameRequest != null)
@@ -43,26 +51,24 @@ graph = (function ()
 				name_flag = true;
 				//console.log("requestName: " + requestName);
 			}
-			else
+			if (pubRequest != null)
 			{
-				//console.log("No Name");
-			}
-		
-			
-			
-			{
-				authorsJSON = authors_JSON;
+				requestPub = pubRequest;
+				pub_flag = true;
 				
-			}
+				for (var i = 0; i < publications.length; i++) 
+				{
+					if(requestPub === publications[i].title.name)
+					{
+						requestPub = publications[i];
+					}
 
-			{
-				publicationsJSON = null; 
-				publications = publications_JSON;
-				//console.log(publications.length);
-				
+				}
 			}
-			authorView = AuthorView.getInstance(authorsJSON, publications);
 			
+			
+				
+			authorView = AuthorView.getInstance(authorsJSON, publications);
 			
 			startGraph();
 		}
@@ -85,6 +91,12 @@ graph = (function ()
 		console.log();
 		//console.log(authorsJSON);
 		var i = 0;
+		
+		if(pub_flag)
+		{
+			time = [];
+			time.push(requestPub.year);
+		}
 		
 		
 		
@@ -157,8 +169,7 @@ graph = (function ()
 					{
 						if(connections[elem].number == temp_connection.number)
 						{
-							
-							
+
 							//console.log(temp_connection.number + " Gibts Schon!");
 							connection_exists = true;
 						}
@@ -166,21 +177,13 @@ graph = (function ()
 									
 					if(!connection_exists)
 					{
-						
-						
-						
+
 						connections.push(temp_connection);
-						//console.log("PUSH");
-						
-						
-						
+						//console.log("PUSH");						
 					}
 				}
 				}
 			});
-			
-			
-					
 
 			//console.log(publicationsJSON[14]);
 			var time_flag = false;
@@ -393,7 +396,7 @@ graph = (function ()
 	    .nodes(nodes)
 	    .links([])
 	    .gravity(gravity)
-	    .charge(-1500)
+	    .charge(-900)
 	    .size([w, h]);
 
 
@@ -469,9 +472,7 @@ graph = (function ()
 			//.attr("y",  (circleWidth/2) )
 	    	 
 			       
-			//CIRCLE
-			d3.select(this).selectAll("circle")
-			.style("cursor", "none")     
+			  
 
 			//TEXT
 			d3.select(this).select("text")
@@ -491,7 +492,9 @@ graph = (function ()
 			var circle_id = circle.id.replace("node:","");
 			
 			//console.log(circle_id);
-
+			
+			if(!pub_flag)
+			{
 				node.forEach(function(links_dom)
 				{
 					var text;
@@ -505,7 +508,7 @@ graph = (function ()
 						node_circle = links_dom[i].children[1];
 						//console.log(node);
 						var circle_toText = links_dom[i];
-								
+						
 						if(text.getAttribute("id").indexOf(text_id) == -1)
 						{
 							node.setAttribute("opacity", "0.2");
@@ -527,53 +530,56 @@ graph = (function ()
 							node.setAttribute("fill", palette.darkerblue);
 							//console.log(node);
 						}
-							
-							
+						
+						
 						//var text = links_dom[i].children[1];
 						//text.setAttribute("id", "text:" + nodes[i].name);
 					}
 				})
-
-				
-				
-				link.forEach(function(links_dom)
-				{
-					for(var i=0; i < links.length; i++)
-					{
-						if(links_dom[i].getAttribute("link_id").indexOf(circle_id) == -1)
-						{
-							links_dom[i].setAttribute("opacity", "0.3");
-							links_dom[i].setAttribute("stroke", palette.lightgray);
-							//var text = links_dom[i].nextSibling;
-						}
-						else
-						{
-							links_dom[i].setAttribute("opacity", "0.8");
-							links_dom[i].setAttribute("stroke", palette.paleryellow);
 						
-							var temp_nodeName = links_dom[i].getAttribute("link_id").replace(":", "").replace(circle_id, "");
-							
-							//console.log("circle: " + circle_id);
-							if(!name_flag || requestName === circle_id)
+						
+						
+						link.forEach(function(links_dom)
+								{
+							for(var i=0; i < links.length; i++)
 							{
-								document.getElementById("node:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
-								document.getElementById("node:" + temp_nodeName).setAttribute("opacity", "0.8");
-								document.getElementById("text:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
-								document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");	
-								document.getElementById("text:" + temp_nodeName).setAttribute("visibility", "visible");
+								if(links_dom[i].getAttribute("link_id").indexOf(circle_id) == -1)
+								{
+									links_dom[i].setAttribute("opacity", "0.3");
+									links_dom[i].setAttribute("stroke", palette.lightgray);
+									//var text = links_dom[i].nextSibling;
+								}
+								else
+								{
+									links_dom[i].setAttribute("opacity", "0.8");
+									links_dom[i].setAttribute("stroke", palette.paleryellow);
+									
+									var temp_nodeName = links_dom[i].getAttribute("link_id").replace(":", "").replace(circle_id, "");
+									
+									//console.log("circle: " + circle_id);
+									if(!pub_flag && (!name_flag || requestName === circle_id))
+									{
+										document.getElementById("node:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
+										document.getElementById("node:" + temp_nodeName).setAttribute("opacity", "0.8");
+										document.getElementById("text:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
+										document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");	
+										document.getElementById("text:" + temp_nodeName).setAttribute("visibility", "visible");
+									}
+									else if(!pub_flag)
+									{
+										document.getElementById("node:" + requestName).setAttribute("fill", palette.paleryellow);
+										document.getElementById("node:" + requestName).setAttribute("opacity", "0.8");
+										document.getElementById("text:" + requestName).setAttribute("fill", palette.paleryellow);
+										document.getElementById("text:" + requestName).setAttribute("opacity", "0.8");
+										document.getElementById("text:" + requestName).setAttribute("visibility", "visible");
+									}
+									//console.log("text:" + temp_nodeName);
+								}
 							}
-							else
-							{
-								document.getElementById("node:" + requestName).setAttribute("fill", palette.paleryellow);
-								document.getElementById("node:" + requestName).setAttribute("opacity", "0.8");
-								document.getElementById("text:" + requestName).setAttribute("fill", palette.paleryellow);
-								document.getElementById("text:" + requestName).setAttribute("opacity", "0.8");
-								document.getElementById("text:" + requestName).setAttribute("visibility", "visible");
-							}
-							//console.log("text:" + temp_nodeName);
-						}
-					}
-				});     
+					});     
+				
+			}
+
 	    	 
 		})
 
@@ -582,25 +588,29 @@ graph = (function ()
 		{
 			//console.log("Raus");
 			
-			link.forEach(function(links_dom)
+			if(!pub_flag)
 			{
-				for(var i=0; i < links.length; i++)
-				{
-					links_dom[i].setAttribute("opacity", "0.3");
-					links_dom[i].setAttribute("stroke", palette.lightgray);
-					//console.log("text:" + temp_nodeName);
-				}
-							
-			});
-		
-			
-			node.forEach(function(nodes_dom)
-			{
-				for(var i=0; i < nodes.length; i++)
-				{
+				
+				link.forEach(function(links_dom)
+						{
+					for(var i=0; i < links.length; i++)
+					{
+						links_dom[i].setAttribute("opacity", "0.3");
+						links_dom[i].setAttribute("stroke", palette.lightgray);
+						//console.log("text:" + temp_nodeName);
+					}
 					
-					text_dom = nodes_dom[i].children[2];
-					node_dom = nodes_dom[i].children[0];
+				});
+				
+				
+			
+				node.forEach(function(nodes_dom)
+				{
+					for(var i=0; i < nodes.length; i++)
+					{
+					
+						text_dom = nodes_dom[i].children[2];
+						node_dom = nodes_dom[i].children[0];
 					node_circle = nodes_dom[i].children[1];
 					//console.log(node);
 					var circle_toText = nodes_dom[i];
@@ -615,9 +625,10 @@ graph = (function ()
 									
 					//var text = links_dom[i].children[1];
 					//text.setAttribute("id", "text:" + nodes[i].name);
-				}
-			})
+					}
+				})
 			 
+			}
 			        
 		 })
 		
@@ -769,9 +780,133 @@ graph = (function ()
 			
 			//node.setAttribute("opacity", "1");
 			//node.setAttribute("fill", palette.darkerblue);
+		}
+		
+		if(pub_flag)
+		{
+			var connectedNodes = [];
+			var protectedLinks = [];
+			$.each(requestPub.authors, function(elem, val)
+			{
+				
+				var author1 = val.name;
+				
+				link.forEach(function(links_dom)
+				{	
+					for(var i=0; i < links.length; i++)
+					{
+						var trueLink = false;
+						var link_id = links_dom[i].getAttribute("link_id");
+						
+						if(link_id.indexOf(author1) != -1)
+						{
+							
+							//console.log("1: " + val.name);
+							
+							
+							$.each(requestPub.authors, function(elem, val)
+							{
+								if(val.name != author1)
+								{
+									var author2 = val.name;
+									
+									//console.log("2: " + author2);
+									
+									if(link_id.indexOf(author1) != -1 && link_id.indexOf(author2) != -1)
+									{
+										trueLink = true;
+										protectedLinks.push(link_id);
+									}
+								}
+							});
+							
+						}
 
+					}					
+				}); 
+				
+				
+						
+			});
+			
+			link.forEach(function(links_dom)
+			{	
+				for(var i=0; i < links.length; i++)
+				{
+					var link_id = links_dom[i].getAttribute("link_id");
+					var deleteLink = true;
+					$.each(protectedLinks, function(elem, val)
+					{
+						if(link_id === val)
+						{
+							deleteLink = false;
+						}
+					});
+					if(deleteLink)
+					{
+						var selector = ".link[link_id='" + link_id + "']";
+						$(selector).remove();
+					}
+					else
+					{
+						var selector = ".link[link_id='" + link_id + "']";
+						$(selector).css("opacity", "1");
+						$(selector).css("fill", palette.paleyellow);
+					}
+					
+				}
+				
+			});
+			
+			node.forEach(function(nodes_dom)
+			{
+						
+				for(var i=0; i < nodes.length; i++)
+				{
+					var deleteNode = true;
+					var tempNode = nodes_dom[i]; 
+					//console.log(nodes_dom[i]);
+					var circle_id = nodes_dom[i].children[0].getAttribute("id");
+					var text_id = nodes_dom[i].children[2];
+					var circle_name = circle_id.replace("node:", "");
+					
+					$.each(requestPub.authors, function(elem, val)
+					{
+						if(circle_name === val.name)
+						{
+							deleteNode = false;
+						}
+					});
+					
+					if(deleteNode)
+					{
+						var removeNode = document.getElementById(circle_id).parentNode;
+						$(removeNode).remove();
+					}		
+					else
+					{
+						document.getElementById(circle_id).setAttribute("fill", palette.paleyellow)
+						text_id.setAttribute("visibility", "visible");
+					}
+							
+							
+							
+				}
+			});
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 		}
+		
+		
+		
 		
 		//console.log(tagNames);
 		//$("#autocomplete").autocomplete("option", { source: tagNames });
