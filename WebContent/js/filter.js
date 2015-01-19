@@ -121,6 +121,10 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		var pubs = publications || publicationsJSON,
 			filteredPubs = [];
 		
+		if (searchName === null) {
+			return publications;
+		}
+		
 		for (var i = 0; i < pubs.length; i++) {
 			for (var j = 0; j < pubs[i].authors.length; j++) {
 				if (searchName === pubs[i].authors[j].name) {
