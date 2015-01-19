@@ -1,6 +1,6 @@
 var Filter = function (authorsJSON, publicationsJSON) {
 
-	var time_range = [ "2014", "2015" ];
+	var time_range = [2014, 2015];
 	var tagNames = [];
 	var pubNames = [];
 	var searchName = null;
@@ -95,7 +95,6 @@ var Filter = function (authorsJSON, publicationsJSON) {
 
 				for (i; i <= (values2 - values1); i++) {
 				var push = temp++;
-				// console.log(push);
 				time_range.push(push);
 			}
 
@@ -109,7 +108,31 @@ var Filter = function (authorsJSON, publicationsJSON) {
 			}
 			
 			$("#autocomplete_pubs").val("");
+			$("#autocomplete").val("");
 			pubRequest = null;
+			searchName = null;
+			tagNames = [];
+			$.each(publicationsJSON, function(elem, val)
+			{
+				if($.inArray(parseInt(val.year), time_range) > -1)
+				{
+					var obj = val.authors;
+					$.each(obj, function(elem, val)
+					{
+						if($.inArray(val.name, tagNames) == -1)
+						{
+							if(typeof publicationsJSON[elem] != 'undefined')
+							{
+								tagNames.push(val.name);
+							}
+							
+						}
+					});
+				}
+			});
+			
+			$("#autocomplete").autocomplete('option', 'source', tagNames)
+			
 			
 		}
 	});
@@ -133,8 +156,13 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		$.fn.fullpage.moveTo(2);
 		$.fn.fullpage.setKeyboardScrolling(true);
 		
-		
+
 		graph.init(globalAuthors, globalPubs, time_range, searchName, pubRequest);
+		
+		pubRequest = null;
+		$("#autocomplete_pubs").val("");
+		$("#autocomplete").val("");
+		
 		
 		pubs = self.filterByName();
 		pubs = self.filterByTimeRange(pubs);

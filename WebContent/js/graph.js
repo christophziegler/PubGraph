@@ -65,9 +65,6 @@ graph = (function ()
 
 				}
 			}
-			
-			
-				
 			authorView = AuthorView.getInstance(authorsJSON, publications);
 			
 			startGraph();
@@ -95,7 +92,7 @@ graph = (function ()
 		if(pub_flag)
 		{
 			time = [];
-			time.push(requestPub.year);
+			time.push(parseInt(requestPub.year));
 		}
 		
 		
@@ -113,6 +110,11 @@ graph = (function ()
 			var object = authorsJSON[elem];
 			var nodeName = object.name;
 			
+			if(nodeName === requestName)
+			{
+				console.log(authorsJSON[elem]);
+			}
+			
 			
 			
 			
@@ -128,33 +130,24 @@ graph = (function ()
 			
 			$.each(object.publications, function(elem, val) 
 			{
-				
-				
-				//console.log(object.publications[elem]);
 				var pub_id = object.publications[elem];
-				var pub_nr = pub_id.replace("pub_", "");
 				//console.log(pub_id);
-				{
-								
-					var time_flag = false;
-					//console.log(publicationsJSON[14]);
+				var pub_nr = null;				
+				var time_flag = false;
 					
-						
-					$.each(time, function(elem, val) 
+				$.each(publications, function(elem, val)
+				{			
+					if(val.id === pub_id)
 					{
-						if(typeof publications[pub_nr] == 'undefined')
+						//console.log(elem);
+						pub_nr = elem;
+						if($.inArray(parseInt(val.year), time) > -1)
 						{
-							
-							//console.log("ScheißPub: " + pub_nr)
-						}
-						else if(publications[pub_nr].year == time[elem])
-						{
-							//console.log("true: " + publications[pub_nr].year);
 							time_flag = true;
 						}
+					}
 				});
-								
-								
+				
 				if(time_flag)
 				{
 					year_pub = publications[pub_nr].year;
@@ -169,23 +162,19 @@ graph = (function ()
 					{
 						if(connections[elem].number == temp_connection.number)
 						{
-
-							//console.log(temp_connection.number + " Gibts Schon!");
 							connection_exists = true;
 						}
 					});
 									
 					if(!connection_exists)
 					{
-
 						connections.push(temp_connection);
 						//console.log("PUSH");						
 					}
 				}
-				}
+				
 			});
 
-			//console.log(publicationsJSON[14]);
 			var time_flag = false;
 			$.each(time, function(elem, val) 
 			{
@@ -197,15 +186,9 @@ graph = (function ()
 			if(time_flag)
 			{
 				temp_node = {name: nodeName, size: pub_size, publications: pub_thisYear};
-				
-				//console.log(temp_node.name + " : " + temp_node.size);
-				
-				//if(nodes.length <= 10)
-				{
-					nodes.push(temp_node);
-					tagNames.push(nodeName);
-					names.push(nodeName);
-				}
+				nodes.push(temp_node);
+				tagNames.push(nodeName);
+				names.push(nodeName);
 			}
 			
 	    });
@@ -216,44 +199,18 @@ graph = (function ()
 	function buildLinks()
 	{
 		
-		//Sicherheitspush
-		
 		$.each(connections, function(elem, val) 
 		{
-			var tempConnectNumber = val.number;
-			var obj = null;
+			var obj = publications[val.number];
 			
-			//console.log(val.number);
-			$.each(publications, function(elem, val)
-			{
-				var tempPubNr = val.id.replace("pub_", "");
-				if(tempPubNr === tempConnectNumber)
-				{
-					//console.log(tempConnectNumber);
-					//console.log(publications[elem]);
-					obj = publications[elem];
-				}
-			});
-			
-			
-			
-			
-			//console.log(publicationsJSON);
-			
-			//console.log(publicationsJSON);
 			var authors = obj.authors;
 			$.each(authors, function(elem, val) 
 			{
 				var author_source = authors[elem].name;
-				//console.log(author_array);
-				
 				$.each(authors, function(elem, val) 
 				{
 					var author_target = authors[elem].name;
-					//if(author_source != author_target)
 					{
-						//console.log("S: " + author_source + " T: " + author_target);
-						
 						var source_id = null;
 						var target_id = null;
 						
@@ -262,12 +219,10 @@ graph = (function ()
 							if(names[elem] == author_source)
 							{
 								source_id = elem;
-								//console.log("S:" + source_id);
 							}
 							if(names[elem] == author_target)
 							{
 								target_id = elem;
-								//console.log("T:" + target_id);
 							}
 						});
 						
@@ -281,20 +236,14 @@ graph = (function ()
 							
 							$.each(links, function(element, val)
 							{
-								//console.log(links[element].link_id);
-								
 								if ((links[element].link_id.indexOf(author_source) != -1) && (links[element].link_id.indexOf(author_target) != -1))
 								{
-									//console.log("drinne");
 									is_inArray = true;
 									
 									var thickness = links[element].value;
-									//console.log("elem: " + links[element] + " thick: " + (thickness + 1));
 									links[element].value = thickness +1;
 								}
 							});
-							
-							//if(links.length <= 10)
 							{	
 								if(is_inArray == false)
 								{
@@ -307,32 +256,15 @@ graph = (function ()
 				});
 			});
 		});
-		
-		//var temp_link = {source: nodes[25], target: nodes[44], value: 1};
-		//links.push(temp_link);
-		
-		
-		/*
-		 * 
-		 
-		links = [
-		        {source: nodes[0], target: nodes[1], value: 1},
-		        {source: nodes[0], target: nodes[2], value: 2}	    
-		  ]
-		 */
-		 
 	}
 
 	function buildGraph()
 	{
 		
 		var width = $('#graph').css('width');
-		//console.log("width: " + width);
-		
 		var w = (parseInt(width.replace("px", "")) -5);
 		
-		//w = 1200,
-	    h = 900;
+		h = 900;
 		var circleWidth = 15;
 
 		var fontFamily = 'Bree Serif',
@@ -359,8 +291,6 @@ graph = (function ()
 			      "green": "#259286",
 			      "yellowgreen": "#738A05"
 		}
-
-
 
 		var vis = d3.select(document.getElementById("graph"))
 	    .append("svg:svg")
@@ -411,7 +341,6 @@ graph = (function ()
 				
 		link.forEach(function(links_dom)
 		{
-			//console.log(links_dom);
 			for(var i=0; i < links.length; i++)
 			{
 				if(links[i].value != 1)
@@ -426,11 +355,7 @@ graph = (function ()
 	    .data(nodes)
 	    .enter().append("g")
 	    .attr("class", "node")
-
-	    		
-
 		.call(force.drag);
-
 
 		//CIRCLE
 		node.append("svg:circle")
@@ -446,7 +371,8 @@ graph = (function ()
 		.attr("r", "20")
 		.attr("fill", "white")
 		.attr("opacity", "0.1")
-		  //MOUSEOVER
+
+		//MOUSEOVER
 	    .on("mouseover", function(d,i) 
 	    {
 			 this;      
@@ -468,31 +394,15 @@ graph = (function ()
 			.attr("font-size","1.5em")
 			.attr("fill","white")
 			.attr("opacity","1")
-			//.attr("x", circleWidth + 15 )
-			//.attr("y",  (circleWidth/2) )
-	    	 
-			       
-			  
-
+		
 			//TEXT
 			d3.select(this).select("text")
 			.style("cursor", "none")
 			
 			var tempNode = this.parentNode;
-			//console.log(tempNode)
-			
-			//var obj = tempNode.selectAll("circle");
 			var sub_obj = tempNode;
-			//console.log(sub_obj);
-			
-			
 			var circle = sub_obj.childNodes[0];
-			
-			
 			var circle_id = circle.id.replace("node:","");
-			
-			//console.log(circle_id);
-			
 			if(!pub_flag)
 			{
 				node.forEach(function(links_dom)
@@ -506,7 +416,6 @@ graph = (function ()
 						text = links_dom[i].children[2];
 						node = links_dom[i].children[0];
 						node_circle = links_dom[i].children[1];
-						//console.log(node);
 						var circle_toText = links_dom[i];
 						
 						if(text.getAttribute("id").indexOf(text_id) == -1)
@@ -528,130 +437,89 @@ graph = (function ()
 							
 							node.setAttribute("opacity", "1");
 							node.setAttribute("fill", palette.darkerblue);
-							//console.log(node);
 						}
-						
-						
-						//var text = links_dom[i].children[1];
-						//text.setAttribute("id", "text:" + nodes[i].name);
 					}
 				})
-						
-						
-						
-						link.forEach(function(links_dom)
-								{
-							for(var i=0; i < links.length; i++)
+		
+				link.forEach(function(links_dom)
+				{
+					for(var i=0; i < links.length; i++)
+					{
+						if(links_dom[i].getAttribute("link_id").indexOf(circle_id) == -1)
+						{
+							links_dom[i].setAttribute("opacity", "0.3");
+							links_dom[i].setAttribute("stroke", palette.lightgray);
+						}
+						else
+						{
+							links_dom[i].setAttribute("opacity", "0.8");
+							links_dom[i].setAttribute("stroke", palette.paleryellow);
+									
+							var temp_nodeName = links_dom[i].getAttribute("link_id").replace(":", "").replace(circle_id, "");
+									
+							if(!pub_flag && (!name_flag || requestName === circle_id))
 							{
-								if(links_dom[i].getAttribute("link_id").indexOf(circle_id) == -1)
-								{
-									links_dom[i].setAttribute("opacity", "0.3");
-									links_dom[i].setAttribute("stroke", palette.lightgray);
-									//var text = links_dom[i].nextSibling;
-								}
-								else
-								{
-									links_dom[i].setAttribute("opacity", "0.8");
-									links_dom[i].setAttribute("stroke", palette.paleryellow);
-									
-									var temp_nodeName = links_dom[i].getAttribute("link_id").replace(":", "").replace(circle_id, "");
-									
-									//console.log("circle: " + circle_id);
-									if(!pub_flag && (!name_flag || requestName === circle_id))
-									{
-										document.getElementById("node:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
-										document.getElementById("node:" + temp_nodeName).setAttribute("opacity", "0.8");
-										document.getElementById("text:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
-										document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");	
-										document.getElementById("text:" + temp_nodeName).setAttribute("visibility", "visible");
-									}
-									else if(!pub_flag)
-									{
-										document.getElementById("node:" + requestName).setAttribute("fill", palette.paleryellow);
-										document.getElementById("node:" + requestName).setAttribute("opacity", "0.8");
-										document.getElementById("text:" + requestName).setAttribute("fill", palette.paleryellow);
-										document.getElementById("text:" + requestName).setAttribute("opacity", "0.8");
-										document.getElementById("text:" + requestName).setAttribute("visibility", "visible");
-									}
-									//console.log("text:" + temp_nodeName);
-								}
+								document.getElementById("node:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
+								document.getElementById("node:" + temp_nodeName).setAttribute("opacity", "0.8");
+								document.getElementById("text:" + temp_nodeName).setAttribute("fill", palette.paleryellow);
+								document.getElementById("text:" + temp_nodeName).setAttribute("opacity", "0.8");	
+								document.getElementById("text:" + temp_nodeName).setAttribute("visibility", "visible");
 							}
-					});     
-				
+							else if(!pub_flag)
+							{
+								document.getElementById("node:" + requestName).setAttribute("fill", palette.paleryellow);
+								document.getElementById("node:" + requestName).setAttribute("opacity", "0.8");
+								document.getElementById("text:" + requestName).setAttribute("fill", palette.paleryellow);
+								document.getElementById("text:" + requestName).setAttribute("opacity", "0.8");
+								document.getElementById("text:" + requestName).setAttribute("visibility", "visible");
+							}
+						}
+					}
+				});     
 			}
-
-	    	 
 		})
 
 		//MOUSEOUT
 		.on("mouseout", function(d,i) 
 		{
-			//console.log("Raus");
-			
 			if(!pub_flag)
 			{
-				
 				link.forEach(function(links_dom)
-						{
+				{
 					for(var i=0; i < links.length; i++)
 					{
 						links_dom[i].setAttribute("opacity", "0.3");
 						links_dom[i].setAttribute("stroke", palette.lightgray);
-						//console.log("text:" + temp_nodeName);
 					}
 					
 				});
-				
-				
 			
 				node.forEach(function(nodes_dom)
 				{
 					for(var i=0; i < nodes.length; i++)
 					{
-					
 						text_dom = nodes_dom[i].children[2];
 						node_dom = nodes_dom[i].children[0];
-					node_circle = nodes_dom[i].children[1];
-					//console.log(node);
-					var circle_toText = nodes_dom[i];
-					node_dom.setAttribute("opacity", "0.2");
-					node_dom.setAttribute("fill", palette.lightgray);
-					node_circle.setAttribute("opacity", "0.1");
-					node_circle.setAttribute("fill", "white");
-					text_dom.setAttribute("opacity", "0.5");
-					text_dom.setAttribute("fill", palette.lightgray);
-					text_dom.setAttribute("visibility", "hidden");
-									
-									
-					//var text = links_dom[i].children[1];
-					//text.setAttribute("id", "text:" + nodes[i].name);
+						node_circle = nodes_dom[i].children[1];
+						var circle_toText = nodes_dom[i];
+						node_dom.setAttribute("opacity", "0.2");
+						node_dom.setAttribute("fill", palette.lightgray);
+						node_circle.setAttribute("opacity", "0.1");
+						node_circle.setAttribute("fill", "white");
+						text_dom.setAttribute("opacity", "0.5");
+						text_dom.setAttribute("fill", palette.lightgray);
 					}
 				})
-			 
-			}
-			        
-		 })
+			 }
+		})
 		
 		.on("click", function(d,i) 
 		{
-			
-			
-			
 			var obj = d3.select(this).selectAll("circle");
 			var tempNode = this.parentNode;
-			//console.log(tempNode)
-			
-			//var obj = tempNode.selectAll("circle");
 			var sub_obj = tempNode;
-			//console.log(sub_obj);
-			
-			
 			var circle = sub_obj.childNodes[0];
-			
-			
 			var circle_id = circle.id.replace("node:","");
-			//console.log("Angeklickt: " + circle_id);
-			
 			authorView.show(circle_id);
 		});
 		
@@ -677,12 +545,9 @@ graph = (function ()
 				circle.setAttribute("id", "node:" + nodes[i].name);
 				
 				var text = links_dom[i].children[2];
-				//console.log(text);
 				text.setAttribute("id", "text:" + nodes[i].name);
 			}
-		})
-
-
+		});
 
 		force.on("tick", function(e) 
 		{
@@ -729,13 +594,11 @@ graph = (function ()
 					{
 						var selector = ".link[link_id='" + link_id + "']";
 						$(selector).remove();
-						//console.log(".link[link_id='" + link_id + "']");
 					}
 					else
 					{
 						var tempName = link_id.replace(":", "").replace(requestName, "");
 						relatedNodes.push(tempName);
-						//console.log(tempName);
 					}
 				}
 			});  
@@ -747,7 +610,6 @@ graph = (function ()
 				for(var i=0; i < nodes.length; i++)
 				{
 					var tempNode = nodes_dom[i]; 
-					//console.log(nodes_dom[i]);
 					var circle_id = nodes_dom[i].children[0].getAttribute("id")
 					var circle_name = circle_id.replace("node:", "");
 					var related_flag = false;
@@ -769,17 +631,11 @@ graph = (function ()
 				}
 			});
 			
+			 
 			document.getElementById("text:" + requestName).setAttribute("opacity", "1");
 			document.getElementById("text:" + requestName).setAttribute("fill", "white");
 			document.getElementById("node:" + requestName).setAttribute("opacity", "1");
 			document.getElementById("node:" + requestName).setAttribute("fill", palette.darkerblue);
-			
-			//text.setAttribute("opacity", "1");
-			//text.setAttribute("fill", "white");
-			
-			
-			//node.setAttribute("opacity", "1");
-			//node.setAttribute("fill", palette.darkerblue);
 		}
 		
 		if(pub_flag)
@@ -800,18 +656,11 @@ graph = (function ()
 						
 						if(link_id.indexOf(author1) != -1)
 						{
-							
-							//console.log("1: " + val.name);
-							
-							
 							$.each(requestPub.authors, function(elem, val)
 							{
 								if(val.name != author1)
 								{
 									var author2 = val.name;
-									
-									//console.log("2: " + author2);
-									
 									if(link_id.indexOf(author1) != -1 && link_id.indexOf(author2) != -1)
 									{
 										trueLink = true;
@@ -824,9 +673,6 @@ graph = (function ()
 
 					}					
 				}); 
-				
-				
-						
 			});
 			
 			link.forEach(function(links_dom)
@@ -860,12 +706,10 @@ graph = (function ()
 			
 			node.forEach(function(nodes_dom)
 			{
-						
 				for(var i=0; i < nodes.length; i++)
 				{
 					var deleteNode = true;
 					var tempNode = nodes_dom[i]; 
-					//console.log(nodes_dom[i]);
 					var circle_id = nodes_dom[i].children[0].getAttribute("id");
 					var text_id = nodes_dom[i].children[2];
 					var circle_name = circle_id.replace("node:", "");
@@ -888,32 +732,10 @@ graph = (function ()
 						document.getElementById(circle_id).setAttribute("fill", palette.paleyellow)
 						text_id.setAttribute("visibility", "visible");
 					}
-							
-							
-							
 				}
 			});
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		}
-		
-		
-		
-		
-		//console.log(tagNames);
-		//$("#autocomplete").autocomplete("option", { source: tagNames });
-		
-		
-			
-		force.start();	
+	force.start();	
 };
 
 }());

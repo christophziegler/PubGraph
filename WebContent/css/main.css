@@ -14,15 +14,36 @@ body, .stage
 	background: #042029; 
 }
 
-.title h1 {
+#welcome h1 {
 	font-size: 112px;
 }
 
-.title p {
+#welcome p {
 	font-family: super-font,  monospace;
 	font-size: 32px;
 	color: white;
 }
+
+#intro_text
+{
+	margin: 0 auto;
+	width: 85%;
+}
+
+p {
+	font-family: monospace;
+	font-size: 32px;
+	color: white;
+	
+}
+
+.intro_block
+{
+	margin-top: 20px;
+	font-size: 30px;
+	text-align: justify;
+}
+
 
 h1 {
 	font-size: 64px;
