@@ -413,9 +413,9 @@ graph = (function ()
 					for(var i=0; i < nodes.length; i++)
 					{
 						
-						text = links_dom[i].children[2];
-						node = links_dom[i].children[0];
-						node_circle = links_dom[i].children[1];
+						text = links_dom[i].getElementsByTagName("text")[0];//.children[2];
+						node = links_dom[i].getElementsByTagName("circle")[0];//.children[0];
+						node_circle = links_dom[i].getElementsByTagName("circle")[1];//.children[1];
 						var circle_toText = links_dom[i];
 						
 						if(text.getAttribute("id").indexOf(text_id) == -1)
@@ -498,9 +498,9 @@ graph = (function ()
 				{
 					for(var i=0; i < nodes.length; i++)
 					{
-						text_dom = nodes_dom[i].children[2];
-						node_dom = nodes_dom[i].children[0];
-						node_circle = nodes_dom[i].children[1];
+						text_dom = nodes_dom[i].getElementsByTagName("text")[0];//.children[2];
+						node_dom = nodes_dom[i].getElementsByTagName("circle")[0];//.children[0];
+						node_circle = nodes_dom[i].getElementsByTagName("circle")[1];//.children[1];
 						var circle_toText = nodes_dom[i];
 						node_dom.setAttribute("opacity", "0.2");
 						node_dom.setAttribute("fill", palette.lightgray);
@@ -541,11 +541,11 @@ graph = (function ()
 		{
 			for(var i=0; i < nodes.length; i++)
 			{
-				var circle = links_dom[i].children[0];
+				var circle = links_dom[i].getElementsByTagName("circle")[0];//.children[0];
 				circle.setAttribute("r", nodes[i].size);
 				circle.setAttribute("id", "node:" + nodes[i].name);
 				
-				var text = links_dom[i].children[2];
+				var text = links_dom[i].getElementsByTagName("text")[0];//.children[2];
 				text.setAttribute("id", "text:" + nodes[i].name);
 			}
 		});
@@ -611,9 +611,13 @@ graph = (function ()
 				for(var i=0; i < nodes.length; i++)
 				{
 					var tempNode = nodes_dom[i]; 
-					var circle_id = nodes_dom[i].children[0].getAttribute("id")
-					var circle_name = circle_id.replace("node:", "");
+					var circle_id;
+					var circle_name;
 					var related_flag = false;
+					
+					circle_id = nodes_dom[i].getElementsByTagName("circle")[0];//.children[0];
+					circle_id = cirlce_id.getAttribute("id");
+					circle_name = circle_id.replace("node:", "");
 					
 					$.each(relatedNodes, function(elem, val) 
 					{
@@ -711,8 +715,10 @@ graph = (function ()
 				{
 					var deleteNode = true;
 					var tempNode = nodes_dom[i]; 
-					var circle_id = nodes_dom[i].children[0].getAttribute("id");
-					var text_id = nodes_dom[i].children[2];
+					var circle_id = nodes_dom[i].getElementsByTagName("circle")[0];
+					circle_id = circle.id; //.children[0].getAttribute("id");
+					var text_id = nodes_dom[i].getElementsByTagName("text")[2];
+					text_id = text_id.id; //.children[2];
 					var circle_name = circle_id.replace("node:", "");
 					
 					$.each(requestPub.authors, function(elem, val)
