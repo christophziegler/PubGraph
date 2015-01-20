@@ -1,5 +1,6 @@
 # PubVis 1.0
-PubVis 1.0 is a visualization tool for the publication database of the media informatics chair at Ludwig-Maximilians-Universität Munich which allows discovering different statistics on the work of the group.
+PubVis 1.0 is a visualization tool for the publication database of the media informatics chair at Ludwig-Maximilians-Universität Munich which allows discovering different statistics on the work of the group. 
+
 ![Welcome](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/welcome.PNG)
 
 The app is structured in a full page layout with different vertical levels. You can switch between vertical levels by scrolling up or down. On the top level you find general information on the app like these help instructions. On the second level you find different graphics on the publications of media informatics group. On the third level the preferences can be found which allow filtering the data set by time spans, author names, publication title or keywords.
