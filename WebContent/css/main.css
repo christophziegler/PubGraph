@@ -25,13 +25,13 @@ body, .stage
 }
 
 #welcome h1 {
-	font-size: 112px;
+	font-size: 3em; /*112px;*/
 	margin-bottom: 48px;
 }
 
 #welcome p {
 	font-family: super-font,  monospace;
-	font-size: 32px;
+	font-size: 1em;/* 	32px; */
 	color: white;
 	padding-bottom: 18px;
 }
@@ -114,8 +114,8 @@ h1, h2 {
 #pageNav li {
 	color: #042029;
 	list-style-type: none;
-	margin-top: 15px;
-	padding: 15px 20px;
+	margin-top: 7.5%;
+	padding: 5% 5%;
 	background-color: white;
 	opacity: .1;
 	border-radius: 10px;

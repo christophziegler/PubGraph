@@ -46,6 +46,15 @@ var Util = (function () {
 			
 		},
 		
+		/**
+		 * Provides shorter version of the url, e.g. to be used as displaed string in a.
+		 */
+		getShortUrl: function (url) {
+			var a = document.createElement("a");
+			a.href = url;
+			return a.hostname;
+		},
+		
 		getAuthorsLastNames: function (authorNames) {
 			var lastNames = [], name;
 			for (var i = 0; i < authorNames.length; i++) {

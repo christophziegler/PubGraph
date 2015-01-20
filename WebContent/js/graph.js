@@ -8,9 +8,9 @@ graph = (function ()
 {
 	
 	//Fisheye
-	var fisheye = d3.fisheye.circular()
-    .radius(200)
-    .distortion(2);
+//	var fisheye = d3.fisheye.circular()
+//    .radius(200)
+//    .distortion(2);
 	
 	var entry = false;
 	
@@ -261,10 +261,10 @@ graph = (function ()
 	function buildGraph()
 	{
 		
-		var width = $('#graph').css('width');
-		var w = (parseInt(width.replace("px", "")) -5);
+//		var width = $('#graph').css('width');
+		var w = $("#graph").width();//(parseInt(width.replace("px", "")) -5);
 		
-		h = 900;
+		var h = $(window).height();//900;
 		var circleWidth = 15;
 
 		var fontFamily = 'Bree Serif',
@@ -299,27 +299,46 @@ graph = (function ()
 	    .attr("width", w)
 	    .attr("height", h);
 		
-		var gravity = 0.5;
-		if(time.length == 1)
-		{
-			gravity = 0.5;
+		/*
+		 * Entspricht logarithmus zur basis 1.7. Bei der Rechnung kommen
+		 * in etwa die gleichen Werte raus, wie bei der if/else-Verzeigung.
+		 * Soll der Wert für die Gravitation schneller steigen, dann den Wert
+		 * für die basis niedriger machen, wenn kleiner erhöhen.
+		 */ 
+		var gravity = .6 * Math.log(time.length)/Math.log(1.55);
+		
+		/*
+		 * Normieren von gravity auf entweder die vertikale (bei Portrait mode) oder 
+		 * horizontale (bei Landscape mode) Auflösung des Entwicklungsgeräts, damit
+		 * die Darstellung auf Geräten mit anderen Auflösungen ähnlich ist´.
+		 */
+		if ($(window).width() > $(window).height()) {
+			gravity = gravity * (1907/$(window).width());
+		} else {
+			gravity = gravity * (933/$(window).height());
 		}
-		else if(time.length == 2)
-		{
-			gravity = 1.0;
-		}
-		else if(time.length == 3)
-		{
-			gravity = 1.5;
-		}
-		else if(time.length == 4)
-		{
-			gravity = 2.5;
-		}
-		else if(time.length >= 5)
-		{
-			gravity = 3
-		}
+		
+		
+//		if(time.length == 1)
+//		{
+//			gravity = gravity;
+//		}
+//		else if(time.length == 2)
+//		{
+//			gravity = 1.0;
+//		}
+//		else if(time.length == 3)
+//		{
+//			gravity = 1.5;
+//		}
+//		else if(time.length == 4)
+//		{
+//			gravity = 2.5;
+//		}
+//		else if(time.length >= 5)
+//		{
+//			gravity = 3
+//		}
 		
 
 		var force = d3.layout.force()

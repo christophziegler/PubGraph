@@ -133,7 +133,7 @@ var AuthorView = (function() {
 						d3_info = d3.select("#general").append("div").attr("id", "generalInfo").append("ul");
 						d3_info.append("li").html("Active since: " + pubStats.activeSince);
 						d3_info.append("li").html("Number of publications: " + pubStats.numPub);
-						d3_info.append("li").html("Rank: " + "... TODO ..."); // TODO Compute rank (Quantile)
+//						d3_info.append("li").html("Rank: " + "... TODO ..."); // TODO Compute rank (Quantile)
 						
 						if (author.hasOwnProperty("url")) {
 							
@@ -141,7 +141,7 @@ var AuthorView = (function() {
 							d3_info.append("li").html("Website: ").append("a")
 								.attr("href", author.url)
 								.attr("target", "_blank")
-								.html(author.url);
+								.html(Util.getShortUrl(author.url));
 							
 						}
 						

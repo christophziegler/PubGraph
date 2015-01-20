@@ -66,6 +66,15 @@ $(document).ready(function() {
 	});
 	
 	
+	$('#welcome').flowtype({
+		minimum   : 500,
+		maximum   : 1000,
+		minFont   : 12,
+		maxFont   : 40,
+		fontRatio : 40
+	});
+	
+	
 	/*
 	 * Configure navigation
 	 */
