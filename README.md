@@ -14,7 +14,7 @@ Clicking on a vertex in the graph will take you to further vertical level which 
 - [The App](http://jqueryui.com/)
 
 ##Acknowledgement
-PubVis makes use of the follwing libraries:
+PubVis makes use of the follwing ressources:
 - [PubDB](http://www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all): Publication database of the media informatics chair of LMU 
 - [jQuery](http://jquery.com/): DOM manipulation
 - [jQuery UI](http://jqueryui.com/): Slider, Accordion
