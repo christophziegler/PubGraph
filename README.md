@@ -36,13 +36,21 @@ On the verical top-level you find general information on the app like help instr
 ##Live Demo
 You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
-##Testing on
-- Laptop with an 12" Display and 1920x1080 resolution running Google Chrome running on Windows 8.1
+
+##Limitations
+### Data set
+PubVis 1.0 can only visualize data that's available. For some of the grafics use fields from PubDB that is not available for all the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all those entries contain the location field.
+
+
+##Tested on
+- Laptop with an 12" Display and 1920x1080 resolution running Google Chrome running on Windows 8.1, navigation with mouse: point, click left, scroll up/down 
 
 
 ##TODOs
 - Interop-Testing: different devices: PC, Laptop, Tablet, Smartphone with different: dislplays, browsers, OS ...
-- More filter options: Author list
+- More filter options: list of author names, list of publications keywords (keywords have already been parsed from the BibText entries in PubDB)
+- Navigation/Interaction: test and refine navigation with different input devices: touch pad, keyboard, touch screen ...
+
 
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
