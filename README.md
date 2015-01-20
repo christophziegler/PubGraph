@@ -15,10 +15,15 @@ Moving your mouse a vertex will highlight the vertex and its next neighbors. Mor
 
 Clicking on a vertex in the graph will take you to a page with detailed information on an author and his or her publications.
 
+
 ###World Map
 A world map allows exploring the frequency of publication by conference-host country. Frequencies are color coded. Simply hover a country with your mouse to get the exact value.
 
 ![World Map](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/worldmap-highlighting.PNG)
+
+###Author's details
+
+
 
 ##Navigation
 The app is structured in a full page layout with different vertical levels and horizontal levels. You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
@@ -26,14 +31,17 @@ The app is structured in a full page layout with different vertical levels and h
 ##Structure
 On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the graph or the world map. On the third level the preferences can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
 
-###Author's details
-
 
 
 ##Live Demo
 You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
+##Testing on
+- Laptop with an 12" Display and 1920x1080 resolution running Google Chrome running on Windows 8.1
+
+
 ##TODOs
+- Interop-Testing: different devices: PC, Laptop, Tablet, Smartphone with different: dislplays, browsers, OS
 
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
