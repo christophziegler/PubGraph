@@ -42,7 +42,7 @@ You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 PubVis 1.0 can only visualize data that's available. For some of the grafics use fields from PubDB that is not available for all the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all those entries contain the location field.
 
 
-##Tested on
+##Tested successfully with the follwing setup
 - Laptop with an 12" Display and 1920x1080 resolution running Google Chrome running on Windows 8.1, navigation with mouse: point, click left, scroll up/down 
 
 
