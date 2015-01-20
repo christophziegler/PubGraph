@@ -9,21 +9,33 @@ var Filter = function (authorsJSON, publicationsJSON) {
 	
 	
 	/*
-	 * Get author names.
-	 */
-	for (var i = 0; i < authorsJSON.length; i++) {
-		tagNames.push(authorsJSON[i].name);
-	}
-	
-	/*
-	 * Get publications title
-	 */
-	for (var i = 0; i < publicationsJSON.length; i++) 
+	* Get publications title
+	*/
+	for (var i = 0; i < publicationsJSON.length; i++)
 	{
 		pubNames.push(publicationsJSON[i].title.name);
 	}
 	
-	
+	/*
+	 * Get author names.
+	 */
+	$.each(publicationsJSON, function(elem, val)
+	{
+		if($.inArray(parseInt(val.year), time_range) > -1)
+		{
+			var obj = val.authors;
+			$.each(obj, function(elem, val)
+			{
+				if($.inArray(val.name, tagNames) == -1)
+				{
+					if(typeof publicationsJSON[elem] != 'undefined')
+					{
+						tagNames.push(val.name);
+					}
+				}
+			});
+		}
+	});
 	
 
 	$("#autocomplete").autocomplete({
@@ -46,6 +58,7 @@ var Filter = function (authorsJSON, publicationsJSON) {
 		}
 
 	});
+	
 	
 	$("#autocomplete_pubs").autocomplete({
 		source : pubNames,
