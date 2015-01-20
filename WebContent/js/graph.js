@@ -736,7 +736,7 @@ graph = (function ()
 					var tempNode = nodes_dom[i]; 
 					var circle_id = nodes_dom[i].getElementsByTagName("circle")[0];
 					circle_id = circle_id.id; //.children[0].getAttribute("id");
-					var text_id = nodes_dom[i].getElementsByTagName("text")[2];
+					var text_id = nodes_dom[i].getElementsByTagName("text")[0];
 					text_id = text_id.id; //.children[2];
 					var circle_name = circle_id.replace("node:", "");
 					
