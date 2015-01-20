@@ -25,12 +25,13 @@ The app is structured in a full page layout with different vertical levels and h
 
 ##Structure
 On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the graph or the world map. On the third level the preferences can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
- 
+
+###Author's details
 
 
 
-##Demo
-You can try out PubVis [here](http://botterblaumenstengel.de/pubvis/).
+##Live Demo
+You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
 ##TODOs
 
