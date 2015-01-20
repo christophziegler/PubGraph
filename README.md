@@ -6,15 +6,18 @@ PubVis 1.0 is a visualization tool for the publication database (PubDB) of the m
 ##Visualisations
 ###Graph
 Authors and publications in PubDB the are displayed in a graph. Vertices in that graph represent authors. Edges represent collaborations between authors. The size of a vertex corresponds with the amount of publications of the respective author. The stroke with of each edge corresponds with the number of publications both authors wrote together.
+
 ![Graph](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/graph-standard.PNG)
 
 Moving your mouse a vertex will highlight the vertex and its next neighbors. Moreover the names of the respective authors are displayed next to the vertices.   
+
 ![Graph](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/graph-standard-highlighting.PNG)
 
 Clicking on a vertex in the graph will take you to a page with detailed information on an author and his or her publications.
 
 ###World Map
 A world map allows exploring the frequency of publication by conference-host country. Frequencies are color coded. Simply hover a country with your mouse to get the exact value.
+
 ![World Map](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/worldmap-highlighting.PNG)
 
 ##Navigation
