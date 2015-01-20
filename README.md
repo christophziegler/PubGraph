@@ -22,6 +22,8 @@ On the verical top-level you find general information on the app like help instr
 ##Demo
 You can try out PubVis [here](http://botterblaumenstengel.de/pubvis/).
 
+##TODOs
+
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
 - [PubDB](http://www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all): Publication database of the media informatics chair of LMU 
@@ -34,3 +36,4 @@ PubVis makes use of the follwing ressources:
 - [ISO-3166 Country and Dependent Territories Lists with UN Regional Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes): Used to map country names to alpha-3 country codes. (Needed for interaction with interface of Data Maps.)
 - [BibTex Parser](https://github.com/mikolalysenko/bibtex-parser): Parse BibTex entries in the PubDB to get information on conference location and keywords.
 - [PubDB to JSON converter](https://github.com/wilkoer/pubdb_to_json_converter/): Proxy server and client-side parser for main page of PubDB.
+- [FlowType](https://github.com/simplefocus/FlowType.JS/): Responsive fonts 
