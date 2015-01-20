@@ -11,7 +11,7 @@ Clicking on a vertex in the graph will take you to further vertical level which 
 
 ##Links
 - [Video](http://jqueryui.com/)
-- [The App](http://jqueryui.com/)
+- [The App](http://botterblaumenstengel.de/pubvis/)
 
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
