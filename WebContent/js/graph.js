@@ -756,7 +756,7 @@ graph = (function ()
 					else
 					{
 						document.getElementById(circle_id).setAttribute("fill", palette.paleyellow)
-						text_id.setAttribute("visibility", "visible");
+						nodes_dom[i].getElementsByTagName("text")[0].setAttribute("visibility", "visible");
 					}
 				}
 			});
