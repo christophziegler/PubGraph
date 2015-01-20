@@ -14,7 +14,8 @@ Moving your mouse a vertex will highlight the vertex and its next neighbors. Mor
 Clicking on a vertex in the graph will take you to a page with detailed information on an author and his or her publications.
 
 ###World Map
-On the second horizontal level of the second vertical level a world map can be found which allows exploring the frequency of publication by conference-host country.
+A world map allows exploring the frequency of publication by conference-host country. Frequencies are color coded. Simply hover a country with your mouse to get the exact value.
+![World Map](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/worldmap-highlighting.PNG)
 
 ##Navigation
 The app is structured in a full page layout with different vertical levels and horizontal levels. You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
