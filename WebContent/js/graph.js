@@ -638,7 +638,7 @@ graph = (function ()
 					var related_flag = false;
 					
 					circle_id = nodes_dom[i].getElementsByTagName("circle")[0];//.children[0];
-					circle_id = cirlce_id.getAttribute("id");
+					circle_id = circle_id.getAttribute("id");
 					circle_name = circle_id.replace("node:", "");
 					
 					$.each(relatedNodes, function(elem, val) 
