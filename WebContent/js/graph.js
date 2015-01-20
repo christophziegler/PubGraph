@@ -305,7 +305,10 @@ graph = (function ()
 		 * Soll der Wert für die Gravitation schneller steigen, dann den Wert
 		 * für die basis niedriger machen, wenn kleiner erhöhen.
 		 */ 
-		var gravity = .6 * Math.log(time.length)/Math.log(1.55);
+		var gravity = 1;
+		if (time.length > 1) {
+			gravity = .6 * Math.log(time.length)/Math.log(1.55);
+		}
 		
 		/*
 		 * Normieren von gravity auf entweder die vertikale (bei Portrait mode) oder 
