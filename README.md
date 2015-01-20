@@ -41,7 +41,8 @@ You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
 
 ##TODOs
-- Interop-Testing: different devices: PC, Laptop, Tablet, Smartphone with different: dislplays, browsers, OS
+- Interop-Testing: different devices: PC, Laptop, Tablet, Smartphone with different: dislplays, browsers, OS ...
+- More filter options: Author list
 
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
