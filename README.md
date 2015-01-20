@@ -39,7 +39,7 @@ You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
 ##Limitations
 ### Data set
-PubVis 1.0 can only visualize data that's available. For some of the grafics use fields from PubDB that is not available for all the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all those entries contain the location field.
+PubVis 1.0 can only visualize data that's available. For some of the grafics use fields from PubDB that is not available for all the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all of those entries contain the location field. E.g. On 20.01.2014 PubVis 1.0 found 733 publications in PubDB and could crawl 353 bib entries. Only 136 of these provided useful location information. Thus, be careful with your interpretation of the illustrations.
 
 
 ##Tested on
