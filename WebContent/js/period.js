@@ -45,6 +45,7 @@ var PeriodView = (function() {
 				// Filter info
 				var pubs = Util.getPublications(publications, pubRefs);
 				var coauthors = Util.getPubLicationStatistics(pubs, authorName).coauthors;
+				var lastNames = Util.getAuthorsLastNames([authorName]);
 				
 				initView();
 				
@@ -73,8 +74,14 @@ var PeriodView = (function() {
 				Util.createCoauthorsChart(authorName, "authorZoom1", "activityAuthorZoom1", coauthors);
 				
 				
+				
 				// Update fullpage
 				$.fn.fullpage.reBuild();
+				
+				// Enable page navigation element for author
+				$("[data-pageNav='authorZoom1']").removeClass("disabled").text(lastNames + " in " + year);
+
+				// Go to author page
 				$.fn.fullpage.moveTo("authorZoom1", 0);
 
 			}

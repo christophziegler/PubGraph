@@ -11,7 +11,11 @@ $(document).ready(function() {
 	
 	$('#fullpage').fullpage({
 		scrollOverflow: true,
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
 		afterLoad: function (anchor, index) {
+			
+			var pageNavAnchor;
 			
 			/* Prohibit scrolling to disabled sections
 			 * (i.e. these views have not been initialized. Thus there is no content
@@ -30,8 +34,35 @@ $(document).ready(function() {
 				$.fn.fullpage.setAllowScrolling(true, "down");
 			}
 			
-		}
-		
+			/*
+			 * Update page navigation
+			 */
+			switch (anchor) {
+			case "chair":
+				pageNavAnchor = "chair";
+				break;
+			case "filter":
+				pageNavAnchor = "filter";
+				break;
+			case "author":
+				pageNavAnchor = "author";
+				break;
+			case "authorZoom1":
+				pageNavAnchor = "authorZoom1";
+				break;
+			default:
+				break;
+			}
+			
+			$("[data-pageNav='" + pageNavAnchor + "']").addClass("active").siblings().removeClass("active");
+			
+			if (anchor === "info") {
+				$("#pageNav").fadeOut();
+			} else {
+				$("#pageNav").fadeIn();
+			}
+			
+		}		
 	});
 	
 	// create a new pubDB json object

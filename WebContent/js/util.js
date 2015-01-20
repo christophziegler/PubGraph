@@ -45,6 +45,15 @@ var Util = (function () {
 			return pubList;
 			
 		},
+		
+		getAuthorsLastNames: function (authorNames) {
+			var lastNames = [], name;
+			for (var i = 0; i < authorNames.length; i++) {
+				name = authorNames[i].split(" ");
+				lastNames.push((name[name.length-1]).trim());
+			}
+			return lastNames;
+		},
 	
 		showPublications: function (nodeId, publications) {
 			
@@ -113,9 +122,9 @@ var Util = (function () {
 				left : 40
 			}, 
 			
-			width = $("#" + dialogId).width()*.8 - margin.left - margin.right;
+			width = $("#" + dialogId).width()*.7 - margin.left - margin.right;
 			
-			height = $("#" + dialogId).height()*.8 - margin.top - margin.bottom;
+			height = $("#" + dialogId).height()*.7 - margin.top - margin.bottom;
 
 			x = d3.scale.ordinal().rangeRoundBands([ 0, width ], .1);
 
@@ -280,7 +289,7 @@ var Util = (function () {
 			
 			var width, barHeight, x, chart, bar;
 			
-			width = $("#" + dialogId).width()*.8;
+			width = $("#" + dialogId).width()*.7;
 			barHeight = 35;
 
 			x = d3.scale.linear().range([0, width*.8 ]);

@@ -44,6 +44,7 @@ var CollabView = (function() {
 				// Filter info
 				var pubs = Util.getPublications(publications, pubRefs);
 				var activity = Util.getPubLicationStatistics(pubs).activity;
+				var lastNames = Util.getAuthorsLastNames(authorNames);
 				
 				initView();
 				
@@ -74,6 +75,14 @@ var CollabView = (function() {
 				
 				// Update fullpage
 				$.fn.fullpage.reBuild();
+				
+				// Enable page navigation element for author
+				$("[data-pageNav='authorZoom1']").removeClass("disabled");
+				
+				// Change text of nav element to last name author1 + last name author1
+				$("[data-pageNav='authorZoom1']").text(lastNames[0] + " & " + lastNames[1]);
+				
+				// Go to author page
 				$.fn.fullpage.moveTo("authorZoom1", 0);
 
 			}

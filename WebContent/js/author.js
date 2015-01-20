@@ -116,7 +116,7 @@ var AuthorView = (function() {
 						$(".general").children("h1").text(authorName);
 						$(".publications").children("h2").text("Publications of " + authorName);
 						$(".coauthors").children("h2").text("Coauthors of " + authorName);
-						$(".activity").children("h2").text("Anual activity of " + authorName);
+						$(".activity").children("h2").text("Annual activity of " + authorName);
 						
 						
 						
@@ -170,6 +170,12 @@ var AuthorView = (function() {
 						
 						// Update fullpage
 						$.fn.fullpage.reBuild();
+						
+						// Enable page navigation element for author
+						$("[data-pageNav='author']").removeClass("disabled")
+							.text(Util.getAuthorsLastNames([authorName]));
+						
+						// Go to author page
 						$.fn.fullpage.moveTo("author", 0);
 						
 											
