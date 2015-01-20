@@ -9,9 +9,8 @@ By clicking on the left and right arrows you can switch between horizontal level
 
 Clicking on a vertex in the graph will take you to further vertical level which provides more detailed information on a author and his or her publications.
 
-##Links
-- [Video](http://jqueryui.com/)
-- [The App](http://botterblaumenstengel.de/pubvis/)
+##Demo
+You can try out PubVis [here](http://botterblaumenstengel.de/pubvis/).
 
 ##Acknowledgement
 PubVis makes use of the follwing ressources:
