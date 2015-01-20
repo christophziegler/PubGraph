@@ -65,6 +65,15 @@ $(document).ready(function() {
 		}		
 	});
 	
+	
+	/*
+	 * Configure navigation
+	 */
+	$("#pageNav li").on("click", function () {
+		$.fn.fullpage.moveTo($(this).attr("data-pageNav"));
+	})
+	
+	
 	// create a new pubDB json object
 	var converter = new pubDB.json();
  
