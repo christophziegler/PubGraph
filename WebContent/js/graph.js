@@ -112,7 +112,7 @@ graph = (function ()
 			
 			if(nodeName === requestName)
 			{
-				console.log(authorsJSON[elem]);
+				//console.log(authorsJSON[elem]);
 			}
 			
 			
