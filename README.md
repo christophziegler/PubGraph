@@ -15,6 +15,7 @@ Clicking on a vertex in the graph will take you to further vertical level which 
 
 ##Acknowledgement
 PubVis makes use of the follwing libraries:
+- [PubDB](http://www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all): Publication database of the media informatics chair of LMU 
 - [jQuery](http://jquery.com/): DOM manipulation
 - [jQuery UI](http://jqueryui.com/): Slider, Accordion
 - [D3](http://d3js.org/): Intersactive SVG grafics
