@@ -3,6 +3,29 @@
 
 PubVis 1.0 is a visualization tool for the publication database (PubDB) of the media informatics chair at Ludwig-Maximilians-Universität Munich which allows discovering different statistics on the work of the group.
 
+**[Visualisations](#visualisations)**
+
+* [Graph](#graph)
+* [World map](#world-map)
+* [Author's details](#authors-details)
+* [Author's details subpages](#authors-details-subpages)
+
+**[Interaction](#interaction)**
+
+* [Filters](#filters)
+* [Structure & Navigation](#structure-navigation)
+
+**[Live demo](#live-demo)**
+
+**[Limitations](#limitations)**
+
+**[Tested on](#tested-on)**
+
+**[TODOs](#todos)**
+
+**[Acknowledgement](#acknowledgement)**
+
+
 ##Visualisations
 ###Graph
 Authors and publications in PubDB the are displayed in a graph. Vertices in that graph represent authors. Edges represent collaborations between authors. The size of a vertex corresponds with the amount of publications of the respective author. The stroke with of each edge corresponds with the number of publications both authors wrote together.
@@ -49,11 +72,13 @@ A world map allows exploring the frequency of publication by conference-host cou
 ![Number of publications per year with a certain coauthor](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-annual-collab.PNG)
 
 
-##Filters
+##Interaction
+
+###Filters
 ![Number of publications per year with a certain coauthor](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/filter-autocomplete.png)
 
 
-##Structure & Navigation
+###Structure & Navigation
 The app is structured in a full page layout with different vertical levels and horizontal levels. On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the [graph](#graph) or the [world map](#world-map). On the third level the [preferences](#filters) can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
 
 You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
