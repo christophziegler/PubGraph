@@ -10,13 +10,19 @@ The below explainations will give you an idea about the project. Here is overvie
 * [World map](#world-map)
 * [Author's details](#authors-details)
 * [Author's details subpages](#authors-details-subpages)
+
 **[Interaction](#interaction)**
 * [Data filters](#data-filters)
 * [Application structure & navigation](#application-structure-navigation)
+
 **[Live demo](#live-demo)**
+
 **[Limitations](#limitations)**
+
 **[Tested on](#tested-on)**
+
 **[TODOs](#todos)**
+
 **[Acknowledgement](#acknowledgement)**
 
 
