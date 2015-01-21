@@ -5,7 +5,7 @@ PubVis 1.0 is a visualization tool for the publication database (PubDB) of the m
 
 Check out the [PubVis 1.0 live-demo](http://botterblaumenstengel.de/pubvis/).
 
-Below you get further information on the project. Here is overview on what you will find:
+Below you get further information on the project. Here is an overview on what you will find:
 
 **[Visualisations](#visualisations)**
 * [Graph](#graph)
