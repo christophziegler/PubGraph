@@ -52,7 +52,7 @@ A world map allows exploring the frequency of publication by conference-host cou
 The app is structured in a full page layout with different vertical levels and horizontal levels. You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
 
 ##Structure
-On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the graph or the world map. On the third level the preferences can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
+On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the [graph](#graph) or the [world map](#world-map). On the third level the preferences can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
 
 
 
