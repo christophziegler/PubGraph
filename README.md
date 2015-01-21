@@ -46,8 +46,7 @@ A world map allows exploring the frequency of publication by conference-host cou
 ![Publications with a certain coauthor](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-pubs-collab.PNG)
 
 ####Number of publications per year with a certain coauthor
-####Publications with a certain coauthor
-![Publications with a certain coauthor](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-annual-collab.PNG)
+![Number of publications per year with a certain coauthor](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-annual-collab.PNG)
 
 ##Navigation
 The app is structured in a full page layout with different vertical levels and horizontal levels. You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
