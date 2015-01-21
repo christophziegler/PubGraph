@@ -13,7 +13,7 @@ Moving your mouse a vertex will highlight the vertex and its next neighbors. Mor
 
 ![Graph](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/graph-standard-highlighting.PNG)
 
-Clicking on a vertex in the graph will take you to a page with [detailed information on an author](#Author's details) and his or her publications.
+Clicking on a vertex in the graph will take you to a page with [detailed information on an author](#authors-details) and his or her publications.
 
 
 ###World Map
