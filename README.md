@@ -22,7 +22,17 @@ A world map allows exploring the frequency of publication by conference-host cou
 ![World Map](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/worldmap-highlighting.PNG)
 
 ###Author's details
+#### Overview
+![Author Overview](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-general.PNG)
 
+####Publications list
+![Author Overview](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-publications.PNG)
+
+####Coauthors list
+![Author Overview](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-coauthors.PNG)
+
+#### Number of publications per year
+![Author Overview](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/author-pubs-year.PNG)
 
 
 ##Navigation
