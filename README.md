@@ -3,7 +3,9 @@
 
 PubVis 1.0 is a visualization tool for the publication database (PubDB) of the media informatics chair at Ludwig-Maximilians-Universität Munich which allows discovering different statistics on the work of the group.
 
-The below explainations will give you an idea about the project. Here is overview on what you will find:
+You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
+
+The below you get further information on the project. Here is overview on what you will find:
 
 **[Visualisations](#visualisations)**
 * [Graph](#graph)
@@ -83,10 +85,6 @@ The app is structured in a full page layout with different vertical levels and h
 
 You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
 
-
-
-##Live Demo
-You can try out PubVis 1.0 [here](http://botterblaumenstengel.de/pubvis/).
 
 
 ##Limitations
