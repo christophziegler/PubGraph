@@ -71,7 +71,7 @@ PubVis 1.0 can only visualize data that's available. For some of the grafics use
 
 ##Tested on
 The current version of Pub 1.0 has been tested on the following setup:
-- Laptop with an 12" Display and 1920x1080 resolution running Google Chrome on Windows 8.1, navigation with mouse: point, click left, scroll up/down 
+- Laptop with an 1920x1080, 12" display running Google Chrome on Windows 8.1, navigation with mouse: point, click left, scroll up/down 
 
 
 ##TODOs
