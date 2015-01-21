@@ -13,7 +13,7 @@ The below explainations will give you an idea about the project. Here is overvie
 
 **[Interaction](#interaction)**
 * [Data filters](#data-filters)
-* [Application structure & navigation](#application-structure-&-navigation)
+* [Application structure & navigation](#application-structure-and-navigation)
 
 **[Live demo](#live-demo)**
 
