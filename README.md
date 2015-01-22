@@ -32,7 +32,7 @@ Authors and publications in PubDB the are displayed in a graph. Vertices in that
 
 ![Graph](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/graph-standard.PNG)
 
-Moving your mouse a vertex will highlight the vertex and its next neighbors. Moreover the names of the respective authors are displayed next to the vertices.   
+Moving your mouse over a vertex will highlight the vertex and its next neighbors. Moreover the names of the respective authors are displayed next to the vertices.   
 
 ![Graph](https://raw.github.com/katzenfriseur/PubGraph/master/WebContent/img/readme/graph-standard-highlighting.PNG)
 
@@ -79,7 +79,7 @@ A world map allows exploring the frequency of publication by conference-host cou
 
 
 ###Application structure and navigation
-The app is structured in a full page layout with different vertical levels and horizontal levels. On the verical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the [graph](#graph) or the [world map](#world-map). On the third level the [preferences](#data-filters) can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
+The app is structured in a full page layout with different vertical levels and horizontal levels. On the vertical top-level you find general information on the app like help instructions. On the second level you find different graphics on the publications of media informatics group, like the [graph](#graph) or the [world map](#world-map). On the third level the [preferences](#data-filters) can be found which allow filtering the data set by time spans, author names, publication title or keywords. Further vertical levels appear once you interact with the graph.
 
 You can switch between vertical levels by scrolling up or down. You can switch between horizontal levels by clicking on the arrows on the left and right side of the screen.
 
@@ -87,7 +87,7 @@ You can switch between vertical levels by scrolling up or down. You can switch b
 
 ##Limitations
 ### Data set
-PubVis 1.0 can only visualize data that's available. For some of the grafics use fields from PubDB that is not available for all the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all of those entries contain the location field. E.g. On 20.01.2014 PubVis 1.0 found 733 publications in PubDB and found 353 corresponding BibTex entries. Only 136 of these entries provided useful location information. Thus, be careful with your interpretation of the illustrations.
+PubVis 1.0 can only visualize data that's available. Some of the grafics use fields from PubDB that are not available for all of the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all of those entries contain the location field. E.g. On 20.01.2014 PubVis 1.0 found 733 publications in PubDB and found 353 corresponding BibTex entries. Only 136 of these entries provided useful location information. Thus, be careful with your interpretation of some of the illustrations.
 
 
 ##Tested on
