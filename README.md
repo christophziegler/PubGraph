@@ -19,7 +19,7 @@ Below you get further information on the project. Here is an overview on what yo
 
 **[Limitations](#limitations)**
 * [Data set](#data-set)
-* [(Input) devices](#input-devices)
+* [(Input) devices](#input-devices-and-screen-sizes)
 
 **[Tested on](#tested-on)**
 
