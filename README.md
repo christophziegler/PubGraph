@@ -104,8 +104,8 @@ The current version of Pub 1.0 has been tested on the following setup:
 - **Interop-Testing**: different devices: PC, Laptop, Tablet, Smartphone with different: dislplays, browsers, OS ...
 - **More filter options**: *list* of author names, *list* of publications keywords (keywords have already been parsed from the BibText entries in PubDB)
 - **Navigation/Interaction**: test and refine navigation with different input devices: touch pad, keyboard, touch screen ...
-- **Bar charts** for annual activity stretch horizontaly to fill a certain area of the screen. This leads to very wide bars in charts for data that covers a only little time spans.
-- **Zero-padding** in bar charts for annual activity. In some cases there may be no publications for a year in the x domain. In the current version thes years are left out in the diagram, which appears not intuitive or inconsistent. The values for years in within the x domain were there is no data should be filled with zeros instead.
+- **Bar charts** for annual activity are stretch horizontaly to fill a certain area of the screen. This leads to very wide bars in charts for data that covers a only little time spans.
+- **Zero-padding** in data set used by bar charts for annual activity. In some cases there may be no publications for a year in the x domain. In the current version these years are left out in the diagram completely, which appears not intuitive or inconsistent. The values for years within the x domain were there is no data should be filled with zeros instead.
 
 
 ##Acknowledgement
