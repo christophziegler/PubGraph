@@ -18,6 +18,8 @@ Below you get further information on the project. Here is an overview on what yo
 * [Application structure and navigation](#application-structure-and-navigation)
 
 **[Limitations](#limitations)**
+* [Data set](#data-set)
+* [(Input) devices](#input-devices)
 
 **[Tested on](#tested-on)**
 
@@ -88,6 +90,9 @@ You can switch between vertical levels by scrolling up or down. You can switch b
 ##Limitations
 ### Data set
 PubVis 1.0 can only visualize data that's available. Some of the grafics use fields from PubDB that are not available for all of the publication entries. This is e.g. the case for the world map. Conference venues are retrieved from the location field specified in the BibTex entries crawled from the [PubDB main page](www.medien.ifi.lmu.de/cgi-bin/search.pl?all:all:all:all:all). Not all of those entries contain the location field. E.g. On 20.01.2014 PubVis 1.0 found 733 publications in PubDB and found 353 corresponding BibTex entries. Only 136 of these entries provided useful location information. Thus, be careful with your interpretation of some of the illustrations.
+
+###(Input) devices and screen sizes
+PubVis 1.0 was created in a quite tough time frame. Thus we were only able to test and bullit proof our implementation on a limited set of [environments](#tested-on). By design, the page layout is applicable for different device types, different screens sizes and different input devices, e.g. PC with large monitor and mouse as input device, tablet with touch screen (you see were this goes ...). However we were not able to optimize the app to run on all environments, but this should definetly be in the focus of [future work](#todos). 
 
 
 ##Tested on
